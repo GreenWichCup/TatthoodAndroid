@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TattHood</string>
+    <string name="please_enter_your_email_address">Please enter your email address</string>
+    <string name="please_enter_your_email_username">Please enter your email username</string>
+    <string name="please_create_your_password">Please create your password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="HOME">TextView</string>
+    <string name="home">HOME</string>
+</resources>

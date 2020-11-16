@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "431245808757",
+    "firebase_url": "https://appfirebase-6678f.firebaseio.com",
+    "project_id": "appfirebase-6678f",
+    "storage_bucket": "appfirebase-6678f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431245808757:android:438a3cd6fb7004b91e143c",
+        "android_client_info": {
+          "package_name": "com.example.app_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "431245808757-jv0vs17lscti12hfaemrr8g6ogimvgos.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIR3teZii2ubYss17fVsn6XX2xdj8VYKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "431245808757-jv0vs17lscti12hfaemrr8g6ogimvgos.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431245808757:android:7ddda07142158d7f1e143c",
+        "android_client_info": {
+          "package_name": "com.example.tatthood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "431245808757-jv0vs17lscti12hfaemrr8g6ogimvgos.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIR3teZii2ubYss17fVsn6XX2xdj8VYKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "431245808757-jv0vs17lscti12hfaemrr8g6ogimvgos.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
