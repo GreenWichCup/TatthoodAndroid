@@ -3,6 +3,7 @@ package com.example.tatthood;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -33,6 +34,10 @@ public class HomeActivity extends AppCompatActivity {
                 logout();
                 break;
 
+            case R.id.map:
+                transitionMap();
+                break;
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -46,6 +51,10 @@ public class HomeActivity extends AppCompatActivity {
     private void logout() {
         mAuth.signOut();
         finish();
+    }
+    private void transitionMap(){
+        Intent toMap = new Intent(this,MapsActivity.class );
+        startActivity(toMap);
     }
 
 }

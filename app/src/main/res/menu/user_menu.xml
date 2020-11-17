@@ -2,6 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/logOutItem"
-        android:title="Log Out"
+        android:title="@string/log_out"
         app:showAsAction="always"/>
+    <item
+        android:id="@+id/map"
+        android:title="@string/map"
+        app:showAsAction="ifRoom" />
 </menu>

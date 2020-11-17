@@ -7,4 +7,7 @@
     <string name="sign_in">Sign In</string>
     <string name="HOME">TextView</string>
     <string name="home">HOME</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="map">Map</string>
+    <string name="log_out">Log Out</string>
 </resources>
