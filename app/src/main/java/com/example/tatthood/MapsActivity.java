@@ -19,15 +19,16 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-//import com.google.android.libraries.places.api.model.Place;
-
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+
     private static final int FINE_LOCATION_REQUEST_CODE = 1000;
-    private FusedLocationProviderClient fusedLocationClient ;
+
+    private FusedLocationProviderClient locationClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +38,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        prepareLocationServices();
-    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
+        prepareLocationServices();
+
     }
 
     /**
@@ -54,61 +52,86 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
-
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        showUserCurrentLocation();
+        showMeTheUserCurrentLocation();
+
     }
-    private void accessLocationPermission(){
+
+    private void giveMePermissionToAccessLocation() {
+
         ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, FINE_LOCATION_REQUEST_CODE);
+
+
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        if(requestCode == FINE_LOCATION_REQUEST_CODE){
-            //length is equal to 1 because we do one  permission request
-            // PaPackageManager.PERMISSION_GRANTED means the user have accepted the permission
-            if (grantResults.length==1 && grantResults[0]== PackageManager.PERMISSION_GRANTED){
-                showUserCurrentLocation();
+        if (requestCode == FINE_LOCATION_REQUEST_CODE) {
+
+            if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                showMeTheUserCurrentLocation();
+
             } else {
-                Toast.makeText(this, "the user denied the permission request", Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(this, "The user denied to give us access the location", Toast.LENGTH_SHORT).show();
+
             }
+
         }
+
+
     }
-    // able to be know if the permission was given by the user
-    private void showUserCurrentLocation(){
- 
+
+    private void showMeTheUserCurrentLocation() {
 
 
-        //context is this because the method is called from the MapActivity
-        if(ActivityCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
-            accessLocationPermission();
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+            giveMePermissionToAccessLocation();
+
+
         } else {
 
-            fusedLocationClient.getLastLocation().addOnCompleteListener(task -> {
-               Location location = task.getResult();
-                if(location != null) {
-                    LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-                    mMap.addMarker(new MarkerOptions().position(latLng).title("Your current location is here"));
-                    CameraUpdate cameraLocation = CameraUpdateFactory.newLatLngZoom(latLng,16.0f);
-                    mMap.moveCamera(cameraLocation);
 
+            locationClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
+                @Override
+                public void onComplete(@NonNull Task<Location> task) {
 
+                    Location location = task.getResult();
+                    if (location != null) {
 
-                } else {
-                   Toast.makeText(MapsActivity.this, "Something went wrong. Please try again",Toast.LENGTH_SHORT).show();
+                        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+                        mMap.addMarker(new MarkerOptions().position(latLng).title("Your current location is here"));
+                        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 16.0f);
+                        mMap.moveCamera(cameraUpdate);
+
+                    } else {
+
+                        Toast.makeText(MapsActivity.this, "Something went wrong. Try again", Toast.LENGTH_SHORT).show();
+
+                    }
+
                 }
             });
 
+
         }
+
+
+
     }
-    private void prepareLocationServices(){
- fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+    private void prepareLocationServices() {
+
+
+        locationClient = LocationServices.getFusedLocationProviderClient(this);
+
     }
 
 }

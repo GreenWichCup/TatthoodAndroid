@@ -1,12 +1,12 @@
 package com.example.tatthood;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -53,6 +53,7 @@ public class HomeActivity extends AppCompatActivity {
         finish();
     }
     private void transitionMap(){
+        // include case Maps / social media /etc.
         Intent toMap = new Intent(this,MapsActivity.class );
         startActivity(toMap);
     }

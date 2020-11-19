@@ -1,8 +1,5 @@
 package com.example.tatthood;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -19,8 +19,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText editTextEmail, editTextUsername, editTextPassword;
-    private Button btnSignUp, btnSignIn;
+    private EditText editTextEmail;
+    private EditText editTextPassword;
     private FirebaseAuth mAuth;
 
     @Override
@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         editTextEmail = findViewById(R.id.editTextEmail);
-        editTextUsername = findViewById(R.id.editTextUsername);
+        EditText editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
-        btnSignUp = findViewById(R.id.btnSignUp);
-        btnSignIn = findViewById(R.id.btnSignIn);
+        Button btnSignUp = findViewById(R.id.btnSignUp);
+        Button btnSignIn = findViewById(R.id.btnSignIn);
 
         mAuth = FirebaseAuth.getInstance();
         btnSignUp.setOnClickListener(new View.OnClickListener() {
@@ -103,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
    private void transitionToHomeActivity(){
+        // organize routing home / social media /etc
         Intent toHomePage = new Intent(this,HomeActivity.class );
         startActivity(toHomePage);
     }
