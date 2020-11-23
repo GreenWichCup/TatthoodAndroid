@@ -11,48 +11,55 @@
 
     <EditText
         android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="200dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="0dp"
         android:layout_marginBottom="10dp"
         android:autofillHints=""
         android:ems="10"
+        android:gravity="center"
         android:hint="@string/please_enter_your_email_address"
         android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/editTextUsername"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
         android:layout_marginBottom="10dp"
         android:autofillHints=""
         android:ems="10"
+        android:gravity="center"
         android:hint="@string/please_enter_your_email_username"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
         android:layout_marginBottom="10dp"
         android:autofillHints=""
         android:ems="10"
+        android:gravity="center"
         android:hint="@string/please_create_your_password"
         android:inputType="textPassword" />
 
     <LinearLayout
         android:id="@+id/btnLayout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="0dp"
         android:baselineAligned="false"
         android:orientation="horizontal">
 
