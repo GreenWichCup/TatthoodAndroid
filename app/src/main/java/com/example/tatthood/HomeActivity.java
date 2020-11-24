@@ -54,7 +54,7 @@ public class HomeActivity extends AppCompatActivity {
     }
     private void transitionMap(){
         // include case Maps / social media /etc.
-        Intent toMap = new Intent(this,MapsActivity.class );
+        Intent toMap = new Intent(this,NavigationDrawerLayout.class );
         startActivity(toMap);
     }
 
