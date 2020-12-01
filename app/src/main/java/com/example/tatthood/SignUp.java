@@ -1,41 +1,45 @@
 package com.example.tatthood;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.tatthood.UsersData.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity {
+public class SignUp extends AppCompatActivity {
 
     private EditText editTextEmail;
     private EditText editTextPassword;
     private FirebaseAuth mAuth;
-    EditText editTextUsername;
+    private EditText editTextUsername;
+    private DatabaseReference mDatabase;
+    private TextView signInLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sign_up);
 
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
         Button btnSignUp = findViewById(R.id.btnSignUp);
-        Button btnSignIn = findViewById(R.id.btnSignIn);
-
+        signInLink= findViewById(R.id.log_in_link);
         mAuth = FirebaseAuth.getInstance();
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,11 +47,10 @@ public class MainActivity extends AppCompatActivity {
                 signUp();
             }
         });
-
-        btnSignIn.setOnClickListener(new View.OnClickListener() {
+        signInLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signIn();
+                toSignIn();
             }
         });
     }
@@ -65,64 +68,47 @@ public class MainActivity extends AppCompatActivity {
     private void signUp() {
 
         if(editTextEmail.getText().toString().equals("")||editTextPassword.getText().toString().equals("")||editTextUsername.getText().toString().equals("")) {
-            Toast.makeText(MainActivity.this, "All fields are required to sign up",
+            Toast.makeText(SignUp.this, "All fields are required to sign up",
                     Toast.LENGTH_SHORT).show();
         } else {
-            ProgressDialog progressDialog = new ProgressDialog(this);
-            progressDialog.setMessage("Signing up" + editTextUsername.getText().toString());
-            progressDialog.show();
             mAuth.createUserWithEmailAndPassword(editTextEmail.getText().toString(), editTextPassword.getText().toString()).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d("signUp log", "createUserWithEmail:success");
-                        Toast.makeText(MainActivity.this, "Authentication successful.",
+                        Toast.makeText(SignUp.this, "Authentication successful.",
                                 Toast.LENGTH_SHORT).show();
 
 //what the meaning of this here => FirebaseUser user = mAuth.getCurrentUser();
-
+                        mDatabase = FirebaseDatabase.getInstance().getReference();
+                        writeNewUser(task.getResult().getUser().getUid(),editTextEmail.getText().toString(),editTextUsername.getText().toString());
                         transitionToHomeActivity();
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w("signUp log", "createUserWithEmail:failure", task.getException());
-                        Toast.makeText(MainActivity.this, "Authentication failed.",
+                        Toast.makeText(SignUp.this, "Authentication failed.",
                                 Toast.LENGTH_SHORT).show();
                     }
-                    progressDialog.dismiss();
                 }
             });
         }
     }
 
-    private void signIn() {
-        if(editTextEmail.getText().toString().equals("")||editTextPassword.getText().toString().equals("")) {
-            Toast.makeText(MainActivity.this, "All fields are required to sign up",
-                    Toast.LENGTH_SHORT).show();
-        } else {
-            mAuth.signInWithEmailAndPassword(editTextEmail.getText().toString(), editTextPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        // Sign in success, update UI with the signed-in user's information
-                        Log.d("signing In log", "Sign In:success");
-                        Toast.makeText(MainActivity.this, "Welcome user .",
-                                Toast.LENGTH_SHORT).show();
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        transitionToHomeActivity();
-                    } else {
-                        // If sign in fails, display a message to the user.
-                        Log.w("signIn log", "Sign In user:failure", task.getException());
-                        Toast.makeText(MainActivity.this, "Welcome failed.",
-                                Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-        }
+    private void writeNewUser(String userId, String username, String email) {
+        User user = new User(userId, username, email);
+        mDatabase.child("TattHood_users").child(userId).setValue(user);
     }
-   private void transitionToHomeActivity(){
+
+    private void transitionToHomeActivity(){
+        Intent toHomePage = new Intent(this, App_Main_Page.class );
         // organize routing home / social media /etc
-        Intent toHomePage = new Intent(this,HomeActivity.class );
         startActivity(toHomePage);
     }
+    private void toSignIn(){
+        Intent toSignInActivity = new Intent(this, SignIn.class );
+        // organize routing home / social media /etc
+        startActivity(toSignInActivity);
+    }
+
 }

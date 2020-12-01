@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/bn_gallery"
+        android:title="@string/gallery"
+        android:icon="@drawable/pictures"/>
+    <item
+        android:id="@+id/bn_home"
+        android:title="@string/home"
+        android:icon="@drawable/home"/>
+    <item
+        android:id="@+id/bn_notifications"
+        android:title="@string/notification"
+        android:icon="@drawable/notifications"/>
+    <item
+        android:id="@+id/bn_hood_map"
+        android:title="@string/map"
+        android:icon="@drawable/map"/>
+    <item
+        android:id="@+id/bn_market"
+        android:title="@string/market"
+        android:icon="@drawable/store"/>
+</menu>

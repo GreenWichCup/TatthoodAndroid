@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">TattHood</string>
     <string name="please_enter_your_email_address">Please enter your email address</string>
-    <string name="please_enter_your_email_username">Please enter your email username</string>
+    <string name="please_enter_your_username">Please enter your username</string>
     <string name="please_create_your_password">Please create your password</string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_in">Sign In</string>
-    <string name="HOME">TextView</string>
-    <string name="home">HOME</string>
+    <string name="homeOne">HomeOne</string>
+    <string name="homeTwo">HomeTwo</string>
     <string name="title_activity_maps">Map</string>
     <string name="map">Map</string>
     <string name="log_out">Log Out</string>
@@ -16,4 +16,33 @@
     <string name="pending_actions">Pending actions</string>
     <string name="active_users">active users</string>
     <string name="share_picture">share picture</string>
+    <string name="already_an_account_log_in">Already an account ? Log in.</string>
+    <string name="or_create_a_new_account">Or create a new account</string>
+    <string name="choose_your_username">choose your username</string>
+    <string name="hello_picture">Hello picture</string>
+    <string name="hello_message">hello message</string>
+    <string name="hello_picture_fragment">hello_picture_fragment</string>
+    <string name="hello_profile">hello profile</string>
+    <string name="tatthood">TattHood</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="home">Home</string>
+    <string name="about_us">About us</string>
+    <string name="logout">logout</string>
+    <string name="todo">TODO</string>
+    <string name="hone_icon">hone_icon</string>
+    <string name="icon_link_to_dashboard">icon_link_to_dashboard</string>
+    <string name="logout_app">logout_app</string>
+    <string name="icon_link_about">icon_link_about</string>
+    <string name="hello_market">Hello market</string>
+    <string name="gallery">Gallery</string>
+    <string name="notification">notification</string>
+    <string name="market">market</string>
+    <string-array name="users_status">
+        <item>Choose a status...</item>
+        <item>Artist</item>
+        <item>Tattoo Shop</item>
+        <item>Collector</item>
+        <item>Skin virgin</item>
+        <item>Adviser</item>
+    </string-array>
 </resources>
