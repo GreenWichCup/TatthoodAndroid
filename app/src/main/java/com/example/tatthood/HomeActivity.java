@@ -7,6 +7,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.tatthood.Fragments.Gallery;
+import com.example.tatthood.Fragments.Home;
+import com.example.tatthood.Fragments.Hood_map;
+import com.example.tatthood.Fragments.Market;
+import com.example.tatthood.Fragments.Notifications;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 

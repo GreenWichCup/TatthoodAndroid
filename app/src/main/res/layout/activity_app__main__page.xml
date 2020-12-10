@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,7 +10,7 @@
     <View
         android:id="@+id/view_divider"
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="1dp"
         android:background="@color/colorDivider"
         app:layout_constraintBottom_toTopOf="@id/tabLayout" />
 
@@ -30,7 +31,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:tabIndicatorHeight="3dp"
         app:tabMode="fixed"
-        app:tabPaddingBottom="8dp"
-        app:tabPaddingTop="15dp" />
+        app:tabIndicatorGravity="top"
+        app:tabPaddingBottom="0dp"
+        app:tabPaddingTop="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

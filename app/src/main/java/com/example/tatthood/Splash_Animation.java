@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.Glide;
+import com.example.tatthood.Modules.GlideApp;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -22,7 +22,6 @@ public class Splash_Animation extends AppCompatActivity {
 
     // initialize variables
 
-    FirebaseStorage storage;
     StorageReference gStorageRef;
 
     ImageView splashInk, splashNeedle, splashWall, drawAnime;
@@ -39,8 +38,7 @@ public class Splash_Animation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash__animation);
 
-        storage = FirebaseStorage.getInstance();
-        gStorageRef = storage.getReferenceFromUrl("gs://appfirebase-6678f.appspot.com/images/giphy_needle.gif");
+        gStorageRef =  FirebaseStorage.getInstance().getReference();
 
         //Assign variables
         splashInk = findViewById(R.id.splash_ink);
@@ -74,7 +72,6 @@ public class Splash_Animation extends AppCompatActivity {
 
         // Set Animate text
         animeText("TattHood");
-        Glide.with(this).load(gStorageRef).into(drawAnime)  ;
 
         //Initialize bottom animation
         Animation animationBottom = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
@@ -87,11 +84,38 @@ public class Splash_Animation extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(Splash_Animation.this,SignIn.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                startActivity(new Intent(Splash_Animation.this,SignUp.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             //finish Activity
                 finish();
             }
         },4000);
+
+        //other method without glide or picasso library
+        StorageReference gifImage = gStorageRef.child("images/giphy_needle.gif");
+        GlideApp.with(this).load(gifImage).into(drawAnime);
+
+        /*
+        try {
+            final File localFile = File.createTempFile("needle","gif");
+            gStorageRef.getFile(localFile)
+                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                            Toast.makeText(Splash_Animation.this,"Picture retrieved",Toast.LENGTH_SHORT).show();
+                            Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                            ((ImageView)findViewById(R.id.draw_anime)).setImageBitmap(bitmap);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(Splash_Animation.this,"You loose ahahahah!!!",Toast.LENGTH_SHORT).show();
+
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        } */
+
 
     }
     Runnable runnable = new Runnable() {
