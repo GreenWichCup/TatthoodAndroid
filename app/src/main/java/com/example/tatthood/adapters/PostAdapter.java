@@ -1,6 +1,7 @@
 package com.example.tatthood.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tatthood.CommentsActivity;
 import com.example.tatthood.ModelData.Post;
 import com.example.tatthood.ModelData.User;
 import com.example.tatthood.Modules.GlideApp;
@@ -61,6 +63,39 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
         asLiked(post.getPostid(),holder.like);
         nLikes(holder.likes,post.getPostid());
+
+        getComments(post.getPostid(), holder.comments);
+
+        holder.comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, CommentsActivity.class);
+                intent.putExtra("postid",post.getPostid());
+                intent.putExtra("publisherid",post.getPublisher());
+                mContext.startActivity(intent);
+            }
+        });
+
+        holder.comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, CommentsActivity.class);
+                intent.putExtra("postid",post.getPostid());
+                intent.putExtra("publisherid",post.getPublisher());
+                mContext.startActivity(intent);
+            }
+        });
+
+        holder.comments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, CommentsActivity.class);
+                intent.putExtra("postid",post.getPostid());
+                intent.putExtra("publisherid",post.getPublisher());
+                mContext.startActivity(intent);
+            }
+        });
+
         holder.like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,8 +110,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
                 }
             }
         });
-
-
     }
 
     @Override
@@ -102,6 +135,23 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             description = itemView.findViewById(R.id.description);
             publisher = itemView.findViewById(R.id.publisher);
         }
+    }
+
+    private void getComments(String postid, TextView comments){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Comments").child(postid);
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                comments.setText("View all " +   snapshot.getChildrenCount() + " comments");
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void asLiked(String postid, final ImageView imageView){

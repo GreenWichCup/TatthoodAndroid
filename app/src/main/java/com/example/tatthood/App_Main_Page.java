@@ -12,8 +12,6 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 public class App_Main_Page extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
