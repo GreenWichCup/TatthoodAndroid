@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class SignUp extends AppCompatActivity {
     private EditText editTextUsername;
     private DatabaseReference mDatabase;
     private TextView signInLink;
+    private Spinner statusUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class SignUp extends AppCompatActivity {
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
+        statusUser = findViewById(R.id.spinner);
+
         Button btnSignUp = findViewById(R.id.btnSignUp);
         signInLink= findViewById(R.id.log_in_link);
         mAuth = FirebaseAuth.getInstance();
@@ -54,16 +58,6 @@ public class SignUp extends AppCompatActivity {
                 toSignIn();
             }
         });
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-     if(currentUser != null) {
-            //Transition to next Activity
-          transitionToHomeActivity();
-        }
     }
 
     private void signUp() {
@@ -89,18 +83,22 @@ public class SignUp extends AppCompatActivity {
                         mDatabase = FirebaseDatabase.getInstance().getReference().child("App_users").child(userId);
                         HashMap<String,Object>hashMap =new HashMap<>();
                         hashMap.put("id",userId);
-                        hashMap.put("username",str_username.toLowerCase());
+                        hashMap.put("username",str_username);
+                        hashMap.put("username_uppercase",str_username.toUpperCase());
                         hashMap.put("email",str_email);
                         hashMap.put("imageUrl","");
                         hashMap.put("bio","");
                         //Later get value from sign up from  (spinner)
-                        hashMap.put("status","");
+                        hashMap.put("status",statusUser.getSelectedItem());
+                        hashMap.put("followers",0);
+                        hashMap.put("following",0);
+                        hashMap.put("post",0);
 
                         mDatabase.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()){
-                                    Intent intent = new Intent(SignUp.this,App_Main_Page.class);
+                                    Intent intent = new Intent(SignUp.this,HomeActivity.class);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(intent);
                                 }

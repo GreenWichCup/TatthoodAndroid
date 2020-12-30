@@ -15,6 +15,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tatthood.Modules.GlideApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -23,6 +25,7 @@ public class Splash_Animation extends AppCompatActivity {
     // initialize variables
 
     StorageReference gStorageRef;
+    private FirebaseAuth mAuth;
 
     ImageView splashInk, splashNeedle, splashWall, drawAnime;
     TextView splashText;
@@ -39,6 +42,7 @@ public class Splash_Animation extends AppCompatActivity {
         setContentView(R.layout.activity_splash__animation);
 
         gStorageRef =  FirebaseStorage.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
 
         //Assign variables
         splashInk = findViewById(R.id.splash_ink);
@@ -84,8 +88,14 @@ public class Splash_Animation extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(Splash_Animation.this,SignUp.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-            //finish Activity
+                FirebaseUser currentUser = mAuth.getCurrentUser();
+
+                if(currentUser != null) {
+                    //Transition to next Activity
+                    startActivity(new Intent(Splash_Animation.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                } else {
+                    startActivity(new Intent(Splash_Animation.this, SignIn.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                }            //finish Activity
                 finish();
             }
         },4000);

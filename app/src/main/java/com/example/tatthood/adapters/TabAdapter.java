@@ -8,7 +8,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.example.tatthood.Fragments.Gallery;
 import com.example.tatthood.Fragments.Home;
 import com.example.tatthood.Fragments.Market;
-import com.example.tatthood.Fragments.Notifications;
+import com.example.tatthood.Fragments.HoodMap;
 import com.example.tatthood.Fragments.Profile;
 import com.example.tatthood.Fragments.Search;
 
@@ -28,11 +28,11 @@ public class TabAdapter extends FragmentStateAdapter {
             case 2:
                 return new Market();
             case 3:
-                return new Gallery();
+                return new HoodMap();
             case 4:
-                return new Notifications();
+                return new Profile();
             default:
-                return new Profile ();
+                return new Gallery();
         }
     }
 

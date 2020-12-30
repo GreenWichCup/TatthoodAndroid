@@ -21,6 +21,7 @@ public class App_Main_Page extends AppCompatActivity {
         viewPager2.setAdapter(new TabAdapter(this));
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
+
         TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
@@ -38,7 +39,7 @@ public class App_Main_Page extends AppCompatActivity {
                         break;
                     }
                     case 3: {
-                        tab.setIcon(R.drawable.notifications);
+                        tab.setIcon(R.drawable.map);
                         break;
                     }
                     case 4: {

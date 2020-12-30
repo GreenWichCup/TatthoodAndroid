@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.tatthood.ModelData.Post;
 import com.example.tatthood.PostActivity;
 import com.example.tatthood.R;
+import com.example.tatthood.SignIn;
 import com.example.tatthood.adapters.PostAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -36,15 +37,33 @@ public class Home extends Fragment {
     private FirebaseAuth firebaseAuth;
 
     private ImageView post_photo;
+    private ImageView logOut;
+    private FirebaseAuth mAuth;
+
+
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        mAuth = FirebaseAuth.getInstance();
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         post_photo = view.findViewById(R.id.post_photo);
+        logOut = view.findViewById(R.id.log_out);
+
+        logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logout();
+                Intent intent = new Intent(getContext(), SignIn.class);
+                startActivity(intent);
+
+            }
+        });
 
         post_photo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +74,9 @@ public class Home extends Fragment {
             }
         });
 
-
+      /*  Toolbar toolbar = view.findViewById(R.id.toolbar);
+        if (getActivity()!= null)
+            ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);*/
 
 
         recyclerView = view.findViewById(R.id.home_recycler_view);
@@ -118,4 +139,12 @@ public class Home extends Fragment {
             }
         });
     }
+
+    private void logout() {
+        mAuth.signOut();
+       getActivity().finish();
+      
+    }
+
+
 }

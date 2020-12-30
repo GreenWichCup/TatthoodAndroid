@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/bn_home"
+        android:title="@string/home"
+        android:icon="@drawable/home"/>
+    <item
+        android:id="@+id/bn_add_photo"
+        android:title="add_photo"
+        android:icon="@drawable/post_photo"/>
+    <item
+        android:id="@+id/bn_search"
+        android:title="search"
+        android:icon="@drawable/search"/>
+    <item
+        android:id="@+id/bn_messages"
+        android:title="Messages"
+        android:icon="@drawable/ic_email"/>
+
+    <item android:id="@+id/bn_profile"
+        android:title="Profile"
+        android:icon="@drawable/profile"/>
+</menu>

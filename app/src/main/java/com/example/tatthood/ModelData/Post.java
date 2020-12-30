@@ -5,13 +5,18 @@ public class Post {
     private String postimage;
     private String description;
     private String publisher;
+    private String category;
 
-    public Post(String postid, String postimage, String description, String publisher) {
+    public Post(String postid, String postimage, String description, String publisher, String category) {
         this.postid = postid;
         this.postimage = postimage;
         this.description = description;
         this.publisher = publisher;
+        this.category = category;
+
     }
+
+
 
     public Post() {
     }
@@ -47,4 +52,14 @@ public class Post {
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 }
+
+

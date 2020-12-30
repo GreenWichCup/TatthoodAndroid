@@ -58,8 +58,7 @@ public class Search extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                searchUsers(s.toString().toLowerCase());
+                searchUsers(s.toString().toUpperCase());
 
             }
 
@@ -74,9 +73,10 @@ public class Search extends Fragment {
     }
 
     private void searchUsers(String s){
+
         Query query = FirebaseDatabase.getInstance().getReference("App_users")
-                .orderByChild("username")
-                .startAt(s)
+                .orderByChild("username_uppercase")
+                .startAt(s.toUpperCase())
                 .endAt(s+"\uf8ff");
 
         query.addValueEventListener(new ValueEventListener() {
@@ -98,7 +98,7 @@ public class Search extends Fragment {
     }
 
     private void readUsers (){
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("TattHood_users");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("App_users");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

@@ -2,6 +2,7 @@ package com.example.tatthood.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,9 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tatthood.CommentsActivity;
+import com.example.tatthood.Fragments.Profile;
 import com.example.tatthood.ModelData.Post;
 import com.example.tatthood.ModelData.User;
 import com.example.tatthood.Modules.GlideApp;
@@ -43,7 +46,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.post_item,parent, false  );
 
-        return new ViewHolder(view);
+        return new PostAdapter.ViewHolder(view);
     }
 
     @Override
@@ -59,12 +62,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             holder.description.setText(post.getDescription());
         }
 
-        publisherInfo(holder.image_profile,holder.username,holder.publisher,post.getPublisher());
+        publisherInfo(holder.image_profile,holder.username,post.getPublisher());
 
         asLiked(post.getPostid(),holder.like);
         nLikes(holder.likes,post.getPostid());
 
         getComments(post.getPostid(), holder.comments);
+        isSaved(post.getPostid(), holder.save);
 
         holder.comment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,6 +114,29 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
                 }
             }
         });
+        // implemented
+        holder.image_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = mContext.getSharedPreferences("PREFS",Context.MODE_PRIVATE).edit();
+                editor.putString("id",post.getPublisher());
+                editor.apply();
+                ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Profile()).commit();
+            }
+        });
+
+        holder.save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (holder.save.getTag().equals("save")){
+                    FirebaseDatabase.getInstance().getReference().child("Saved").child(firebaseUser.getUid())
+                            .child(post.getPostid()).setValue(true);
+                } else {
+                    FirebaseDatabase.getInstance().getReference().child("Saved").child(firebaseUser.getUid())
+                            .child(post.getPostid()).removeValue();
+                }
+            }
+        });
     }
 
     @Override
@@ -119,7 +146,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView image_profile, post_image,like,comment, save;
-        public TextView username, likes, comments, description, publisher;
+        public TextView username, likes, comments, description;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -133,7 +160,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             likes = itemView.findViewById(R.id.likes);
             comments = itemView.findViewById(R.id.comments);
             description = itemView.findViewById(R.id.description);
-            publisher = itemView.findViewById(R.id.publisher);
         }
     }
 
@@ -143,7 +169,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                comments.setText("View all " +   snapshot.getChildrenCount() + " comments");
+                if (snapshot.getChildrenCount() != 0) {
+                    comments.setText("View all " + snapshot.getChildrenCount() + " comments");
+                } else {
+                    comments.setVisibility(View.GONE);
+                }
 
             }
 
@@ -191,7 +221,30 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         });
     }
 
-    private void publisherInfo(ImageView image_profile, TextView username, TextView publisher, String userid){
+    private void isSaved(String postid, final ImageView imageView){
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Saved").child(firebaseUser.getUid());
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.child(postid).exists()){
+                    imageView.setImageResource(R.drawable.ic_bookmark_colored);
+                    imageView.setTag("saved");
+                } else
+                {
+                    imageView.setImageResource(R.drawable.ic_save_post);
+                    imageView.setTag("save");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void publisherInfo(ImageView image_profile, TextView username, String userid){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("App_users")
                 .child(userid);
 
@@ -201,7 +254,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
                 User user = snapshot.getValue(User.class);
                 GlideApp.with(mContext).load(user.getimageUrl()).into(image_profile);
                 username.setText(user.getUsername());
-                publisher.setText(user.getUsername());
             }
 
             @Override

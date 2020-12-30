@@ -1,4 +1,5 @@
 <resources>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBw_8k0qiZbmFbtgOSkBwefg5SFQsoLBZQ</string>
     <string name="app_name">TattHood</string>
     <string name="please_enter_your_email_address">Please enter your email address</string>
     <string name="please_enter_your_username">Please enter your username</string>
@@ -39,6 +40,9 @@
     <string name="search">Search...</string>
     <string name="post">POST</string>
     <string name="likes">likes</string>
+    <string name="following">Following</string>
+    <string name="followers">Followers</string>
+    <string name="posts">Posts</string>
     <string-array name="users_status">
         <item>Choose a status...</item>
         <item>Artist</item>
@@ -46,5 +50,13 @@
         <item>Collector</item>
         <item>Skin virgin</item>
         <item>Adviser</item>
+    </string-array>
+    <string-array name="tatoo_category">
+        <item>Choose a category...</item>
+        <item>abdomen</item>
+        <item>abstract</item>
+        <item>african</item>
+        <item>alien</item>
+        <item>anchor</item>
     </string-array>
 </resources>

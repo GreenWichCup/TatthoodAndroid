@@ -35,6 +35,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     private List<User> mUser;
 
     FirebaseUser firebaseUser;
+
     public UserAdapter(Context mContext, List<User> mUser) {
         this.mContext = mContext;
         this.mUser = mUser;
@@ -56,9 +57,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         holder.fullName.setText(user.getStatus());
 
         GlideApp.with(mContext).load(user.getimageUrl()).into(holder.image_profile);
-
         isFollowing(user.getId(),holder.btn_follow);
-
             if (user.getId().equals(firebaseUser.getUid())){
                 holder.btn_follow.setVisibility(View.GONE);
             }
@@ -67,9 +66,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
                 @Override
                 public void onClick(View view) {
                     SharedPreferences.Editor editor = mContext.getSharedPreferences("PREFS",Context.MODE_PRIVATE).edit();
-                    editor.putString("profileId",user.getId());
+                    editor.putString("id",user.getId());
                     editor.apply();
-                    ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment,new Profile()).commit();
+                    ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Profile()).commit();
                 }
             });
             holder.btn_follow.setOnClickListener(new View.OnClickListener() {

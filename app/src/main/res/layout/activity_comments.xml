@@ -25,7 +25,8 @@
         android:padding="4dp"
         android:layout_alignParentBottom="true"
         android:background="#ffff">
-    <de.hdodenhof.circleimageview.CircleImageView
+
+        <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:id="@+id/image_profile"/>
@@ -39,7 +40,8 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:background="@android:color/transparent"
-            android:layout_toLeftOf="@id/post"/>
+            android:layout_toLeftOf="@id/post"
+            android:layout_toEndOf="@id/image_profile"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

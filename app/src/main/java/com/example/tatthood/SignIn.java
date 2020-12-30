@@ -69,7 +69,7 @@ public class SignIn extends AppCompatActivity {
                         reference.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                               Intent intent = new Intent(SignIn.this,App_Main_Page.class);
+                               Intent intent = new Intent(SignIn.this,HomeActivity.class);
                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                startActivity(intent);
                                finish();
@@ -91,7 +91,7 @@ public class SignIn extends AppCompatActivity {
     }
     private void transitionToHomeActivity(){
         // organize routing home / social media /etc
-        Intent toHomePage = new Intent(this,App_Main_Page.class );
+        Intent toHomePage = new Intent(this,HomeActivity.class );
         startActivity(toHomePage);
     }
     private void toCreateAccount(){
