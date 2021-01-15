@@ -10,9 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.tatthood.Fragments.Home;
+import com.example.tatthood.Fragments.MainSearchFragment;
 import com.example.tatthood.Fragments.Messages;
 import com.example.tatthood.Fragments.Profile;
-import com.example.tatthood.Fragments.Search;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -44,7 +44,7 @@ public class HomeActivity extends AppCompatActivity {
                     break;
 
                 case R.id.bn_search:
-                    selectFragment = new Search();
+                    selectFragment = new MainSearchFragment();
                   break;
 
                 case R.id.bn_messages:

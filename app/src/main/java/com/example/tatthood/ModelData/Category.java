@@ -4,6 +4,8 @@ public class Category {
     private String categoryName ;
     private String letter;
     private String imageurl;
+    private String postid;
+    private String tattoourl;
 
     public Category() {
     }
@@ -12,6 +14,8 @@ public class Category {
         this.categoryName = categoryName;
         this.letter = letter;
         this.imageurl = imageurl;
+        this.postid = postid;
+        this.tattoourl = tattoourl;
 
     }
 
@@ -38,4 +42,21 @@ public class Category {
     public void setLetter(String letter) {
         this.letter = letter;
     }
+
+    public String getPostid() {
+        return postid;
+    }
+
+    public void setPostid(String postid) {
+        this.postid = postid;
+    }
+
+    public String getTattoourl() {
+        return tattoourl;
+    }
+
+    public void setTattoourl(String tattoourl) {
+        this.tattoourl = tattoourl;
+    }
+
 }

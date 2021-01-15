@@ -6,22 +6,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.tatthood.ModelData.Post;
 import com.example.tatthood.ModelData.User;
 import com.example.tatthood.Modules.GlideApp;
 import com.example.tatthood.R;
-import com.example.tatthood.adapters.PhotoGridAdapter;
+import com.example.tatthood.adapters.PortFolioTabsAdapter;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -30,30 +28,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class Profile extends Fragment {
+public class Profile extends Fragment  {
 
     private TextView nameTv,user_status ,toolbarNameTv, userBioTv, followersCountTv, followingCountTv, postsCountTv, editProfile;
     private CircleImageView profileImage;
-    private Button btnFollow;
+
     private LinearLayout layoutCount;
     String profileId;
-    ImageButton gridPortfolio, gridSavedPost;
     FirebaseUser firebaseUser;
 
-    PhotoGridAdapter photoGridAdapter;
-    RecyclerView recyclerView;
-    List<Post> photoList;
-
-    private  List<String> mSaved;
-    PhotoGridAdapter savedPostGridAdapter;
-    RecyclerView saved_post_recyclerView;
-    List<Post> savedPostList;
 
 
     public Profile() {
@@ -82,47 +67,41 @@ public class Profile extends Fragment {
         postsCountTv = view.findViewById(R.id.postCount);
         toolbarNameTv = view.findViewById(R.id.toolbar_name);
         profileImage = view.findViewById(R.id.image_profile);
-        btnFollow = view.findViewById(R.id.btn_follow);
 
-        // portfolio recyclerview
+        // Portfolio tabLayout
 
-        gridPortfolio = view.findViewById(R.id.grid_portfolio);
-        gridSavedPost = view.findViewById(R.id.grid_saved_post);
+        ViewPager2 viewPager2 = view.findViewById(R.id.vpProfile);
+        viewPager2.setAdapter(new PortFolioTabsAdapter(getActivity()));
 
-        recyclerView = view.findViewById(R.id.recycler_view_portfolio);
-        recyclerView.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new GridLayoutManager(getContext(),3);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        photoList = new ArrayList<>();
-        photoGridAdapter = new PhotoGridAdapter(getContext(),photoList);
-        recyclerView.setAdapter(photoGridAdapter);
+        TabLayout tabLayout = view.findViewById(R.id.tabLayoutProfile);
 
-        // saved_post recyclerview
-
-        saved_post_recyclerView = view.findViewById(R.id.recycler_view_saved_post);
-        saved_post_recyclerView.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManagerTwo = new GridLayoutManager(getContext(),3);
-        saved_post_recyclerView.setLayoutManager(linearLayoutManagerTwo);
-        savedPostList = new ArrayList<>();
-        savedPostGridAdapter = new PhotoGridAdapter(getContext(),savedPostList);
-        saved_post_recyclerView.setAdapter(savedPostGridAdapter);
-
-
-
+        TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
+            @Override
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                switch (position){
+                    case 0: {
+                        tab.setIcon(R.drawable.ic_grid);
+                        break;
+                    }
+                    case 1: {
+                        tab.setIcon(R.drawable.ic_save_post);
+                        break;
+                    }
+                    default:
+                        break;
+                }
+            }
+        });
+        tabLayoutMediator.attach();
         userInfo();
         getFollowers();
         getNrPosts();
-        userPortfolio();
-        mSavedPost();
 
         if (profileId.equals(firebaseUser.getUid())){
             editProfile.setText("Edit Profile");
-            btnFollow.setVisibility(View.GONE);
         } else {
             checkFollow();
-            gridSavedPost.setVisibility(View.GONE);
         }
-
 
         editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,7 +121,7 @@ public class Profile extends Fragment {
                             .child(profileId)
                             .child("followers")
                             .child(firebaseUser.getUid()).setValue(true);
-                } else if (btn.equals("following")){
+                } else if (btn.equals("Unfollow")){
                     FirebaseDatabase.getInstance().getReference()
                             .child("Follow")
                             .child(firebaseUser.getUid())
@@ -158,23 +137,7 @@ public class Profile extends Fragment {
             }
         });
 
-        gridPortfolio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                recyclerView.setVisibility(View.VISIBLE);
-                saved_post_recyclerView.setVisibility(View.GONE);
-            }
-        });
-
-        gridSavedPost.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                recyclerView.setVisibility(View.GONE);
-                saved_post_recyclerView.setVisibility(View.VISIBLE);
-
-            }
-        });
+        // later will be replaced by tab layout and viewpager2
 
         return view ;
 
@@ -205,11 +168,7 @@ public class Profile extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                if (snapshot.child(profileId).exists()) {
-                   editProfile.setVisibility(View.GONE);
-                   btnFollow.setVisibility(View.GONE);
-                   layoutCount.setVisibility(View.VISIBLE);
-
-
+                   editProfile.setText("Unfollow");
                } else {
                    editProfile.setText("follow");
                }
@@ -232,7 +191,7 @@ public class Profile extends Fragment {
             }
         });
 
-        DatabaseReference userFollowing = FirebaseDatabase.getInstance().getReference("Follow").child(profileId).child("followers");
+        DatabaseReference userFollowing = FirebaseDatabase.getInstance().getReference("Follow").child(profileId).child("following");
         userFollowing.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -265,70 +224,5 @@ public class Profile extends Fragment {
         });
     }
 
-    private void userPortfolio(){
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts");
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                photoList.clear();
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                   Post userPost = dataSnapshot.getValue(Post.class);
-                    if (userPost.getPublisher().equals(profileId)){
-                        photoList.add(userPost);
-                    }
-                }
-                Collections.reverse(photoList);
-                photoGridAdapter.notifyDataSetChanged();
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
-
-    private void mSavedPost(){
-        mSaved = new ArrayList<>();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Saved")
-                .child(firebaseUser.getUid());
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    mSaved.add(dataSnapshot.getKey());
-                }
-                readSavedPost();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-            }
-        });
-    }
-
-    private void readSavedPost(){
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts");
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                savedPostList.clear();
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    Post savedPost = dataSnapshot.getValue(Post.class);
-                    for (String id : mSaved ){
-                        if (savedPost.getPostid().equals(id)){
-                            savedPostList.add(savedPost);
-                        }
-                    }
-                }
-                savedPostGridAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-    }
 }

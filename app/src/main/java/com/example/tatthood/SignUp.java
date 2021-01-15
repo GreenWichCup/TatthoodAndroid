@@ -90,9 +90,7 @@ public class SignUp extends AppCompatActivity {
                         hashMap.put("bio","");
                         //Later get value from sign up from  (spinner)
                         hashMap.put("status",statusUser.getSelectedItem());
-                        hashMap.put("followers",0);
-                        hashMap.put("following",0);
-                        hashMap.put("post",0);
+
 
                         mDatabase.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override

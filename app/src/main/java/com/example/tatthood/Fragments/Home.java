@@ -74,11 +74,6 @@ public class Home extends Fragment {
             }
         });
 
-      /*  Toolbar toolbar = view.findViewById(R.id.toolbar);
-        if (getActivity()!= null)
-            ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);*/
-
-
         recyclerView = view.findViewById(R.id.home_recycler_view);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tatthood.Interfaces.RecyclerViewClickInterface;
 import com.example.tatthood.ModelData.Post;
 import com.example.tatthood.Modules.GlideApp;
 import com.example.tatthood.R;
@@ -20,9 +21,15 @@ public class PhotoGridAdapter extends RecyclerView.Adapter<PhotoGridAdapter.View
     public Context mContext ;
     public List<Post> userPostedPhoto;
 
-    public PhotoGridAdapter(Context mContext, List<Post> userPostedPhoto) {
+    public RecyclerViewClickInterface photoClickInterface;
+
+
+
+    public PhotoGridAdapter(Context mContext, List<Post> userPostedPhoto,RecyclerViewClickInterface photoClickInterface) {
         this.mContext = mContext;
         this.userPostedPhoto = userPostedPhoto;
+        this.photoClickInterface = photoClickInterface;
+
     }
 
     @NonNull
@@ -37,8 +44,6 @@ public class PhotoGridAdapter extends RecyclerView.Adapter<PhotoGridAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Post userPhoto = userPostedPhoto.get(position);
         GlideApp.with(mContext).load(userPhoto.getPostimage()).into(holder.postedImage);
-
-
     }
 
     @Override
@@ -46,13 +51,16 @@ public class PhotoGridAdapter extends RecyclerView.Adapter<PhotoGridAdapter.View
         return userPostedPhoto.size();
     }
 
-
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView postedImage;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             postedImage = itemView.findViewById(R.id.posted_image);
+            itemView.setOnClickListener((View v) -> {
+                photoClickInterface.onItemClick(getBindingAdapterPosition());
+            });
+
         }
     }
 }

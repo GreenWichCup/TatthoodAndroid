@@ -91,7 +91,6 @@
                 android:background="@android:color/transparent"
                 android:hint="search for category..."
                 android:maxLines="1" />
-
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 

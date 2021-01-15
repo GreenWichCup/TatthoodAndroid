@@ -86,7 +86,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
                                 .child(user.getId())
                                 .child("followers")
                                 .child(firebaseUser.getUid()).setValue(true);
-                    } else {
+                    } else  {
 
                         FirebaseDatabase.getInstance().getReference()
                                 .child("Follow")
@@ -136,7 +136,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.child(userId).exists()){
-                    button.setText("following");
+                    button.setText("Unfollow");
                 } else{
                     button.setText("follow");
                 }

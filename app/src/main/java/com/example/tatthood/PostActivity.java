@@ -19,7 +19,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,6 +26,8 @@ import com.example.tatthood.Interfaces.RecyclerViewClickInterface;
 import com.example.tatthood.ModelData.Category;
 import com.example.tatthood.adapters.CategoryAdapter;
 import com.example.tatthood.adapters.SelectedCategoryAdapter;
+import com.google.android.flexbox.FlexboxLayoutManager;
+import com.google.android.flexbox.JustifyContent;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -101,13 +102,13 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
 
         // selected categoryList
         selectedCategoryRecyclerView = findViewById(R.id.selected_category_recyclerview);
-        selectedCategoryRecyclerView.setHasFixedSize(true);
-        selectedCategoryRecyclerView.setLayoutManager(new GridLayoutManager(this,3));
-        sCategory = new ArrayList<String>();
+        selectedCategoryRecyclerView.setHasFixedSize(false);
+        FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(this);
+        layoutManager.setJustifyContent(JustifyContent.SPACE_EVENLY);
+        selectedCategoryRecyclerView.setLayoutManager(layoutManager);
+        sCategory = new ArrayList<>();
         selectedCategoryAdapter = new SelectedCategoryAdapter(this,sCategory);
         selectedCategoryRecyclerView.setAdapter(selectedCategoryAdapter);
-
-
 
         //send Post to firebaseDatabase
         close_post = findViewById(R.id.post_cancel);
@@ -131,7 +132,7 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
             }
         });
 
-        CropImage.activity().start(PostActivity.this);
+        CropImage.activity().setAspectRatio(4,5).start(PostActivity.this);
     }
 
     private String getFileExtension(Uri uri){
@@ -175,7 +176,7 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
                         reference.child(postId).setValue(hashMap);
 
                        sCategory.forEach((n) -> {
-                           DatabaseReference refCategoryPost = FirebaseDatabase.getInstance().getReference("Category").child(n).child("matched");
+                           DatabaseReference refCategoryPost = FirebaseDatabase.getInstance().getReference("Category").child(n.trim().toLowerCase()).child("matched");
                            //need one variable for each category
                            HashMap<String,Object> hashMapCategory = new HashMap<>();
                            hashMapCategory.put("postid",postId);
@@ -184,7 +185,7 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
 
                         progressDialog.dismiss();
 
-                        startActivity(new Intent(PostActivity.this, App_Main_Page.class));
+                        startActivity(new Intent(PostActivity.this, HomeActivity.class));
                         finish();
                     } else {
                         Toast.makeText(PostActivity.this,"Error!",Toast.LENGTH_SHORT).show();
@@ -273,7 +274,6 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
     @Override
     public void onLongClick(int position) {
         sCategory.remove(sCategory.get(position));
-
         selectedCategoryAdapter.notifyDataSetChanged();
     }
 }

@@ -84,7 +84,7 @@ public class CommentsActivity extends AppCompatActivity {
                     Toast.makeText(CommentsActivity.this,"You can not send empty",Toast.LENGTH_SHORT).show();
                 } else {
                     addcomment();
-                    startActivity(new Intent(CommentsActivity.this,App_Main_Page.class));
+                    startActivity(new Intent(CommentsActivity.this,HomeActivity.class));
                     finish();
                 }
             }

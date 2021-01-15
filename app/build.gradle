@@ -57,7 +57,7 @@ dependencies {
 
     //FirebaseUI
     implementation 'com.firebaseui:firebase-ui-storage:6.4.0'
-    implementation 'com.firebaseui:firebase-ui-database:5.0.0'
+    implementation 'com.firebaseui:firebase-ui-database:6.2.1'
 
 
     //Glide dependencies
@@ -72,6 +72,9 @@ dependencies {
 
     //Crop image
     api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+
+    //FlexBox
+    implementation 'com.google.android:flexbox:2.0.1'
 
 
 }

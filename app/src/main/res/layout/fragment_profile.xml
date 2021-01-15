@@ -58,13 +58,7 @@
           app:civ_border_width="1dp"
           android:src="@mipmap/ic_launcher"
           android:layout_margin="16dp"/>
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Status"
-          android:textSize="18sp"
-          android:layout_gravity="center"
-          android:id="@+id/user_status"/>
+
   </LinearLayout>
 
     <LinearLayout
@@ -77,12 +71,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
+            android:layout_gravity="start"
             android:id="@+id/username"
             android:padding="4dp"
             android:text="Username"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:layout_gravity="start"
+            android:id="@+id/user_status"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -115,8 +118,7 @@
         android:id="@+id/countLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-       >
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -193,59 +195,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/layout_follow">
-       <Button
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="FOLLOW"
-           android:textColor="@color/white"
-           android:minWidth="160dp"
-           android:layout_centerHorizontal="true"
-           android:id="@+id/btn_follow"
-           />
+
     </RelativeLayout>
 
 </RelativeLayout>
-
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tabLayoutProfile"
+        android:background="@android:color/transparent"
+        android:layout_below="@+id/combined_layout"
+        app:tabIndicatorHeight="3dp"
+        app:tabMode="fixed"
+        app:tabPaddingBottom="8dp"
+        android:paddingTop="15dp"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="#2ACC11"
         android:id="@+id/view"
-        android:layout_below="@+id/combined_layout"
+        android:layout_below="@id/tabLayoutProfile"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"/>
 
-    <LinearLayout
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpProfile"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/view"
-        android:id="@+id/linear_tab"
-        android:orientation="horizontal">
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/grid_portfolio"
-            android:src="@drawable/ic_grid"/>
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/grid_saved_post"
-            android:src="@drawable/ic_save_post"/>
-
-    </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_portfolio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linear_tab"/>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_saved_post"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linear_tab"
-        android:visibility="gone"/>
+        android:layout_height="match_parent"
+        android:layout_below="@id/view"/>
 
 
 </RelativeLayout>

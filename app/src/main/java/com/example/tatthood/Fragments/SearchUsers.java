@@ -9,12 +9,13 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tatthood.R;
 import com.example.tatthood.ModelData.User;
+import com.example.tatthood.R;
 import com.example.tatthood.adapters.UserAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,45 +27,41 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Search extends Fragment {
+public class SearchUsers extends Fragment {
 
     RecyclerView usersRecyclerView;
     private UserAdapter userAdapter;
     private List<User> mUsers;
-    EditText search_bar_edt;
+    EditText searchUsers_bar_edt;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =inflater.inflate(R.layout.fragment_search, container, false);
+        View view =inflater.inflate(R.layout.fragment_search_users, container, false);
 
         usersRecyclerView = view.findViewById(R.id.search_recycler_view);
         usersRecyclerView.setHasFixedSize(true);
         usersRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        search_bar_edt = view.findViewById(R.id.search_bar_edt);
+        searchUsers_bar_edt = view.findViewById(R.id.searchUsers_bar_edt);
         mUsers = new ArrayList<>();
         userAdapter = new UserAdapter(getContext(),mUsers);
         usersRecyclerView.setAdapter(userAdapter);
 
-        readUsers();
-
-        search_bar_edt.addTextChangedListener(new TextWatcher() {
+        searchUsers_bar_edt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 searchUsers(s.toString().toUpperCase());
-
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-
+                readUsers();
             }
         });
 
@@ -72,8 +69,14 @@ public class Search extends Fragment {
         return view;
     }
 
-    private void searchUsers(String s){
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
+
+    }
+
+    private void searchUsers(String s){
         Query query = FirebaseDatabase.getInstance().getReference("App_users")
                 .orderByChild("username_uppercase")
                 .startAt(s.toUpperCase())
@@ -89,7 +92,6 @@ public class Search extends Fragment {
                 }
                     userAdapter.notifyDataSetChanged();
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -102,7 +104,7 @@ public class Search extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (search_bar_edt.getText().toString().equals("")){
+                if (searchUsers_bar_edt.getText().toString().isEmpty()){
                     mUsers.clear();
                     for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                         User user = dataSnapshot.getValue(User.class);

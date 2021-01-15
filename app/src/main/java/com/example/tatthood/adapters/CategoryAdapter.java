@@ -22,9 +22,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder>   {
 
-    private Context mContext;
-    private List<Category> mCategory;
-    private RecyclerViewClickInterface recyclerViewClickInterface;
+    public Context mContext;
+    public List<Category> mCategory;
+    public RecyclerViewClickInterface recyclerViewClickInterface;
 
     DatabaseReference mDatatbase;
 
@@ -66,16 +66,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
             category_name = itemView.findViewById(R.id.category_name);
             image_category = itemView.findViewById(R.id.image_category);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    recyclerViewClickInterface.onItemClick(getBindingAdapterPosition());
-                }
+            itemView.setOnClickListener((View v) -> {
+                recyclerViewClickInterface.onItemClick(getBindingAdapterPosition());
             });
             itemView.setOnLongClickListener((v -> {
                 recyclerViewClickInterface.onLongClick(getBindingAdapterPosition());
-               // mCategory.remove(getBindingAdapterPosition());
-              //  notifyItemRemoved(getBindingAdapterPosition());
                 return true;
             }));
 
