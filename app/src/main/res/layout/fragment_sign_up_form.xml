@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OnBoarding.SignUpFormFragment">
+
+    <LinearLayout
+        android:id="@+id/formLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_profile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/profile"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
+            android:text="Status"
+            android:textStyle="bold"
+            android:id="@+id/statusChoosed"/>
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/enter_your_email_address"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/custom_edtv_sign_up"/>
+
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/choose_your_username"
+            android:inputType="textPersonName"
+            android:background="@drawable/custom_edtv_sign_up"/>
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:ems="8"
+            android:gravity="center"
+            android:hint="@string/create_your_password"
+            android:inputType="textPassword"
+            android:background="@drawable/custom_edtv_sign_up"/>
+
+        <Button
+            android:id="@+id/btnSignUp"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:background="@drawable/custom_tv_status"
+            android:text="@string/sign_up" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="0"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:id="@+id/log_in_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:text="@string/already_an_account_log_in"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

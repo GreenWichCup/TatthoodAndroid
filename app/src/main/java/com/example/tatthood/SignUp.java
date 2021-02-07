@@ -91,7 +91,6 @@ public class SignUp extends AppCompatActivity {
                         //Later get value from sign up from  (spinner)
                         hashMap.put("status",statusUser.getSelectedItem());
 
-
                         mDatabase.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {

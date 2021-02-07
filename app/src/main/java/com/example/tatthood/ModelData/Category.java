@@ -1,6 +1,9 @@
 package com.example.tatthood.ModelData;
 
-public class Category {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Category implements Parcelable {
     private String categoryName ;
     private String letter;
     private String imageurl;
@@ -18,6 +21,26 @@ public class Category {
         this.tattoourl = tattoourl;
 
     }
+
+    protected Category(Parcel in) {
+        categoryName = in.readString();
+        letter = in.readString();
+        imageurl = in.readString();
+        postid = in.readString();
+        tattoourl = in.readString();
+    }
+
+    public static final Creator<Category> CREATOR = new Creator<Category>() {
+        @Override
+        public Category createFromParcel(Parcel in) {
+            return new Category(in);
+        }
+
+        @Override
+        public Category[] newArray(int size) {
+            return new Category[size];
+        }
+    };
 
     public String getImageurl() {
         return imageurl;
@@ -59,4 +82,17 @@ public class Category {
         this.tattoourl = tattoourl;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(categoryName);
+        dest.writeString(letter);
+        dest.writeString(imageurl);
+        dest.writeString(postid);
+        dest.writeString(tattoourl);
+    }
 }

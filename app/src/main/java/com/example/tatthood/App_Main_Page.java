@@ -19,7 +19,6 @@ public class App_Main_Page extends AppCompatActivity {
 
         ViewPager2 viewPager2 = findViewById(R.id.viewPager2);
         viewPager2.setAdapter(new TabAdapter(this));
-
         TabLayout tabLayout = findViewById(R.id.tabLayout);
 
         TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {

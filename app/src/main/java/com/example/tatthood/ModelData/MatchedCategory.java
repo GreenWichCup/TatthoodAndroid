@@ -2,15 +2,15 @@ package com.example.tatthood.ModelData;
 
 public class MatchedCategory {
     private String postid;
-    private String tattoourl;
+    private String imageurl;
 
 
     public MatchedCategory() {
     }
 
-    public MatchedCategory(String postid, String tattoourl) {
+    public MatchedCategory(String postid, String imageurl) {
         this.postid = postid;
-        this.tattoourl = tattoourl;
+        this.imageurl = imageurl;
     }
 
     public String getPostid() {
@@ -21,11 +21,11 @@ public class MatchedCategory {
         this.postid = postid;
     }
 
-    public String getTattoourl() {
-        return tattoourl;
+    public String getImageurl() {
+        return imageurl;
     }
 
-    public void setTattoourl(String tattoourl) {
-        this.tattoourl = tattoourl;
+    public void setImageurl(String imageurl) {
+        this.imageurl = imageurl;
     }
 }

@@ -2,8 +2,10 @@ package com.example.tatthood.ModelData;
 
 import com.google.firebase.database.IgnoreExtraProperties;
 
+import java.io.Serializable;
+
 @IgnoreExtraProperties
-public class User {
+public class User implements Serializable {
 
     public String id;
     public String username;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,32 +9,34 @@
     android:tag="MainSearchFragment">
 
     <com.google.android.material.appbar.AppBarLayout
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/app_bar">
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/search_toobar"
             android:background="?android:attr/windowBackground">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/search"/>
+                android:src="@drawable/search"
+                android:layout_marginEnd="10dp"/>
             <EditText
                 android:id="@+id/search_bar_edt"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:background="@android:color/transparent"
                 android:hint="@string/search"
                 android:maxLines="1" />
-
         </androidx.appcompat.widget.Toolbar>
-
     </com.google.android.material.appbar.AppBarLayout>
+
     <com.google.android.material.tabs.TabLayout
+        app:layout_constraintTop_toBottomOf="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tabLayoutSearch"
@@ -41,20 +44,24 @@
         android:layout_below="@+id/app_bar"
         app:tabIndicatorHeight="3dp"
         app:tabMode="fixed"
-        app:tabPaddingBottom="8dp"
-        android:paddingTop="15dp"/>
+        app:tabPaddingBottom="5dp"
+        android:paddingTop="5dp"/>
+
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="#2ACC11"
-        android:id="@+id/view"
         android:layout_below="@id/tabLayoutSearch"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="2dp"/>
+        android:background="#2ACC11"
+        app:layout_constraintBottom_toBottomOf="@+id/tabLayoutSearch" />
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp2Search"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/view"/>
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="16dp" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

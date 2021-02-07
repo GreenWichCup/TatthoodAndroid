@@ -28,7 +28,7 @@
         android:autofillHints=""
         android:ems="10"
         android:gravity="center"
-        android:hint="@string/please_enter_your_email_address"
+        android:hint="@string/enter_your_email_address"
         android:inputType="textEmailAddress" />
 
     <EditText
@@ -56,7 +56,7 @@
         android:autofillHints=""
         android:ems="10"
         android:gravity="center"
-        android:hint="@string/please_create_your_password"
+        android:hint="@string/create_your_password"
         android:inputType="textPassword" />
 
     <Spinner

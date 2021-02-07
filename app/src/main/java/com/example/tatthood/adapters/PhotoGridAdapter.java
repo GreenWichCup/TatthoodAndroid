@@ -20,10 +20,7 @@ public class PhotoGridAdapter extends RecyclerView.Adapter<PhotoGridAdapter.View
 
     public Context mContext ;
     public List<Post> userPostedPhoto;
-
     public RecyclerViewClickInterface photoClickInterface;
-
-
 
     public PhotoGridAdapter(Context mContext, List<Post> userPostedPhoto,RecyclerViewClickInterface photoClickInterface) {
         this.mContext = mContext;
@@ -60,7 +57,6 @@ public class PhotoGridAdapter extends RecyclerView.Adapter<PhotoGridAdapter.View
             itemView.setOnClickListener((View v) -> {
                 photoClickInterface.onItemClick(getBindingAdapterPosition());
             });
-
         }
     }
 }

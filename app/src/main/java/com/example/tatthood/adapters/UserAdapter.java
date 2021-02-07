@@ -51,7 +51,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        final User user = mUser.get(position);
+        User user = mUser.get(position);
         holder.btn_follow.setVisibility(View.VISIBLE);
         holder.username.setText(user.getUsername());
         holder.fullName.setText(user.getStatus());

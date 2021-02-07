@@ -8,22 +8,19 @@
     tools:context=".Fragments.HoodMap">
 
       <fragment
+          xmlns:map="http://schemas.android.com/apk/res-auto"
+          class="com.google.android.libraries.maps.SupportMapFragment"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-        android:id="@+id/google_map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+          android:id="@+id/google_map"
+          map:mapId
+          android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
     <!-- TODO: Update blank fragment layout -->
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right|end"
-        android:text="Button" />
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/bottom_sheet" />
+    <include layout="@layout/content_remain"/>
+
+    <include layout="@layout/row_add_item"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

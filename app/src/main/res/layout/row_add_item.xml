@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/lnBottomSheet"
+    android:padding="10dp"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    app:behavior_hideable="true"
+    android:background="@drawable/custom_background"
+    app:behavior_peekHeight="56dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="NEW ITEM WITH BOTTOM"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_200"
+            android:layout_marginBottom="00dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="NEW BOTTOM"
+            android:layout_gravity="right"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_200"
+            android:layout_marginBottom="00dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This persitent bottom sheet dialog.The persistent bottom sheet is displayed in apps contentIt dwjeflkwejflwkejflskdvjslkvjaldjvalfkvjalkfjv"
+        android:textStyle="italic"
+        android:textSize="20sp"
+        android:textColor="@color/teal_700"/>
+    <Button
+        android:id="@+id/btnAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:text="SHOW IT"
+        android:foreground="?attr/selectableItemBackground"
+        />
+
+
+</LinearLayout>

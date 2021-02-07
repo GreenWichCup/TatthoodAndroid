@@ -37,8 +37,6 @@ public class PortFolioPost extends Fragment implements RecyclerViewClickInterfac
     PhotoGridAdapter photoGridAdapter;
     RecyclerView recyclerView;
     List<Post> photoList;
-
-
     String profileId;
     FirebaseUser firebaseUser;
 

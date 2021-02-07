@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +21,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tatthood.Interfaces.RecyclerViewClickInterface;
@@ -37,7 +38,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -57,6 +57,7 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
     EditText post_description;
     ImageView close_post, post_image_add;
     TextView post_txt;
+    Spinner spinnerListCategory;
 
     RecyclerView category_recyclerView;
     private CategoryAdapter categoryAdapter;
@@ -70,41 +71,16 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post);
+        setContentView(R.layout.new_post_layout);
 
-        //search category recyclerView
-        category_recyclerView = findViewById(R.id.category_recyclerview);
-        category_recyclerView.setHasFixedSize(true);
-        category_recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        category_search_bar = findViewById(R.id.category_search_bar);
-        mCategory = new ArrayList<>();
-        categoryAdapter = new CategoryAdapter(this,mCategory,this);
-        category_recyclerView.setAdapter(categoryAdapter);
+        spinnerListCategory = findViewById(R.id.spinner);
 
-        readCategory();
-
-        category_search_bar.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                searchCategory(s.toString().toUpperCase());
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
 
         // selected categoryList
         selectedCategoryRecyclerView = findViewById(R.id.selected_category_recyclerview);
         selectedCategoryRecyclerView.setHasFixedSize(false);
         FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(this);
-        layoutManager.setJustifyContent(JustifyContent.SPACE_EVENLY);
+        layoutManager.setJustifyContent(JustifyContent.FLEX_START);
         selectedCategoryRecyclerView.setLayoutManager(layoutManager);
         sCategory = new ArrayList<>();
         selectedCategoryAdapter = new SelectedCategoryAdapter(this,sCategory);
@@ -128,11 +104,59 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
         post_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                uploadImage();
+
+                if (!sCategory.isEmpty() ){
+                    uploadImage();
+                } else{
+                    Toast.makeText(PostActivity.this,"Choose a category",Toast.LENGTH_SHORT).show();
+                };
             }
         });
 
         CropImage.activity().setAspectRatio(4,5).start(PostActivity.this);
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Category");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Is better to use a List, because you don't know the size
+                // of the iterator returned by dataSnapshot.getChildren() to
+                // initialize the array
+                final List<String> categoryList = new ArrayList<String>();
+
+                for (DataSnapshot snapshot: dataSnapshot.getChildren()) {
+                    String categoryItems = snapshot.child("categoryName").getValue(String.class);
+                    if (categoryItems!=null){
+                        categoryList.add(categoryItems);
+                    }
+                    Log.d("tag", "onDataChange: "+categoryItems);
+                }
+
+                Spinner spinnerProperty = (Spinner) findViewById(R.id.spinner);
+                ArrayAdapter<String> addressAdapter = new ArrayAdapter<String>(PostActivity.this, android.R.layout.simple_spinner_item, categoryList);
+                addressAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinnerProperty.setAdapter(addressAdapter);
+
+                spinnerProperty.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            String categoryValue =  parent.getItemAtPosition(position).toString();
+                            sCategory.add(categoryValue);
+
+                        selectedCategoryAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
     }
 
     private String getFileExtension(Uri uri){
@@ -174,14 +198,12 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
                         hashMap.put("description",post_description.getText().toString());
                         hashMap.put("publisher", FirebaseAuth.getInstance().getCurrentUser().getUid());
                         reference.child(postId).setValue(hashMap);
+                        HashMap<String,Object> hashMapCategory = new HashMap<>();
+                        sCategory.forEach((n) -> {
+                            hashMap.put("post_category"+sCategory.indexOf(n),(n.toLowerCase()));
+                        });
+                        reference.child(postId).child("Category").setValue(hashMapCategory);
 
-                       sCategory.forEach((n) -> {
-                           DatabaseReference refCategoryPost = FirebaseDatabase.getInstance().getReference("Category").child(n.trim().toLowerCase()).child("matched");
-                           //need one variable for each category
-                           HashMap<String,Object> hashMapCategory = new HashMap<>();
-                           hashMapCategory.put("postid",postId);
-                           refCategoryPost.child(postId).setValue(hashMapCategory);
-                       });
 
                         progressDialog.dismiss();
 
@@ -199,9 +221,7 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
             });
         } else{
             Toast.makeText(this,"No image selected!",Toast.LENGTH_SHORT).show();
-
         }
-
     }
 
     @Override
@@ -217,48 +237,48 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
         }
     }
 
-    private void searchCategory(String s){
-        Query query = FirebaseDatabase.getInstance().getReference("Category")
-                .orderByChild("categoryName_uppercase")
-                .startAt(s.toUpperCase())
-                .endAt(s+"\uf8ff");
-
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mCategory.clear();
-                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    Category category = dataSnapshot.getValue(Category.class);
-                    mCategory.add(category);
-                }
-                categoryAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-    }
-    private void readCategory(){
+    private void searchCategory(){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Category");
-        reference.addValueEventListener(new ValueEventListener() {
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (category_search_bar.getText().toString().equals("")){
-                    mCategory.clear();
-                    for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                        Category category = dataSnapshot.getValue(Category.class);
-                        mCategory.add(category);
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Is better to use a List, because you don't know the size
+                // of the iterator returned by dataSnapshot.getChildren() to
+                // initialize the array
+                final List<String> categoryList = new ArrayList<String>();
+
+                for (DataSnapshot snapshot: dataSnapshot.getChildren()) {
+                    String categoryItems = snapshot.child("categoryItems").getValue(String.class);
+                    if (categoryItems!=null){
+                        categoryList.add(categoryItems);
                     }
-                    categoryAdapter.notifyDataSetChanged();
                 }
+
+                Spinner spinnerProperty = (Spinner) findViewById(R.id.spinner);
+                ArrayAdapter<String> addressAdapter = new ArrayAdapter<String>(PostActivity.this, android.R.layout.simple_spinner_item, categoryList);
+                addressAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinnerProperty.setAdapter(addressAdapter);
+
+                spinnerProperty.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        if (position == 0){
+                            Toast.makeText(getApplicationContext(),"Something selected on 0 position ?",Toast.LENGTH_SHORT).show();
+                        } else {
+                            String categoryValue =  parent.getItemAtPosition(position).toString();
+                            sCategory.add(categoryValue);
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
+            public void onCancelled(DatabaseError databaseError) {
             }
         });
     }

@@ -1,9 +1,9 @@
 <resources>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBw_8k0qiZbmFbtgOSkBwefg5SFQsoLBZQ</string>
     <string name="app_name">TattHood</string>
-    <string name="please_enter_your_email_address">Please enter your email address</string>
-    <string name="please_enter_your_username">Please enter your username</string>
-    <string name="please_create_your_password">Please create your password</string>
+    <string name="enter_your_email_address">Enter your email address</string>
+    <string name="enter_your_username">Enter your username</string>
+    <string name="create_your_password">Create your password</string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_in">Sign In</string>
     <string name="homeOne">HomeOne</string>
@@ -61,4 +61,6 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="map_id">d0f79f3a91fc1f95</string>
+
 </resources>

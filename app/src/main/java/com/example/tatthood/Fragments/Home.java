@@ -9,13 +9,14 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tatthood.Interfaces.RecyclerViewClickInterface;
 import com.example.tatthood.ModelData.Post;
-import com.example.tatthood.PostActivity;
 import com.example.tatthood.R;
-import com.example.tatthood.SignIn;
+import com.example.tatthood.TestPagerActivity;
 import com.example.tatthood.adapters.PostAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -24,17 +25,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Home extends Fragment {
+public class Home extends Fragment implements RecyclerViewClickInterface {
 
     private RecyclerView recyclerView;
     private PostAdapter postAdapter;
     private List<Post>postLists;
 
     private List<String> followingList;
-    private FirebaseAuth firebaseAuth;
 
     private ImageView post_photo;
     private ImageView logOut;
@@ -52,48 +53,22 @@ public class Home extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        post_photo = view.findViewById(R.id.post_photo);
-        logOut = view.findViewById(R.id.log_out);
-
-        logOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logout();
-                Intent intent = new Intent(getContext(), SignIn.class);
-                startActivity(intent);
-
-            }
-        });
-
-        post_photo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(),PostActivity.class);
-                startActivity(intent);
-
-            }
-        });
-
         recyclerView = view.findViewById(R.id.home_recycler_view);
         recyclerView.setHasFixedSize(true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        layoutManager.setReverseLayout(true);
-        layoutManager.setStackFromEnd(true);
+        LinearLayoutManager layoutManager = new GridLayoutManager(getContext(),2);
         recyclerView.setLayoutManager(layoutManager);
         postLists = new ArrayList<>();
-        postAdapter = new PostAdapter(getContext(),postLists );
+        postAdapter = new PostAdapter(getContext(),postLists,this );
         recyclerView.setAdapter(postAdapter);
 
-        checkingFollowing();
-
+        readPost();
 
         return view;
     }
 
     private void checkingFollowing(){
         followingList = new ArrayList<>();
-        firebaseAuth = FirebaseAuth.getInstance();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Follow").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("following");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Follow").child(mAuth.getCurrentUser().getUid()).child("following");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -119,11 +94,9 @@ public class Home extends Fragment {
                 postLists.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Post post = dataSnapshot.getValue(Post.class);
-                    for (String id : followingList){
-                        if (post.getPublisher().equals(id)){
                             postLists.add(post);
-                        }
-                    }
+
+
                 }
                 postAdapter.notifyDataSetChanged();
             }
@@ -142,4 +115,17 @@ public class Home extends Fragment {
     }
 
 
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(getActivity(), TestPagerActivity.class);
+        intent.putExtra("index",position);
+        intent.putExtra("photoList", (Serializable) postLists);
+        getActivity().startActivity(intent);
+
+    }
+
+    @Override
+    public void onLongClick(int position) {
+
+    }
 }

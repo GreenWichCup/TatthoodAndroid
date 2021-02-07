@@ -1,6 +1,8 @@
 package com.example.tatthood.Fragments;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,6 +50,8 @@ public class SavedPost extends Fragment implements RecyclerViewClickInterface {
         View view = inflater.inflate(R.layout.fragment_saved_post, container, false);
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
+        SharedPreferences prefs = getContext().getSharedPreferences("PREFS", Context.MODE_PRIVATE);
+        profileId = prefs.getString("id","none");
 
         saved_post_recyclerView = view.findViewById(R.id.recycler_view_saved_post);
         saved_post_recyclerView.setHasFixedSize(true);
@@ -56,7 +60,6 @@ public class SavedPost extends Fragment implements RecyclerViewClickInterface {
         savedPostList = new ArrayList<>();
         savedPostGridAdapter = new PhotoGridAdapter(getContext(),savedPostList, this);
         saved_post_recyclerView.setAdapter(savedPostGridAdapter);
-
 
 
         mSavedPost();
@@ -73,7 +76,7 @@ public class SavedPost extends Fragment implements RecyclerViewClickInterface {
     private void mSavedPost(){
         mSaved = new ArrayList<>();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Saved")
-                .child(firebaseUser.getUid());
+                .child(profileId);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

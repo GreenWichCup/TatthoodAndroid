@@ -1,11 +1,13 @@
 package com.example.tatthood.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -13,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.tatthood.EditProfileActivity;
 import com.example.tatthood.ModelData.Post;
 import com.example.tatthood.ModelData.User;
 import com.example.tatthood.Modules.GlideApp;
@@ -32,9 +35,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Profile extends Fragment  {
 
-    private TextView nameTv,user_status ,toolbarNameTv, userBioTv, followersCountTv, followingCountTv, postsCountTv, editProfile;
+    private TextView nameTv,user_status ,toolbarNameTv, userBioTv, followersCountTv, followingCountTv, postsCountTv;
     private CircleImageView profileImage;
-
+    private Button editProfile;
     private LinearLayout layoutCount;
     String profileId;
     FirebaseUser firebaseUser;
@@ -48,6 +51,9 @@ public class Profile extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        if (container != null){
+            container.removeAllViews();
+        }
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
@@ -107,8 +113,8 @@ public class Profile extends Fragment  {
             @Override
             public void onClick(View v) {
                 String btn = editProfile.getText().toString();
-                if (btn.equals("Edit profile")){
-                    //go to edit profile
+                if (btn.equalsIgnoreCase("Edit profile")){
+                    startActivity(new Intent(getContext(),EditProfileActivity.class ));
                 } else if (btn.equals("follow")){
                     FirebaseDatabase.getInstance().getReference()
                             .child("Follow")

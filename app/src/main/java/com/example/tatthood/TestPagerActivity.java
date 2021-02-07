@@ -2,7 +2,6 @@ package com.example.tatthood;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +9,6 @@ import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.example.tatthood.Interfaces.RecyclerViewClickInterface;
 import com.example.tatthood.ModelData.Post;
 import com.example.tatthood.adapters.TestPagerAdapter;
 
@@ -19,10 +17,9 @@ import java.util.List;
 public class TestPagerActivity extends AppCompatActivity {
 
     ViewPager2 vpHorizontal;
-    RecyclerViewClickInterface clickInterface;
+
     TestPagerAdapter swipePost;
     List<Post> listSwipePost;
-    TextView bundleTv;
     int currentPost;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
