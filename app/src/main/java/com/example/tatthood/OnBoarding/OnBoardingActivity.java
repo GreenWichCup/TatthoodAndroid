@@ -1,7 +1,8 @@
-package com.example.tatthood;
+package com.example.tatthood.OnBoarding;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -11,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.tatthood.HomeActivity;
+import com.example.tatthood.R;
 import com.example.tatthood.adapters.ObFragAdapter;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,18 +39,25 @@ public class OnBoardingActivity extends AppCompatActivity implements View.OnClic
         vp2OnboardingItems.setAdapter(fragAdapter);
         mAuth = FirebaseAuth.getInstance();
 
-        obLayoutIndicator = findViewById(R.id.obIndicator);
+
          btnObAction = findViewById(R.id.btnObAction);
         btnPrevious = findViewById(R.id.btnPrevious);
 
         btnObAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("TAGClick", "vpcurrentItem onClick : "+vp2OnboardingItems.getCurrentItem());
                 if (vp2OnboardingItems.getCurrentItem() + 1 <  fragAdapter.getItemCount() ) {
-                    vp2OnboardingItems.setCurrentItem(vp2OnboardingItems.getCurrentItem()+1);
+                    vp2OnboardingItems.setCurrentItem(vp2OnboardingItems.getCurrentItem() + 1);
                     btnPrevious.setVisibility(View.VISIBLE);
-                }  else {
-                        startActivity(new Intent(OnBoardingActivity.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                    if (vp2OnboardingItems.getCurrentItem() > 2) {
+                        btnObAction.setText("Start");
+                    }
+                }
+
+                else {
+                    Log.d("TAGClick", "vpcurrentItem onClick : "+vp2OnboardingItems.getCurrentItem());
+                    startActivity(new Intent(OnBoardingActivity.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                     finish();
                 }
 
@@ -57,15 +67,16 @@ public class OnBoardingActivity extends AppCompatActivity implements View.OnClic
         btnPrevious.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (vp2OnboardingItems.getCurrentItem() - 1 == 0 ) {
-                    vp2OnboardingItems.setCurrentItem(vp2OnboardingItems.getCurrentItem()-1);
-                    btnPrevious.setVisibility(View.GONE);
-                } else {
+                if(vp2OnboardingItems.getCurrentItem()<4 && vp2OnboardingItems.getCurrentItem()>0) {
+                    btnObAction.setText("Next");
                     vp2OnboardingItems.setCurrentItem(vp2OnboardingItems.getCurrentItem()-1);
                 }
+                if (vp2OnboardingItems.getCurrentItem() == 0) {
+                        btnPrevious.setVisibility(View.GONE);
+                    }
+
             }
         });
-
     }
 
     private void setupOnboardingIndicator(){

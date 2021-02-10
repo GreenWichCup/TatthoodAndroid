@@ -31,7 +31,7 @@ public class SearchTattoo extends Fragment {
     RecyclerView.LayoutManager manager;
 
     FirebaseDatabase database;
-    DatabaseReference reference,reference2;
+    DatabaseReference referenceTattooPosted,referenceCategory;
 
     FirebaseRecyclerOptions<Category> optionsSearch;
     FirebaseRecyclerAdapter<Category, SearchTattooAdapter> adapter_search;
@@ -47,7 +47,8 @@ public class SearchTattoo extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         database = FirebaseDatabase.getInstance();
-        reference = database.getReference().child("Posts");
+        referenceTattooPosted = database.getReference().child("Posts");
+        referenceCategory = database.getReference("Category");
     }
 
     @Override
@@ -55,7 +56,7 @@ public class SearchTattoo extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         manager = new LinearLayoutManager(getContext());
-        View view =inflater.inflate(R.layout.fragment_search_tattoo, container, false);
+        View view = inflater.inflate(R.layout.fragment_search_tattoo, container, false);
         searchTattoo_rv = view.findViewById(R.id.rv_search_tattoo);
         searchTattoo_rv.setLayoutManager(manager);
 
@@ -67,15 +68,15 @@ public class SearchTattoo extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         SearchViewModel model = new ViewModelProvider(requireActivity()).get(SearchViewModel.class);
         model.getSelectedStatus().observe(getViewLifecycleOwner(), item -> {
-            firebaseSearch(item.toUpperCase());
+            firebaseSearch(item);
         });
 
     }
 
     private void firebaseSearch(String inputUser){
     // Change for Posts ref
-        Query query = reference.child("categories")
-                .startAt(inputUser.toUpperCase()).endAt(inputUser+"\uf8ff");
+        Query query = referenceCategory.orderByChild("matched")
+                .startAt("\uf8ff");
 
         optionsSearch = new FirebaseRecyclerOptions.Builder<Category>()
                 .setQuery(query,Category.class)
@@ -84,29 +85,33 @@ public class SearchTattoo extends Fragment {
         adapter_search = new FirebaseRecyclerAdapter<Category, SearchTattooAdapter>(optionsSearch) {
             @Override
             protected void onBindViewHolder(@NonNull SearchTattooAdapter searchTattooAdapter, int i, @NonNull Category category) {
+                Query queryMatch = referenceCategory.orderByChild(category.getCategoryName())
+                        .startAt(inputUser.toUpperCase()).endAt(inputUser+"\uf8ff");
                 searchTattooAdapter.categoryName.setText(category.getCategoryName());
-                FirebaseRecyclerOptions<MatchedCategory> optionsMatched = new FirebaseRecyclerOptions.Builder<MatchedCategory>()
-                        .setQuery(reference.child("categories").child(category.getCategoryName().toLowerCase()), MatchedCategory.class)
-                        .build();
-                adapter_matched = new FirebaseRecyclerAdapter<MatchedCategory, MatchedTattooAdapter>(optionsMatched) {
-                    @Override
-                    protected void onBindViewHolder(@NonNull MatchedTattooAdapter matchedTattooAdapter, int i, @NonNull MatchedCategory matchedCategory) {
-                        GlideApp.with(getContext()).load(matchedCategory.getImageurl()).into(matchedTattooAdapter.matched_image);
-                        matchedTattooAdapter.title.setText(matchedCategory.getPostid());
-                    }
+                    FirebaseRecyclerOptions<MatchedCategory> optionsMatched = new FirebaseRecyclerOptions.Builder<MatchedCategory>()
+                            .setQuery(queryMatch, MatchedCategory.class)
+                            .build();
+                    adapter_matched = new FirebaseRecyclerAdapter<MatchedCategory, MatchedTattooAdapter>(optionsMatched) {
+                        @Override
+                        protected void onBindViewHolder(@NonNull MatchedTattooAdapter matchedTattooAdapter, int i, @NonNull MatchedCategory matchedCategory) {
+                            GlideApp.with(getContext()).load(matchedCategory.getImageurl()).into(matchedTattooAdapter.matched_image);
+                            matchedTattooAdapter.title.setText(matchedCategory.getPostid());
+                        }
 
-                    @NonNull
-                    @Override
-                    public MatchedTattooAdapter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                        View view2 = LayoutInflater.from(getContext())
-                                .inflate(R.layout.matched_tattoo_card_item, parent, false);
-                        return new MatchedTattooAdapter(view2);
-                    }
-                };
-                adapter_matched.startListening();
-                adapter_matched.notifyDataSetChanged();
-                searchTattooAdapter.category_rv.setAdapter(adapter_matched);
-            }
+                        @NonNull
+                        @Override
+                        public MatchedTattooAdapter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                            View view2 = LayoutInflater.from(getContext())
+                                    .inflate(R.layout.matched_tattoo_card_item, parent, false);
+                            return new MatchedTattooAdapter(view2);
+                        }
+                    };
+                    adapter_matched.startListening();
+                    adapter_matched.notifyDataSetChanged();
+                    searchTattooAdapter.category_rv.setAdapter(adapter_matched);
+
+                }
+
             @NonNull
             @Override
             public SearchTattooAdapter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

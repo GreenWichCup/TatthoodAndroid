@@ -11,6 +11,7 @@ import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -24,8 +25,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tatthood.Interfaces.RecyclerViewClickInterface;
-import com.example.tatthood.ModelData.Category;
-import com.example.tatthood.adapters.CategoryAdapter;
 import com.example.tatthood.adapters.SelectedCategoryAdapter;
 import com.google.android.flexbox.FlexboxLayoutManager;
 import com.google.android.flexbox.JustifyContent;
@@ -34,6 +33,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -58,11 +58,9 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
     ImageView close_post, post_image_add;
     TextView post_txt;
     Spinner spinnerListCategory;
+    CheckBox personalCheckbox;
 
-    RecyclerView category_recyclerView;
-    private CategoryAdapter categoryAdapter;
-    private List<Category> mCategory;
-    EditText category_search_bar;
+    FirebaseUser currentUser;
 
     RecyclerView selectedCategoryRecyclerView;
     private SelectedCategoryAdapter selectedCategoryAdapter;
@@ -75,7 +73,9 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
 
         spinnerListCategory = findViewById(R.id.spinner);
 
+        personalCheckbox = findViewById(R.id.personal_checkBox);
 
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
         // selected categoryList
         selectedCategoryRecyclerView = findViewById(R.id.selected_category_recyclerview);
         selectedCategoryRecyclerView.setHasFixedSize(false);
@@ -104,8 +104,7 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
         post_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if (!sCategory.isEmpty() ){
+                if (!sCategory.isEmpty() && !post_description.getText().toString().equals("")){
                     uploadImage();
                 } else{
                     Toast.makeText(PostActivity.this,"Choose a category",Toast.LENGTH_SHORT).show();
@@ -171,6 +170,8 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
         progressDialog.setMessage("Posting...");
         progressDialog.show();
 
+
+
         if (imageUri != null){
             StorageReference referencefile = storageReference.child(System.currentTimeMillis()+"."+getFileExtension(imageUri));
             uploadTask = referencefile.putFile(imageUri);
@@ -196,15 +197,17 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
                         hashMap.put("postid",postId);
                         hashMap.put("postimage",imageUrl);
                         hashMap.put("description",post_description.getText().toString());
-                        hashMap.put("publisher", FirebaseAuth.getInstance().getCurrentUser().getUid());
+                        hashMap.put("publisher", currentUser.getUid());
+                        if(personalCheckbox.isChecked()){
+                            hashMap.put("personal_tattoo",true);
+                        }
+
                         reference.child(postId).setValue(hashMap);
                         HashMap<String,Object> hashMapCategory = new HashMap<>();
                         sCategory.forEach((n) -> {
-                            hashMap.put("post_category"+sCategory.indexOf(n),(n.toLowerCase()));
+                            hashMapCategory.put("post_category"+sCategory.indexOf(n),(n.toLowerCase()));
                         });
                         reference.child(postId).child("Category").setValue(hashMapCategory);
-
-
                         progressDialog.dismiss();
 
                         startActivity(new Intent(PostActivity.this, HomeActivity.class));
@@ -237,57 +240,8 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
         }
     }
 
-    private void searchCategory(){
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Category");
-        reference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Is better to use a List, because you don't know the size
-                // of the iterator returned by dataSnapshot.getChildren() to
-                // initialize the array
-                final List<String> categoryList = new ArrayList<String>();
-
-                for (DataSnapshot snapshot: dataSnapshot.getChildren()) {
-                    String categoryItems = snapshot.child("categoryItems").getValue(String.class);
-                    if (categoryItems!=null){
-                        categoryList.add(categoryItems);
-                    }
-                }
-
-                Spinner spinnerProperty = (Spinner) findViewById(R.id.spinner);
-                ArrayAdapter<String> addressAdapter = new ArrayAdapter<String>(PostActivity.this, android.R.layout.simple_spinner_item, categoryList);
-                addressAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spinnerProperty.setAdapter(addressAdapter);
-
-                spinnerProperty.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        if (position == 0){
-                            Toast.makeText(getApplicationContext(),"Something selected on 0 position ?",Toast.LENGTH_SHORT).show();
-                        } else {
-                            String categoryValue =  parent.getItemAtPosition(position).toString();
-                            sCategory.add(categoryValue);
-                        }
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-
-                    }
-                });
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
-    }
-
     @Override
     public void onItemClick(int position) {
-        String catString = mCategory.get(position).getCategoryName().toLowerCase();
-        sCategory.add(catString);
-        selectedCategoryAdapter.notifyDataSetChanged();
 
     }
 

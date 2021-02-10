@@ -7,6 +7,8 @@ import android.view.animation.Transformation;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.tatthood.OnBoarding.OnBoardingActivity;
+
 public class ProgressBarAnimation extends Animation {
 
     private Context context;
@@ -29,7 +31,7 @@ public class ProgressBarAnimation extends Animation {
         progressBar.setProgress((int)value);
         tvLoadingCounter.setText((int) value  + "%");
         if ( value == to ) {
-            context.startActivity(new Intent(context,OnBoardingActivity.class));
+            context.startActivity(new Intent(context, OnBoardingActivity.class));
         }
     }
 }

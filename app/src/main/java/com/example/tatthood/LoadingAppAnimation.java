@@ -34,5 +34,6 @@ public class LoadingAppAnimation extends AppCompatActivity {
         anim.setDuration(8000);
         progressBar.setAnimation(anim);
 
+
     }
 }

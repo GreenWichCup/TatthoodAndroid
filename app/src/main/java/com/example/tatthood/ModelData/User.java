@@ -11,20 +11,22 @@ public class User implements Serializable {
     public String username;
     public String email;
     public String imageUrl;
-    public String bio;
+    public String hood;
     public String status;
+    public String address;
 
     public User() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public User( String id, String email, String username,String status,String bio,String imageUrl) {
+    public User(String address, String id, String email, String username, String status, String hood, String imageUrl) {
         this.username = username;
         this.email = email;
         this.id = id ;
-        this.bio = bio;
+        this.hood = hood;
         this.status = status;
         this.imageUrl = imageUrl;
+        this.address = address;
 
     }
 
@@ -52,21 +54,18 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getimageUrl() {
-
-        return imageUrl;
-    }
+    public String getimageUrl() { return imageUrl;}
 
     public void setimageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
 
-    public String getBio() {
-        return bio;
+    public String getHood() {
+        return hood;
     }
 
-    public void setBio(String bio) {
-        this.bio = bio;
+    public void setHood(String hood) {
+        this.hood = hood;
     }
 
     public String getStatus() {
@@ -76,4 +75,8 @@ public class User implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public String getAddress() { return address; }
+
+    public void setAddress(String address) { this.address = address; }
 }

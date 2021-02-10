@@ -39,17 +39,15 @@ import static android.content.Context.INPUT_METHOD_SERVICE;
 
 public class SignUpFormFragment extends Fragment implements View.OnKeyListener, View.OnClickListener {
 
-    private EditText editTextEmail;
-    private EditText editTextPassword;
+    private EditText editTextUsername, editTextEmail, editTextPassword,editTextConfirmPassword,editTextStreetHood,editTextCity,editTextPostalCode,editTextCountry,editTextState;
     private FirebaseAuth mAuth;
-    private EditText editTextUsername;
     private DatabaseReference mDatabase;
     private TextView signInLink;
     private TextView tv_status_choosed;
-    LinearLayout linFormLayout;
+    LinearLayout linFormLayout,lin_address,lin_address_part2;
     ImageView image_profile;
     Button btnSignUp;
-    Boolean modeSignUp;
+
 
     public SignUpFormFragment() {
         // Required empty public constructor
@@ -72,11 +70,20 @@ public class SignUpFormFragment extends Fragment implements View.OnKeyListener, 
         editTextEmail = view.findViewById(R.id.editTextEmail);
         editTextUsername = view.findViewById(R.id.editTextUsername);
         editTextPassword = view.findViewById(R.id.editTextPassword);
+        editTextConfirmPassword = view.findViewById(R.id.editTextConfirmPassword);
+        editTextStreetHood = view.findViewById(R.id.editTextStreetHood);
+        editTextCity = view.findViewById(R.id.editTextCity);
+        editTextPostalCode = view.findViewById(R.id.editTextPostaleCode);
+        editTextCountry = view.findViewById(R.id.editTextCountry);
+        editTextState = view.findViewById(R.id.editTextState);
+        lin_address_part2 = view.findViewById(R.id.lin_address_part2);
+
         tv_status_choosed = view.findViewById(R.id.statusChoosed);
-
         linFormLayout = view.findViewById(R.id.formLayout);
-        image_profile = view.findViewById(R.id.image_profile);
+        lin_address = view.findViewById(R.id.lin_address);
+        lin_address_part2 =view.findViewById(R.id.lin_address_part2);
 
+        image_profile = view.findViewById(R.id.image_profile);
         btnSignUp = view.findViewById(R.id.btnSignUp);
         signInLink= view.findViewById(R.id.log_in_link);
         mAuth = FirebaseAuth.getInstance();
@@ -89,16 +96,51 @@ public class SignUpFormFragment extends Fragment implements View.OnKeyListener, 
         btnSignUp.setOnClickListener(this);
         signInLink.setOnClickListener(this);
 
-
         return view ;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         SearchViewModel model = new ViewModelProvider(requireActivity()).get(SearchViewModel.class);
         model.getSelectedStatus().observe(getViewLifecycleOwner(), item -> {
-           tv_status_choosed.setText(item);
+          tv_status_choosed.setText(item);
+           switch (item){
+               case "Hood" :
+                   editTextUsername.setHint("Hood name");
+                   lin_address.setVisibility(View.VISIBLE);
+                   lin_address_part2.setVisibility(View.VISIBLE);
+                   break;
+
+               case "Artist" :
+                   editTextUsername.setHint("Artist name");
+                   editTextStreetHood.setHint("Hood affiliated");
+                   lin_address.setVisibility(View.GONE);
+                   lin_address_part2.setVisibility(View.GONE);
+
+                   break;
+
+               case "Tattoued" :
+                   editTextUsername.setHint("username");
+                   editTextStreetHood.setHint("Favorite Hood ");
+                   lin_address.setVisibility(View.GONE);
+                   lin_address_part2.setVisibility(View.GONE);
+                   break;
+
+               case "Virgin skin" :
+                   editTextUsername.setHint("username");
+                   editTextStreetHood.setHint("interest for tattoued ");
+                   lin_address.setVisibility(View.GONE);
+                   lin_address_part2.setVisibility(View.GONE);
+                   break;
+
+               case "Seller" :
+                   editTextUsername.setHint("Store name");
+                   lin_address.setVisibility(View.VISIBLE);
+                   lin_address_part2.setVisibility(View.VISIBLE);
+                   break;
+           }
         });
     }
 
@@ -106,14 +148,35 @@ public class SignUpFormFragment extends Fragment implements View.OnKeyListener, 
         String str_username = editTextUsername.getText().toString();
         String str_email = editTextEmail.getText().toString();
         String str_password = editTextPassword.getText().toString();
+        String str_confirmPassword = editTextConfirmPassword.getText().toString();
         String str_status = tv_status_choosed.getText().toString();
+        String str_streetHood = editTextStreetHood.getText().toString();
+        String str_city = editTextCity.getText().toString();
+        String str_postal_code = editTextPostalCode.getText().toString();
+        String str_country = editTextCountry.getText().toString();
+        String str_state = editTextState.getText().toString();
 
-        if (str_email.equals("") || str_password.equals("") || str_username.equals("")) {
-            Toast.makeText(getContext(), "All fields are required to sign up",
+        if (str_username.equals("")) {
+            Toast.makeText(getContext(), editTextUsername.getHint() + "is required to sign up",
                     Toast.LENGTH_SHORT).show();
+
+        } else if (str_email.equals("")) {
+            Toast.makeText(getContext(), editTextEmail.getHint() + "is required to sign up",
+                    Toast.LENGTH_SHORT).show();
+
+        } else if (str_password.equals("")) {
+            Toast.makeText(getContext(), editTextPassword.getHint() + "is required to sign up",
+                    Toast.LENGTH_SHORT).show();
+        } else if (!str_confirmPassword.equals(str_password) ) {
+            Toast.makeText(getContext(),"passwords doesn't match",
+                    Toast.LENGTH_SHORT).show();
+        } else if ((lin_address.getVisibility() ==View.VISIBLE) && (str_streetHood.equals("")|| str_city.equals("") || str_postal_code.equals("") || str_country.equals("") || str_state.equals(""))) {
+            Toast.makeText(getContext(),"A complete address is required to sign up",  Toast.LENGTH_SHORT).show();
+
         } else {
+            Log.d("TAG", "All seems to be well set up: so? ");
             mAuth.createUserWithEmailAndPassword(str_email, str_password).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
-                @Override
+                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
@@ -129,9 +192,18 @@ public class SignUpFormFragment extends Fragment implements View.OnKeyListener, 
                         hashMap.put("username_uppercase", str_username.toUpperCase());
                         hashMap.put("email", str_email);
                         hashMap.put("imageUrl", "");
-                        hashMap.put("bio", "");
                         //Later get value from sign up from  (spinner)
                         hashMap.put("status", str_status);
+                        if (str_status.equals("Hood") ||str_status.equals("Seller")){
+                            String address = str_streetHood+", "+str_city+", "+str_postal_code+", "+str_state;
+                            Log.d("statushood", "statushood: "+tv_status_choosed.getText().toString());
+                            hashMap.put("address", address);
+                            hashMap.put("country", str_country);
+                        } else if (tv_status_choosed.getText().toString().equals("Artist") || tv_status_choosed.getText().toString().equals("Tattoued")  ){
+                            hashMap.put("hood", str_streetHood);
+                        } else if (tv_status_choosed.getText().toString().equals("Virgin skin")){
+                            hashMap.put("int", str_streetHood);
+                        }
 
                         mDatabase.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
@@ -147,15 +219,13 @@ public class SignUpFormFragment extends Fragment implements View.OnKeyListener, 
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w("signUp log", "createUserWithEmail:failure", task.getException());
-                        Toast.makeText(getContext(), "Authentication failed.",
+                        Toast.makeText(getContext(), "createUserWithEmail failed.",
                                 Toast.LENGTH_SHORT).show();
                     }
                 }
 
             });
         } }
-
-
 
     private void toSignIn(){
         Intent toSignInActivity = new Intent(getActivity(), SignIn.class );
@@ -173,15 +243,14 @@ public class SignUpFormFragment extends Fragment implements View.OnKeyListener, 
     @Override
     public boolean onKey(View v, int keyCode, KeyEvent event) {
 
-        if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
-            signUp(); 
-        }
-
         return false;
     }
 
     @Override
     public void onClick(View v) {
+        if (v.getId() == R.id.editTextCountry){
+            editTextCountry.setNextFocusRightId(R.id.editTextState);
+        }
         if (v.getId() == R.id.btnSignUp){
             signUp();
         } else if (v.getId() == R.id.log_in_link) {

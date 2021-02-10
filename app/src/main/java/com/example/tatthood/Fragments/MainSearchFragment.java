@@ -90,12 +90,11 @@ public class MainSearchFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                model.selectStatus(s.toString());
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-
+                model.selectStatus(s.toString());
             }
         });
 

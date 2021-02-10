@@ -69,7 +69,7 @@ public class EditProfileActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
                 username.setText(user.getUsername());
-                bio.setText(user.getBio());
+                bio.setText(user.getHood());
                 GlideApp.with(getApplicationContext()).load(user.getimageUrl()).into(currentProfilePhoto);
 
             }

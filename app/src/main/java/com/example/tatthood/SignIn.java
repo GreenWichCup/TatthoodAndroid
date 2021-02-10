@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.tatthood.OnBoarding.OnBoardingActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -95,7 +96,7 @@ public class SignIn extends AppCompatActivity {
         startActivity(toHomePage);
     }
     private void toCreateAccount(){
-        Intent toSignUpActivity = new Intent(this, SignUp.class);
+        Intent toSignUpActivity = new Intent(this, OnBoardingActivity.class);
         // organize routing home / social media /etc
         startActivity(toSignUpActivity);
     }

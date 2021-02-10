@@ -128,7 +128,6 @@ public class TestPagerAdapter extends RecyclerView.Adapter<TestPagerAdapter.Test
         holder.save.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            String user = FirebaseAuth.getInstance().getCurrentUser().getUid();
             if (holder.save.getTag().equals("save")){
                 FirebaseDatabase.getInstance().getReference().child("Saved").child(firebaseUser.getUid())
                         .child(post.getPostid()).setValue(true);

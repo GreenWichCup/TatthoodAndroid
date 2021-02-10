@@ -2,6 +2,8 @@ package com.example.tatthood.Fragments;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.tatthood.ModelData.User;
 import com.example.tatthood.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -25,19 +28,29 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HoodMap extends Fragment implements OnMapReadyCallback {
 
-
     private GoogleMap mMap;
+    private Geocoder geocoder;
     private static final int FINE_LOCATION_REQUEST_CODE = 1000;
     private FusedLocationProviderClient locationClient;
 
+    private List<String> mHoods;
+    Query reference;
     Button buttonOpenDialog, btnAction;
     LinearLayout linearLayout ;
     BottomSheetBehavior bottomSheetBehavior;
@@ -54,8 +67,11 @@ public class HoodMap extends Fragment implements OnMapReadyCallback {
         SupportMapFragment supportMapFragment = (SupportMapFragment) getChildFragmentManager()
                 .findFragmentById(R.id.google_map);
         //Async Map
-        supportMapFragment.getMapAsync(HoodMap.this);
+        mHoods = new ArrayList<>();
         prepareLocationServices();
+
+        supportMapFragment.getMapAsync(HoodMap.this);
+        geocoder = new Geocoder(getContext());
 
         //Bottom sheet
         buttonOpenDialog =  view.findViewById(R.id.btnBottomSheet);
@@ -63,6 +79,7 @@ public class HoodMap extends Fragment implements OnMapReadyCallback {
         bottomSheetBehavior = BottomSheetBehavior.from(linearLayout);
         btnAction = view.findViewById(R.id.btnAction);
 
+        reference = FirebaseDatabase.getInstance().getReference("App_users");
 
         bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
@@ -111,21 +128,20 @@ public class HoodMap extends Fragment implements OnMapReadyCallback {
         });
 
 
+
         return view;
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-            // Customise the styling of the base map using a JSON object defined
-            // in a raw resource file.
-            boolean success = mMap.setMapStyle(new MapStyleOptions(getResources().getString(R.string.style_json)));
-
-            if (!success) {
-                Log.e(TAG, "Style parsing failed.");
-            }
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         // Position the map's camera near Sydney, Australia.
         showMeTheUserCurrentLocation();
+
+        //list Hoods
+        searchHoods();
+
     }
 
     private void giveMePermissionToAccessLocation() {
@@ -137,7 +153,6 @@ public class HoodMap extends Fragment implements OnMapReadyCallback {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
         if (requestCode == FINE_LOCATION_REQUEST_CODE) {
-
             if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
                 showMeTheUserCurrentLocation();
@@ -182,5 +197,39 @@ public class HoodMap extends Fragment implements OnMapReadyCallback {
         locationClient = LocationServices.getFusedLocationProviderClient(getActivity());
     }
 
+
+    private void searchHoods(){
+        Query query = FirebaseDatabase.getInstance().getReference("App_users")
+              .orderByChild("status")
+              .equalTo("Hood");
+       query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    User user = dataSnapshot.getValue(User.class);
+                    String hoodAddress  = user.getAddress();
+                    try {
+                       List<Address> addresses = geocoder.getFromLocationName(hoodAddress,1);
+                       if (addresses.size()>0) {
+                           Address value = addresses.get(0);
+                           LatLng hoodCoord = new LatLng(value.getLatitude(), value.getLongitude());
+                           Log.d(TAG, "hood infos" + value.toString());
+                           MarkerOptions hoodMarker = new MarkerOptions()
+                                   .position(hoodCoord)
+                                   .title(value.getLocality());
+                           mMap.addMarker(hoodMarker);
+                       }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 
 }

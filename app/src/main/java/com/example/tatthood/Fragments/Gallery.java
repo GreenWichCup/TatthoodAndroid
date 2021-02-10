@@ -1,65 +1,136 @@
 package com.example.tatthood.Fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tatthood.Interfaces.RecyclerViewClickInterface;
+import com.example.tatthood.ModelData.Post;
 import com.example.tatthood.R;
+import com.example.tatthood.adapters.PhotoGridAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Gallery#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Gallery extends Fragment {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+import static android.content.ContentValues.TAG;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+public class Gallery extends Fragment implements RecyclerViewClickInterface {
+
+    PhotoGridAdapter personalTattooGridAdapter;
+    RecyclerView recyclerView_personal_tattoo;
+    private List<Post> mPersonal;
+    List<Post> personalPostList;
+    String profileId;
+    FirebaseUser firebaseUser;
 
     public Gallery() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Gallery.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Gallery newInstance(String param1, String param2) {
-        Gallery fragment = new Gallery();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view =inflater.inflate(R.layout.fragment_gallery, container, false);
+
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        SharedPreferences prefs = getContext().getSharedPreferences("PREFS", Context.MODE_PRIVATE);
+        profileId = prefs.getString("id","none");
+
+        recyclerView_personal_tattoo = view.findViewById(R.id.recycler_view_personal_tattoo);
+        recyclerView_personal_tattoo.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManagerTwo = new GridLayoutManager(getContext(),3);
+        recyclerView_personal_tattoo.setLayoutManager(linearLayoutManagerTwo);
+        personalPostList = new ArrayList<>();
+        personalTattooGridAdapter = new PhotoGridAdapter(getContext(),personalPostList, this);
+        recyclerView_personal_tattoo.setAdapter(personalTattooGridAdapter);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gallery, container, false);
+
+        mPersonalTattooPost();
+
+        return view ;
+    }
+
+    private void mPersonalTattooPost(){
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                personalPostList.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    Post post = dataSnapshot.getValue(Post.class);
+                    if (post.getPublisher().equals(profileId) && dataSnapshot.child("personal_tattoo").exists()){
+                        Log.d(TAG, "data found for condition:");
+                        personalPostList.add(post);
+                    }
+                }
+                Collections.reverse(personalPostList);
+                personalTattooGridAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void readPersonalTattooPost(){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                personalPostList.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    Post savedPost = dataSnapshot.getValue(Post.class);
+                    for (Post id : mPersonal ){
+                        if (savedPost.getPostid().equals(id)){
+                            personalPostList.add(savedPost);
+                        }
+                    }
+                }
+                Collections.reverse(personalPostList);
+                personalTattooGridAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
+
+
+    @Override
+    public void onItemClick(int position) {
+
+    }
+
+    @Override
+    public void onLongClick(int position) {
+
     }
 }

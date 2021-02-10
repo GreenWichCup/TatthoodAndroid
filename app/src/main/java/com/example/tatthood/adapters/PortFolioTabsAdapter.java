@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.example.tatthood.Fragments.Gallery;
 import com.example.tatthood.Fragments.PortFolioPost;
 import com.example.tatthood.Fragments.SavedPost;
 
@@ -21,6 +22,8 @@ public class PortFolioTabsAdapter extends FragmentStateAdapter {
                 return new PortFolioPost();
             case 1:
                 return new SavedPost();
+            case 2:
+                return new Gallery();
             default:
                 return null;
         }
@@ -29,6 +32,6 @@ public class PortFolioTabsAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 3;
     }
 }

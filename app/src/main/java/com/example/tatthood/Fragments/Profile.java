@@ -35,7 +35,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Profile extends Fragment  {
 
-    private TextView nameTv,user_status ,toolbarNameTv, userBioTv, followersCountTv, followingCountTv, postsCountTv;
+    private TextView nameTv,user_status, userHood, followersCountTv, followingCountTv, postsCountTv,locationTv;
     private CircleImageView profileImage;
     private Button editProfile;
     private LinearLayout layoutCount;
@@ -63,7 +63,7 @@ public class Profile extends Fragment  {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         nameTv = view.findViewById(R.id.username);
-        userBioTv = view.findViewById(R.id.user_bio);
+        userHood = view.findViewById(R.id.user_bio);
         editProfile = view.findViewById(R.id.edit_profile);
         followersCountTv = view.findViewById(R.id.followersCount);
         followingCountTv = view.findViewById(R.id.followingCount);
@@ -71,7 +71,7 @@ public class Profile extends Fragment  {
 
         layoutCount = view.findViewById(R.id.countLayout);
         postsCountTv = view.findViewById(R.id.postCount);
-        toolbarNameTv = view.findViewById(R.id.toolbar_name);
+        locationTv = view.findViewById(R.id.location);
         profileImage = view.findViewById(R.id.image_profile);
 
         // Portfolio tabLayout
@@ -85,14 +85,15 @@ public class Profile extends Fragment  {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                 switch (position){
-                    case 0: {
+                    case 0:
                         tab.setIcon(R.drawable.ic_grid);
                         break;
-                    }
-                    case 1: {
+                    case 1:
                         tab.setIcon(R.drawable.ic_save_post);
                         break;
-                    }
+                    case 2 :
+                        tab.setIcon(R.drawable.ic_personal);
+                        break;
                     default:
                         break;
                 }
@@ -154,14 +155,17 @@ public class Profile extends Fragment  {
         userReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (getContext() == null){
-                    return;
-                }
+                if (getContext() == null){ return; }
                 User user = snapshot.getValue(User.class);
                 GlideApp.with(getContext()).load(user.getimageUrl()).into(profileImage);
                 nameTv.setText(user.getUsername());
                 user_status.setText(user.getStatus());
-                userBioTv.setText(user.getBio());
+                userHood.setText(user.getHood());
+                if (!user.getStatus().equals("Hood")){
+                    locationTv.setVisibility(View.GONE);
+                } else {
+                    locationTv.setText(user.getAddress());
+                }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

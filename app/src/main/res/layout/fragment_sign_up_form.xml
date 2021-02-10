@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,10 +15,10 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/image_profile"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
             android:src="@drawable/profile"
             />
@@ -32,11 +30,26 @@
             android:layout_gravity="center"
             android:text="Status"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:id="@+id/statusChoosed"/>
+
+
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="center"
+            android:hint="username"
+            android:inputType="textPersonName"
+            android:background="@drawable/custom_edtv_sign_up"/>
 
         <EditText
             android:id="@+id/editTextEmail"
-            android:layout_width="250dp"
+            android:layout_width="280dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_marginStart="0dp"
@@ -44,26 +57,13 @@
             android:autofillHints=""
             android:ems="10"
             android:gravity="center"
-            android:hint="@string/enter_your_email_address"
+            android:hint="email"
             android:inputType="textEmailAddress"
             android:background="@drawable/custom_edtv_sign_up"/>
 
         <EditText
-            android:id="@+id/editTextUsername"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/choose_your_username"
-            android:inputType="textPersonName"
-            android:background="@drawable/custom_edtv_sign_up"/>
-
-        <EditText
             android:id="@+id/editTextPassword"
-            android:layout_width="250dp"
+            android:layout_width="280dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_marginStart="0dp"
@@ -75,38 +75,148 @@
             android:hint="@string/create_your_password"
             android:inputType="textPassword"
             android:background="@drawable/custom_edtv_sign_up"/>
+        <EditText
+            android:id="@+id/editTextConfirmPassword"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:ems="8"
+            android:gravity="center"
+            android:hint="confirm password"
+            android:inputType="textPassword"
+            android:background="@drawable/custom_edtv_sign_up"/>
+        <EditText
+            android:id="@+id/editTextStreetHood"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:ems="8"
+            android:gravity="center"
+            android:hint="Street name"
+            android:inputType="text"
+            android:background="@drawable/custom_edtv_sign_up"/>
 
-        <Button
-            android:id="@+id/btnSignUp"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="wrap_content"
+       <LinearLayout
+           android:layout_width="280dp"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:layout_marginStart="0dp"
+           android:layout_marginEnd="0dp"
+           android:orientation="horizontal"
+           android:layout_marginBottom="10dp"
+           android:visibility="gone"
+           android:id="@+id/lin_address">
+
+           <EditText
+               android:id="@+id/editTextCity"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_gravity="center"
+               android:layout_marginEnd="10dp"
+               android:layout_weight="1"
+               android:autofillHints=""
+               android:background="@drawable/custom_edtv_sign_up"
+               android:ems="8"
+               android:gravity="center"
+               android:hint="City"
+               android:inputType="text" />
+
+           <EditText
+               android:id="@+id/editTextPostaleCode"
+               android:layout_width="match_parent"
+               android:layout_marginStart="10dp"
+               android:layout_height="40dp"
+               android:layout_weight="1"
+               android:layout_gravity="center"
+               android:autofillHints=""
+               android:ems="8"
+               android:gravity="center"
+               android:hint="Postal code"
+               android:inputType="text"
+               android:background="@drawable/custom_edtv_sign_up"/>
+       </LinearLayout>
+        <LinearLayout
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/lin_address_part2">
+        <EditText
+            android:id="@+id/editTextCountry"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:background="@drawable/custom_edtv_sign_up"
+            android:ems="8"
+            android:gravity="center"
+            android:hint="Country"
+            android:nextFocusRight="@id/editTextState"
+            android:inputType="text" />
+            <EditText
+                android:id="@+id/editTextState"
+                android:layout_width="280dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="10dp"
+                android:autofillHints=""
+                android:background="@drawable/custom_edtv_sign_up"
+                android:ems="8"
+                android:gravity="center"
+                android:hint="State"
+                android:inputType="text" />
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:foregroundGravity="center"
-            android:gravity="center"
-            android:background="@drawable/custom_tv_status"
-            android:text="@string/sign_up" />
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:orientation="vertical">
 
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="15dp"
-            android:layout_weight="0"
-            android:background="?android:attr/listDivider" />
+            <Button
+                android:id="@+id/btnSignUp"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/custom_tv_status"
+                android:foregroundGravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="@string/sign_up" />
 
-        <TextView
-            android:id="@+id/log_in_link"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="100dp"
-            android:gravity="center"
-            android:text="@string/already_an_account_log_in"
-            />
+            <TextView
+                android:id="@+id/log_in_link"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="Have an account? Log in." />
+        </LinearLayout>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
