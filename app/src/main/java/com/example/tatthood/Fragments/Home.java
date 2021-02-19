@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.tatthood.Interfaces.RecyclerViewClickInterface;
 import com.example.tatthood.ModelData.Post;
 import com.example.tatthood.R;
-import com.example.tatthood.TestPagerActivity;
+import com.example.tatthood.Activity.TestPagerActivity;
 import com.example.tatthood.adapters.PostAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;

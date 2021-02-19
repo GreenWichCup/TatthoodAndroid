@@ -1,4 +1,4 @@
-package com.example.tatthood;
+package com.example.tatthood.Activity;
 
 import android.os.Bundle;
 
@@ -6,10 +6,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.tatthood.R;
 import com.example.tatthood.adapters.TabAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-
+//no use : contain vp2 Home tabLayout
 public class App_Main_Page extends AppCompatActivity {
 
     @Override

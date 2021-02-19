@@ -1,4 +1,4 @@
-package com.example.tatthood;
+package com.example.tatthood.Activity;
 
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tatthood.ModelData.User;
 import com.example.tatthood.Modules.GlideApp;
+import com.example.tatthood.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;

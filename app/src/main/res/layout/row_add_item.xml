@@ -6,46 +6,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:id="@+id/lnBottomSheet"
-    android:padding="10dp"
+    android:padding="5dp"
     app:layout_behavior="@string/bottom_sheet_behavior"
     app:behavior_hideable="true"
     android:background="@drawable/custom_background"
-    app:behavior_peekHeight="56dp">
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent">
-
+    app:behavior_peekHeight="70dp">
+        <View
+            android:id="@+id/bottom_sheet_indicator"
+            android:layout_width="50dp"
+            android:layout_height="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/black"/>
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="NEW ITEM WITH BOTTOM"
+            android:text="Hoods information"
             android:textSize="25sp"
             android:textStyle="bold"
             android:textColor="@color/purple_200"
-            android:layout_marginBottom="00dp" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="NEW BOTTOM"
-            android:layout_gravity="right"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/purple_200"
-            android:layout_marginBottom="00dp" />
-
-    </LinearLayout>
+            android:layout_marginBottom="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="This persitent bottom sheet dialog.The persistent bottom sheet is displayed in apps contentIt dwjeflkwejflwkejflskdvjslkvjaldjvalfkvjalkfjv"
-        android:textStyle="italic"
+        android:textColor="@color/teal_700"
         android:textSize="20sp"
-        android:textColor="@color/teal_700"/>
+        android:textStyle="italic" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This persitent bottom sheet dialog.The persistent bottom sheet is displayed in apps contentIt dwjeflkwejflwkejflskdvjslkvjaldjvalfkvjalkfjv"
+        android:textColor="@color/teal_700"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
     <Button
         android:id="@+id/btnAction"
         android:layout_width="wrap_content"
@@ -56,6 +54,5 @@
         android:text="SHOW IT"
         android:foreground="?attr/selectableItemBackground"
         />
-
 
 </LinearLayout>

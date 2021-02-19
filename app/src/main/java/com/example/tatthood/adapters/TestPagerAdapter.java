@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tatthood.CommentsActivity;
+import com.example.tatthood.Activity.CommentsActivity;
 import com.example.tatthood.Fragments.Profile;
 import com.example.tatthood.ModelData.Post;
 import com.example.tatthood.ModelData.User;
@@ -71,26 +71,6 @@ public class TestPagerAdapter extends RecyclerView.Adapter<TestPagerAdapter.Test
     isSaved(post.getPostid(), holder.save);
 
         holder.comment.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(mContext, CommentsActivity.class);
-            intent.putExtra("postid",post.getPostid());
-            intent.putExtra("publisherid",post.getPublisher());
-            mContext.startActivity(intent);
-        }
-    });
-
-        holder.comment.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(mContext, CommentsActivity.class);
-            intent.putExtra("postid",post.getPostid());
-            intent.putExtra("publisherid",post.getPublisher());
-            mContext.startActivity(intent);
-        }
-    });
-
-        holder.comments.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(mContext, CommentsActivity.class);

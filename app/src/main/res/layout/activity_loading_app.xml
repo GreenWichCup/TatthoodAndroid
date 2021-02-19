@@ -1,38 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoadingAppAnimation"
     android:backgroundTint="@color/black"
-    >
+    tools:context=".Activity.LoadingAnimActivity">
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/logo_app_loading"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_above="@id/loading_counter"
-        android:layout_marginBottom="331dp"
         android:src="@drawable/logotatthood"
-        android:layout_centerHorizontal="true"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/videoView" />
 
     <TextView
+        android:id="@+id/loading_counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/loading_counter"
         android:text="0%"
         android:textColor="@color/black"
         android:textSize="25sp"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/progress_bar"
-        />
-   <ProgressBar android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:id="@+id/progress_bar"
-       style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-       android:layout_alignParentBottom="true"
-       android:layout_marginBottom="20dp"/>
+        app:layout_constraintBottom_toTopOf="@+id/cardProgressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</RelativeLayout>
+    <com.google.android.material.card.MaterialCardView
+        app:strokeColor="@color/black"
+        app:strokeWidth="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:cardCornerRadius="20dp"
+        android:id="@+id/cardProgressBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/black"
+        android:layout_marginBottom="20dp">
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintCircleRadius="10dp"/>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

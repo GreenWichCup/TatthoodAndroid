@@ -28,6 +28,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -51,7 +52,8 @@ public class HoodMap extends Fragment implements OnMapReadyCallback {
 
     private List<String> mHoods;
     Query reference;
-    Button buttonOpenDialog, btnAction;
+
+    Button buttonOpenDialog, btnAction, btnHoods, btnArtist, btnSeller;
     LinearLayout linearLayout ;
     BottomSheetBehavior bottomSheetBehavior;
     private static final String TAG =  HoodMap.class.getSimpleName();
@@ -75,6 +77,9 @@ public class HoodMap extends Fragment implements OnMapReadyCallback {
 
         //Bottom sheet
         buttonOpenDialog =  view.findViewById(R.id.btnBottomSheet);
+        btnHoods= view.findViewById(R.id.btn_hoods);
+        btnArtist=view.findViewById(R.id.btn_artist);
+        btnSeller= view.findViewById(R.id.btn_seller);
         linearLayout = view.findViewById(R.id.lnBottomSheet);
         bottomSheetBehavior = BottomSheetBehavior.from(linearLayout);
         btnAction = view.findViewById(R.id.btnAction);
@@ -121,12 +126,15 @@ public class HoodMap extends Fragment implements OnMapReadyCallback {
                 } else {
                     bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     buttonOpenDialog.setText("Expand ");
-
                 }
-
             }
         });
-
+        btnHoods.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchHoods();
+            }
+        });
 
 
         return view;
@@ -135,12 +143,18 @@ public class HoodMap extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        boolean success = googleMap.setMapStyle(new MapStyleOptions(getResources()
+                .getString(R.string.style_json)));
+
+        if (!success) {
+            Log.e(TAG, "Style parsing failed.");
+        }
+
         // Position the map's camera near Sydney, Australia.
         showMeTheUserCurrentLocation();
 
         //list Hoods
-        searchHoods();
+
 
     }
 

@@ -11,7 +11,7 @@
       android:id="@+id/btn_status"
       android:layout_width="240dp"
       android:layout_height="wrap_content"
-      android:background="@drawable/custom_tv_status"
+      android:background="@drawable/custom_rounded_tv"
       android:gravity="center_horizontal"
       android:text="Status position"
       android:textAlignment="center"

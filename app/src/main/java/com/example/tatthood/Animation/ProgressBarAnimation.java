@@ -1,4 +1,4 @@
-package com.example.tatthood;
+package com.example.tatthood.Animation;
 
 import android.content.Context;
 import android.content.Intent;

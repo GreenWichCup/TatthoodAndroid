@@ -15,7 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.example.tatthood.EditProfileActivity;
+import com.example.tatthood.Activity.EditProfileActivity;
 import com.example.tatthood.ModelData.Post;
 import com.example.tatthood.ModelData.User;
 import com.example.tatthood.Modules.GlideApp;
@@ -41,7 +41,6 @@ public class Profile extends Fragment  {
     private LinearLayout layoutCount;
     String profileId;
     FirebaseUser firebaseUser;
-
 
 
     public Profile() {

@@ -1,4 +1,4 @@
-package com.example.tatthood;
+package com.example.tatthood.Activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +10,7 @@ import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.tatthood.ModelData.Post;
+import com.example.tatthood.R;
 import com.example.tatthood.adapters.TestPagerAdapter;
 
 import java.util.List;

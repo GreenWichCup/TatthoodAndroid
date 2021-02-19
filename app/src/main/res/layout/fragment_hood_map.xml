@@ -14,8 +14,6 @@
           android:id="@+id/google_map"
           android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
-    <!-- TODO: Update blank fragment layout -->
-
     <include layout="@layout/content_remain"/>
 
     <include layout="@layout/row_add_item"/>

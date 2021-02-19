@@ -1,4 +1,4 @@
-package com.example.tatthood;
+package com.example.tatthood.Activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +15,7 @@ import com.example.tatthood.Fragments.Home;
 import com.example.tatthood.Fragments.HoodMap;
 import com.example.tatthood.Fragments.MainSearchFragment;
 import com.example.tatthood.Fragments.Profile;
+import com.example.tatthood.R;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;

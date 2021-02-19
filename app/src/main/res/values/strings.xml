@@ -43,24 +43,21 @@
     <string name="following">Following</string>
     <string name="followers">Followers</string>
     <string name="posts">Posts</string>
-    <string-array name="users_status">
-        <item>Choose a status...</item>
-        <item>Artist</item>
-        <item>Tattoo Shop</item>
-        <item>Collector</item>
-        <item>Skin virgin</item>
-        <item>Adviser</item>
-    </string-array>
-    <string-array name="tatoo_category">
-        <item>Choose a category...</item>
-        <item>abdomen</item>
-        <item>abstract</item>
-        <item>african</item>
-        <item>alien</item>
-        <item>anchor</item>
-    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="map_id">d0f79f3a91fc1f95</string>
+    <string name="style_json">
+  [
+    {
+      \"featureType\": \"poi\",
+      \"elementType\": \"all\",
+      \"stylers\": [
+        {
+          \"visibility\": \"off\"
+        }
+      ]
+    }
+  ]
+  </string>
 
 </resources>

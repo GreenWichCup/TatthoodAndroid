@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tatthood.App_Main_Page;
+import com.example.tatthood.Activity.App_Main_Page;
 import com.example.tatthood.ModelData.Comment;
 import com.example.tatthood.ModelData.User;
 import com.example.tatthood.Modules.GlideApp;

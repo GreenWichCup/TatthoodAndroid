@@ -1,4 +1,4 @@
-package com.example.tatthood;
+package com.example.tatthood.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.tatthood.ModelData.Comment;
 import com.example.tatthood.ModelData.User;
 import com.example.tatthood.Modules.GlideApp;
+import com.example.tatthood.R;
 import com.example.tatthood.adapters.CommentAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -30,6 +31,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+
+//need to add bottom sheet for send a new comment (edt_tv + smiley shortcuts)
 public class CommentsActivity extends AppCompatActivity {
 
     EditText addcomment;

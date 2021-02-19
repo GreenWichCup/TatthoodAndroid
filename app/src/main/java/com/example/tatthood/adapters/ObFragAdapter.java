@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.tatthood.OnBoarding.OverviewFragment;
 import com.example.tatthood.OnBoarding.SignUpFormFragment;
 import com.example.tatthood.OnBoarding.StatusFragment;
 import com.example.tatthood.OnBoarding.WelcomeFragment;
@@ -29,8 +28,7 @@ public class ObFragAdapter extends FragmentStateAdapter {
                 return new StatusFragment();
             case 2:
                 return new SignUpFormFragment();
-            case 3:
-                return new OverviewFragment();
+
             default:
                 return null;
         }
@@ -38,6 +36,6 @@ public class ObFragAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 4;
+        return 3;
     }
 }

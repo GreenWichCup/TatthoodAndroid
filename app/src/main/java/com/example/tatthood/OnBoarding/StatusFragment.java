@@ -57,7 +57,6 @@ public class StatusFragment extends Fragment {
                 v.setSelected(true);
                 model.selectStatus(choiceItem);
 
-
             }
         });
 }}

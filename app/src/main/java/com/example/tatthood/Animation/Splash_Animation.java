@@ -1,4 +1,4 @@
-package com.example.tatthood;
+package com.example.tatthood.Animation;
 
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
@@ -14,7 +14,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.tatthood.Activity.HomeActivity;
+import com.example.tatthood.Activity.SignIn;
 import com.example.tatthood.Modules.GlideApp;
+import com.example.tatthood.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.storage.FirebaseStorage;

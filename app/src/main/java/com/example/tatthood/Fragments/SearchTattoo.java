@@ -1,6 +1,7 @@
 package com.example.tatthood.Fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
+import static android.content.ContentValues.TAG;
+
 public class SearchTattoo extends Fragment {
 
     RecyclerView searchTattoo_rv;
@@ -34,6 +37,7 @@ public class SearchTattoo extends Fragment {
     DatabaseReference referenceTattooPosted,referenceCategory;
 
     FirebaseRecyclerOptions<Category> optionsSearch;
+    FirebaseRecyclerOptions<MatchedCategory> optionsMatched;
     FirebaseRecyclerAdapter<Category, SearchTattooAdapter> adapter_search;
     FirebaseRecyclerAdapter<MatchedCategory, MatchedTattooAdapter> adapter_matched ;
 
@@ -48,7 +52,7 @@ public class SearchTattoo extends Fragment {
         super.onCreate(savedInstanceState);
         database = FirebaseDatabase.getInstance();
         referenceTattooPosted = database.getReference().child("Posts");
-        referenceCategory = database.getReference("Category");
+        referenceCategory = database.getReference("CategoryMatched");
     }
 
     @Override
@@ -68,15 +72,16 @@ public class SearchTattoo extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         SearchViewModel model = new ViewModelProvider(requireActivity()).get(SearchViewModel.class);
         model.getSelectedStatus().observe(getViewLifecycleOwner(), item -> {
-            firebaseSearch(item);
+            firebaseSearch(item.toUpperCase());
         });
 
     }
 
     private void firebaseSearch(String inputUser){
-    // Change for Posts ref
-        Query query = referenceCategory.orderByChild("matched")
-                .startAt("\uf8ff");
+        Query query = referenceCategory.orderByChild("categoryName_uppercase")
+                .startAt(inputUser.toUpperCase()).endAt(inputUser+"\uf8ff");
+
+        Log.d(TAG, "queryInfo: ");
 
         optionsSearch = new FirebaseRecyclerOptions.Builder<Category>()
                 .setQuery(query,Category.class)
@@ -85,10 +90,9 @@ public class SearchTattoo extends Fragment {
         adapter_search = new FirebaseRecyclerAdapter<Category, SearchTattooAdapter>(optionsSearch) {
             @Override
             protected void onBindViewHolder(@NonNull SearchTattooAdapter searchTattooAdapter, int i, @NonNull Category category) {
-                Query queryMatch = referenceCategory.orderByChild(category.getCategoryName())
-                        .startAt(inputUser.toUpperCase()).endAt(inputUser+"\uf8ff");
                 searchTattooAdapter.categoryName.setText(category.getCategoryName());
-                    FirebaseRecyclerOptions<MatchedCategory> optionsMatched = new FirebaseRecyclerOptions.Builder<MatchedCategory>()
+                Query queryMatch = referenceCategory.child(category.getCategoryName().toLowerCase()).child("matched");
+                   optionsMatched = new FirebaseRecyclerOptions.Builder<MatchedCategory>()
                             .setQuery(queryMatch, MatchedCategory.class)
                             .build();
                     adapter_matched = new FirebaseRecyclerAdapter<MatchedCategory, MatchedTattooAdapter>(optionsMatched) {

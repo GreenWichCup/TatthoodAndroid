@@ -1,21 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.HoodMap"
     tools:showIn="@layout/fragment_hood_map"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
+    <RelativeLayout
+        app:layout_constraintTop_toTopOf="parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
     <Button
         android:id="@+id/btnBottomSheet"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
         android:layout_alignParentEnd="true"
-        android:text="click"
-        android:textColor="@color/black"/>
+        android:layout_gravity="center_vertical"
+        android:text="View infos"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="12dp"/>
+    <Button
+        android:id="@+id/btn_hoods"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center_vertical"
+        android:text="Hoods"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"/>
+    <Button
+        android:id="@+id/btn_artist"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center_vertical"
+        android:text="Artists"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"/>
+    <Button
+        android:id="@+id/btn_seller"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center_vertical"
+        android:text="Seller"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"/>
+</LinearLayout>
 </RelativeLayout>
-
+</androidx.constraintlayout.widget.ConstraintLayout>
 

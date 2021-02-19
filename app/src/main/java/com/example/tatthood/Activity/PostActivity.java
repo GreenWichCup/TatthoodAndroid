@@ -1,4 +1,4 @@
-package com.example.tatthood;
+package com.example.tatthood.Activity;
 
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
@@ -25,6 +25,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tatthood.Interfaces.RecyclerViewClickInterface;
+import com.example.tatthood.R;
 import com.example.tatthood.adapters.SelectedCategoryAdapter;
 import com.google.android.flexbox.FlexboxLayoutManager;
 import com.google.android.flexbox.JustifyContent;
@@ -190,7 +191,6 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
                     if (task.isSuccessful()){
                         Uri downloadUri = task.getResult();
                         imageUrl = downloadUri.toString();
-
                         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts");
                         String postId = reference.push().getKey();
                         HashMap<String,Object> hashMap = new HashMap<>();
@@ -201,13 +201,20 @@ public class PostActivity extends AppCompatActivity implements RecyclerViewClick
                         if(personalCheckbox.isChecked()){
                             hashMap.put("personal_tattoo",true);
                         }
-
                         reference.child(postId).setValue(hashMap);
+
                         HashMap<String,Object> hashMapCategory = new HashMap<>();
+                        HashMap<String,Object> hashInfoCat = new HashMap<>();
+                        DatabaseReference refCategory = FirebaseDatabase.getInstance().getReference("CategoryMatched");
+                        String catName = refCategory.push().getKey();
                         sCategory.forEach((n) -> {
-                            hashMapCategory.put("post_category"+sCategory.indexOf(n),(n.toLowerCase()));
+                            hashInfoCat.put("categoryName_uppercase", n.toUpperCase());
+                            hashInfoCat.put("categoryName",n.trim().toLowerCase());
+                            hashMapCategory.put("postid",postId);
+                            hashMapCategory.put("imageurl",imageUrl);
+                            refCategory.child(n.trim().toLowerCase()).setValue(hashInfoCat);
+                            refCategory.child(n.trim().toLowerCase()).child("matched").child(postId).setValue(hashMapCategory);
                         });
-                        reference.child(postId).child("Category").setValue(hashMapCategory);
                         progressDialog.dismiss();
 
                         startActivity(new Intent(PostActivity.this, HomeActivity.class));
