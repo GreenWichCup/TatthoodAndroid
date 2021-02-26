@@ -143,6 +143,7 @@ public class Profile extends Fragment  {
             }
         });
 
+
         // later will be replaced by tab layout and viewpager2
 
         return view ;

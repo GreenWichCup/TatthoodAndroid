@@ -1,6 +1,8 @@
 package com.example.tatthood.OnBoarding;
 
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -32,8 +34,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
+import static android.content.ContentValues.TAG;
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
 public class SignUpFormFragment extends Fragment implements View.OnKeyListener, View.OnClickListener {
@@ -47,7 +52,7 @@ public class SignUpFormFragment extends Fragment implements View.OnKeyListener, 
     ImageView image_profile;
     Button btn_act_sign_up,btnNext;
     StartAppActivity getAct;
-
+    private Geocoder geocoder;
 
 
     public SignUpFormFragment() {
@@ -97,6 +102,8 @@ public class SignUpFormFragment extends Fragment implements View.OnKeyListener, 
         linFormLayout.setOnClickListener(this);
         image_profile.setOnClickListener(this);
         btn_act_sign_up.setOnClickListener(this);
+
+        geocoder = new Geocoder(getContext());
 
         return view;
     }
@@ -204,6 +211,19 @@ public class SignUpFormFragment extends Fragment implements View.OnKeyListener, 
                             hashMap.put("address", address);
                             hashMap.put("city", str_city);
                             hashMap.put("country", str_country);
+                            try {
+                                List<Address> addresses = geocoder.getFromLocationName(address,1);
+                                if (addresses.size()>0) {
+                                    Address value = addresses.get(0);
+                                    String lat = Double.toString(value.getLatitude());
+                                    String lng = Double.toString(value.getLongitude());
+                                    hashMap.put("lat", lat);
+                                    hashMap.put("lng",lng);
+                                    Log.i(TAG, "Coord LatLng: ");
+                                }
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                         } else if (tv_status_choosed.getText().toString().equals("Artist") || tv_status_choosed.getText().toString().equals("Tattoued")) {
                             hashMap.put("hood", str_streetHood);
                         } else if (tv_status_choosed.getText().toString().equals("Virgin skin")) {

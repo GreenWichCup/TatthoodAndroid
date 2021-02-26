@@ -3,29 +3,27 @@ package com.example.tatthood.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.tatthood.Fragments.TopSheetBehavior;
+import com.example.tatthood.Fragments.TopSheetDialog;
 import com.example.tatthood.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
 
 public class SignUp extends AppCompatActivity {
-
     private EditText editTextEmail;
     private EditText editTextPassword;
     private FirebaseAuth mAuth;
@@ -33,16 +31,25 @@ public class SignUp extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private TextView signInLink;
     private Spinner statusUser;
+    private ImageView imageViewSignUp;
+    View sheet;
+    LinearLayout linearLayout;
+    View rootView;
+    TopSheetDialog dialog;
+    int state;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
         statusUser = findViewById(R.id.spinner);
+        imageViewSignUp = findViewById(R.id.imageViewSignUp);
+        sheet = findViewById(R.id.top_sheet);
+        linearLayout = findViewById(R.id.formLayout);
+        rootView = findViewById(R.id.rootLayout);
 
         Button btnSignUp = findViewById(R.id.btnSignUp);
         signInLink= findViewById(R.id.log_in_link);
@@ -50,7 +57,7 @@ public class SignUp extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signUp();
+                openTopSheet();
             }
         });
         signInLink.setOnClickListener(new View.OnClickListener() {
@@ -59,59 +66,58 @@ public class SignUp extends AppCompatActivity {
                 toSignIn();
             }
         });
+
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                float height= sheet.getHeight();
+                v.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        int pointerId = event.getPointerId(0);
+                        int pointerIndex = event.findPointerIndex(pointerId);
+                        // Get the pointer's current position
+                        float x = event.getX(pointerIndex);
+                        float y = event.getY(pointerIndex);
+                        if (y>height){
+                            TopSheetBehavior.from(sheet).setState(TopSheetBehavior.STATE_COLLAPSED);
+                            Log.i("onTouchTag", "heightTouched = "+y+ " is higher than " + height);
+                        }
+
+                        return false;
+                    }
+                });
+            }
+        });
+        TopSheetBehavior.from(sheet).setTopSheetCallback(new TopSheetBehavior.TopSheetCallback() {
+            @Override
+            public void onStateChanged(@NonNull View bottomSheet, int newState) {
+                switch (newState) {
+                    case BottomSheetBehavior.STATE_HIDDEN:
+
+                    case BottomSheetBehavior.STATE_COLLAPSED:
+                        enableLL(linearLayout);
+                        break;
+
+                    case BottomSheetBehavior.STATE_EXPANDED:
+                        disableLL(linearLayout);
+                        break;
+                    case BottomSheetBehavior.STATE_SETTLING:
+                        // to do
+                        break;
+                }
+            }
+
+            @Override
+            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+
+            }
+        });
     }
 
     private void signUp() {
-        String str_username = editTextUsername.getText().toString();
-        String str_email = editTextEmail.getText().toString();
-        String str_password = editTextPassword.getText().toString();
 
-
-        if(str_email.equals("")||str_password.equals("")||str_username.equals("")) {
-            Toast.makeText(SignUp.this, "All fields are required to sign up",
-                    Toast.LENGTH_SHORT).show();
-        } else {
-            mAuth.createUserWithEmailAndPassword(str_email, str_password).addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        // Sign in success, update UI with the signed-in user's information
-                        Toast.makeText(SignUp.this, "Signing up successful.",
-                                Toast.LENGTH_SHORT).show();
-
-                        FirebaseUser firebaseUser = mAuth.getCurrentUser();
-                        String userId = firebaseUser.getUid();
-                        mDatabase = FirebaseDatabase.getInstance().getReference().child("App_users").child(userId);
-                        HashMap<String,Object>hashMap =new HashMap<>();
-                        hashMap.put("id",userId);
-                        hashMap.put("username",str_username);
-                        hashMap.put("username_uppercase",str_username.toUpperCase());
-                        hashMap.put("email",str_email);
-                        hashMap.put("imageUrl","");
-                        hashMap.put("bio","");
-                        //Later get value from sign up from  (spinner)
-                        hashMap.put("status",statusUser.getSelectedItem());
-
-                        mDatabase.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()){
-                                    Intent intent = new Intent(SignUp.this,HomeActivity.class);
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                    startActivity(intent);
-                                }
-                            }
-                        });
-
-                    } else {
-                        // If sign in fails, display a message to the user.
-                        Log.w("signUp log", "createUserWithEmail:failure", task.getException());
-                        Toast.makeText(SignUp.this, "Authentication failed.",
-                                Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-        }
     }
 
     private void toSignIn(){
@@ -124,6 +130,31 @@ public class SignUp extends AppCompatActivity {
         Intent toSignInActivity = new Intent(this, App_Main_Page.class );
         // organize routing home / social media /etc
         startActivity(toSignInActivity);
+    }
+
+    public void openTopSheet() {
+        sheet.setBackgroundResource(R.color.black);
+        sheet.bringToFront();
+        TopSheetBehavior.from(sheet).setState(TopSheetBehavior.STATE_EXPANDED);
+    }
+
+    private void disableLL(ViewGroup layout){
+        for (int i = 0; i < layout.getChildCount(); i++) {
+            View child = layout.getChildAt(i);
+            child.setEnabled(false);
+            if (child instanceof ViewGroup)
+                disableLL((ViewGroup) child);
+        }
+    }
+
+    private void enableLL(ViewGroup layout){
+        // can be merged in an one with a boolean
+        for (int i = 0; i < layout.getChildCount(); i++) {
+            View child = layout.getChildAt(i);
+            child.setEnabled(true);
+            if (child instanceof ViewGroup)
+                enableLL((ViewGroup) child);
+        }
     }
 
 }

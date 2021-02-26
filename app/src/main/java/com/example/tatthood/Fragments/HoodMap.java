@@ -2,8 +2,6 @@ package com.example.tatthood.Fragments;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,7 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,6 +19,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.tatthood.ModelData.User;
+import com.example.tatthood.Modules.GlideApp;
 import com.example.tatthood.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -29,6 +30,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -39,23 +41,26 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HoodMap extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private Geocoder geocoder;
     private static final int FINE_LOCATION_REQUEST_CODE = 1000;
     private FusedLocationProviderClient locationClient;
-
-    private List<String> mHoods;
+    private List<User> mHoods;
     Query reference;
+ //   private ClusterManager mClusterManager;
+ //   private MyClusterManagerRenderer mClusterManagerRenderer;
+ //   private ArrayList<ClusterMarker>mClusterMarkers = new ArrayList<>();
 
     Button buttonOpenDialog, btnAction, btnHoods, btnArtist, btnSeller;
     LinearLayout linearLayout ;
     BottomSheetBehavior bottomSheetBehavior;
+    TextView hoodTitle, hoodAddress;
+    ImageView hoodPicture;
+
     private static final String TAG =  HoodMap.class.getSimpleName();
 
 
@@ -73,8 +78,6 @@ public class HoodMap extends Fragment implements OnMapReadyCallback {
         prepareLocationServices();
 
         supportMapFragment.getMapAsync(HoodMap.this);
-        geocoder = new Geocoder(getContext());
-
         //Bottom sheet
         buttonOpenDialog =  view.findViewById(R.id.btnBottomSheet);
         btnHoods= view.findViewById(R.id.btn_hoods);
@@ -84,14 +87,18 @@ public class HoodMap extends Fragment implements OnMapReadyCallback {
         bottomSheetBehavior = BottomSheetBehavior.from(linearLayout);
         btnAction = view.findViewById(R.id.btnAction);
 
+        hoodTitle = view.findViewById(R.id.hoodTitle);
+        hoodPicture = view.findViewById(R.id.hoodPicture);
+        hoodAddress = view.findViewById(R.id.hoodAddress);
+
         reference = FirebaseDatabase.getInstance().getReference("App_users");
 
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
         bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
                 switch (newState) {
                     case BottomSheetBehavior.STATE_HIDDEN:
-
                     case BottomSheetBehavior.STATE_COLLAPSED:
                         buttonOpenDialog.setText("Expand");
                         break;
@@ -102,6 +109,7 @@ public class HoodMap extends Fragment implements OnMapReadyCallback {
                     case BottomSheetBehavior.STATE_SETTLING:
                         buttonOpenDialog.setText("Other case ");
                         break;
+                    default:
                 }
                 btnAction.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -152,8 +160,22 @@ public class HoodMap extends Fragment implements OnMapReadyCallback {
 
         // Position the map's camera near Sydney, Australia.
         showMeTheUserCurrentLocation();
-
         //list Hoods
+        searchHoods();
+
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                String title = marker.getTitle();
+                hoodTitle.getText().toString();
+                Log.i(TAG, "onMarkerClick: "+ title);
+                bottomSheetInfos(title);
+                CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(marker.getPosition(), 14.0f);
+                mMap.moveCamera(cameraUpdate);
+                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                return false;
+            }
+        });
 
 
     }
@@ -182,6 +204,7 @@ public class HoodMap extends Fragment implements OnMapReadyCallback {
 
     }
 
+
     private void showMeTheUserCurrentLocation() {
         if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             giveMePermissionToAccessLocation();
@@ -193,13 +216,12 @@ public class HoodMap extends Fragment implements OnMapReadyCallback {
                     if (location != null) {
                         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
                         mMap.addMarker(new MarkerOptions().position(latLng).title("Your current location is here"));
-                        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 16.0f);
+                        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 12.0f);
                         mMap.moveCamera(cameraUpdate);
 
                     } else {
                         Toast.makeText(getActivity(), "Something went wrong. Try again", Toast.LENGTH_SHORT).show();
                     }
-
                 }
             });
 
@@ -213,37 +235,55 @@ public class HoodMap extends Fragment implements OnMapReadyCallback {
 
 
     private void searchHoods(){
+         final int index = 0;
         Query query = FirebaseDatabase.getInstance().getReference("App_users")
-              .orderByChild("status")
-              .equalTo("Hood");
-       query.addValueEventListener(new ValueEventListener() {
+                .orderByChild("status")
+                .equalTo("Hood");
+        query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     User user = dataSnapshot.getValue(User.class);
-                    String hoodAddress  = user.getAddress();
-                    try {
-                       List<Address> addresses = geocoder.getFromLocationName(hoodAddress,1);
-                       if (addresses.size()>0) {
-                           Address value = addresses.get(0);
-                           LatLng hoodCoord = new LatLng(value.getLatitude(), value.getLongitude());
-                           Log.d(TAG, "hood infos" + value.toString());
-                           MarkerOptions hoodMarker = new MarkerOptions()
-                                   .position(hoodCoord)
-                                   .title(value.getLocality());
-                           mMap.addMarker(hoodMarker);
-                       }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                }
+                    Double lat = Double.parseDouble(user.getLat());
+                    Double lng = Double.parseDouble(user.getLng());
+                            LatLng hoodCoord = new LatLng(lat, lng);
+                            MarkerOptions hoodMarker = new MarkerOptions()
+                                    .position(hoodCoord)
+                                    .title(user.getUsername());
+                    Log.i(TAG, "snapshot: "+ user.getUsername());
+                    mMap.addMarker(hoodMarker);
+                    mHoods.add(user);
+                        }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
+    }
+
+  /*  private void addMapMarkers(){
+        if (mMap != null) {
+            if (mClusterManager ==null){
+                mClusterManager = new ClusterManager<ClusterMarker>(getContext().getApplicationContext(),mMap);
+            } if (mClusterManagerRenderer == null){
+                mClusterManagerRenderer = new MyClusterManagerRenderer(getActivity(),mMap,mClusterManager);
+                mClusterManager.setRenderer(mClusterManagerRenderer);
+            }
+        }
+    }*/
+
+    private void bottomSheetInfos(String mTitle){
+      for (User user : mHoods) {
+          Log.i(TAG, "bottonSheetInfos: "+user.getEmail());
+          if (user.getUsername().equals(mTitle)){
+               hoodTitle.setText(user.getUsername());
+              GlideApp.with(getActivity()).load(user.getimageUrl()).into(hoodPicture);
+              hoodAddress.setText(user.getAddress());
+
+          }
+      }
+
     }
 
 }
