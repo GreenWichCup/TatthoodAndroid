@@ -12,7 +12,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.tatthood.Activity.EditProfileActivity;
@@ -20,6 +24,7 @@ import com.example.tatthood.ModelData.Post;
 import com.example.tatthood.ModelData.User;
 import com.example.tatthood.Modules.GlideApp;
 import com.example.tatthood.R;
+import com.example.tatthood.ViewModel.TopSheetViewModel;
 import com.example.tatthood.adapters.PortFolioTabsAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -33,19 +38,22 @@ import com.google.firebase.database.ValueEventListener;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class Profile extends Fragment  {
+public class Profile extends Fragment {
 
     private TextView nameTv,user_status, userHood, followersCountTv, followingCountTv, postsCountTv,locationTv;
     private CircleImageView profileImage;
-    private Button editProfile;
-    private LinearLayout layoutCount;
+    private Button editProfile,btn_profile_top_sheet;
+    private LinearLayout layoutCount,open_sheet_ll,top_sheet_ll;
     String profileId;
     FirebaseUser firebaseUser;
-
+    ConstraintLayout combined_layout;
+    CoordinatorLayout coordinatorLayout ;
+    private ViewPager2 viewPager2;
+    TopSheetViewModel mTopSheetViewModel;
 
     public Profile() {
         // Required empty public constructor
-    }
+        }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,13 +64,13 @@ public class Profile extends Fragment  {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        SharedPreferences prefs = getContext().getSharedPreferences("PREFS", Context.MODE_PRIVATE);
+        SharedPreferences prefs = getContext().getSharedPreferences(getContext().getPackageName()+"PREFS_UserProfile", Context.MODE_PRIVATE);
         profileId = prefs.getString("id","none");
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         nameTv = view.findViewById(R.id.username);
-        userHood = view.findViewById(R.id.user_bio);
+        userHood = view.findViewById(R.id.user_hood);
         editProfile = view.findViewById(R.id.edit_profile);
         followersCountTv = view.findViewById(R.id.followersCount);
         followingCountTv = view.findViewById(R.id.followingCount);
@@ -72,14 +80,18 @@ public class Profile extends Fragment  {
         postsCountTv = view.findViewById(R.id.postCount);
         locationTv = view.findViewById(R.id.location);
         profileImage = view.findViewById(R.id.image_profile);
-
+        open_sheet_ll = view.findViewById(R.id.open_sheet_ll);
+        top_sheet_ll = view.findViewById(R.id.top_sheet_ll);
+        btn_profile_top_sheet = view.findViewById(R.id.btn_profile_top_sheet);
+        combined_layout = view.findViewById(R.id.combined_layout);
+        coordinatorLayout = view.findViewById(R.id.rootLayout);
         // Portfolio tabLayout
+        viewPager2 = view.findViewById(R.id.vpProfile);
 
-        ViewPager2 viewPager2 = view.findViewById(R.id.vpProfile);
+
         viewPager2.setAdapter(new PortFolioTabsAdapter(getActivity()));
 
         TabLayout tabLayout = view.findViewById(R.id.tabLayoutProfile);
-
         TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
@@ -108,6 +120,13 @@ public class Profile extends Fragment  {
         } else {
             checkFollow();
         }
+
+        btn_profile_top_sheet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTopSheet();
+            }
+        });
 
         editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,11 +162,39 @@ public class Profile extends Fragment  {
             }
         });
 
+        TopSheetBehavior.from(top_sheet_ll).setTopSheetCallback(new TopSheetBehavior.TopSheetCallback() {
+            @Override
+            public void onStateChanged(@NonNull View bottomSheet, int newState) {
+                switch (newState) {
+                    case TopSheetBehavior.STATE_COLLAPSED:
+                    break;
+                    case TopSheetBehavior.STATE_DRAGGING:
+                        break;
+                    case TopSheetBehavior.STATE_EXPANDED:
+                        break;
+                    case TopSheetBehavior.STATE_HIDDEN:
+                        break;
+                    case TopSheetBehavior.STATE_SETTLING:
+                        break;
+                }
+            }
 
-        // later will be replaced by tab layout and viewpager2
+            @Override
+            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+            }
+        });
 
         return view ;
 
+    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mTopSheetViewModel = new ViewModelProvider(requireActivity()).get(TopSheetViewModel.class);
+        mTopSheetViewModel.getSheetStatus().observe(getViewLifecycleOwner(),state -> {
+                TopSheetBehavior.from(top_sheet_ll).setState(TopSheetBehavior.STATE_COLLAPSED);
+
+        });
     }
 
     private void userInfo(){
@@ -159,13 +206,14 @@ public class Profile extends Fragment  {
                 User user = snapshot.getValue(User.class);
                 GlideApp.with(getContext()).load(user.getimageUrl()).into(profileImage);
                 nameTv.setText(user.getUsername());
-                user_status.setText(user.getStatus());
-                userHood.setText(user.getHood());
                 if (!user.getStatus().equals("Hood")){
-                    locationTv.setVisibility(View.GONE);
+                    userHood.setVisibility(View.VISIBLE);
                 } else {
-                    locationTv.setText(user.getAddress());
+                    userHood.setText(user.getHood());
                 }
+                locationTv.setText(user.getCity());
+                user_status.setText(user.getStatus());
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -233,6 +281,10 @@ public class Profile extends Fragment  {
             }
         });
     }
-
+    public void openTopSheet() {
+      //  top_sheet_ll.setBackgroundResource(R.color.black);
+        top_sheet_ll.bringToFront();
+        TopSheetBehavior.from(top_sheet_ll).setState(TopSheetBehavior.STATE_EXPANDED);
+    }
 
 }

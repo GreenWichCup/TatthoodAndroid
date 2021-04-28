@@ -8,7 +8,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.tatthood.Activity.HomeActivity;
-import com.example.tatthood.OnBoarding.OnBoardingActivity;
+import com.example.tatthood.Activity.StartAppActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -42,8 +42,9 @@ public class ProgressBarAnimation extends Animation {
             if(currentUser != null) {
                 //Transition to next Activity
                 context.startActivity(new Intent(context, HomeActivity.class));
+
             }else{
-                context.startActivity(new Intent(context, OnBoardingActivity.class));
+                context.startActivity(new Intent(context, StartAppActivity.class));
             }
         }
     }

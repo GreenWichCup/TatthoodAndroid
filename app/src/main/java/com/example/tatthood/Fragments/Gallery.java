@@ -9,7 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.tatthood.Interfaces.RecyclerViewClickInterface;
 import com.example.tatthood.ModelData.Post;
 import com.example.tatthood.R;
+import com.example.tatthood.ViewModel.TopSheetViewModel;
 import com.example.tatthood.adapters.PhotoGridAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -40,6 +43,8 @@ public class Gallery extends Fragment implements RecyclerViewClickInterface {
     List<Post> personalPostList;
     String profileId;
     FirebaseUser firebaseUser;
+    TopSheetViewModel mTopSheetViewModel;
+
 
     public Gallery() {
         // Required empty public constructor
@@ -71,7 +76,25 @@ public class Gallery extends Fragment implements RecyclerViewClickInterface {
 
         mPersonalTattooPost();
 
+
+
+
         return view ;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        mTopSheetViewModel = new ViewModelProvider(requireActivity()).get(TopSheetViewModel.class);
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mTopSheetViewModel.setSheetState(true);
+            }
+        });
+
     }
 
     private void mPersonalTattooPost(){
@@ -131,6 +154,11 @@ public class Gallery extends Fragment implements RecyclerViewClickInterface {
 
     @Override
     public void onLongClick(int position) {
+
+    }
+
+    @Override
+    public void onViewClick(View viewClicked) {
 
     }
 }

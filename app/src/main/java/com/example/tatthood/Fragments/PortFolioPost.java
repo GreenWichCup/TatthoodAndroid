@@ -11,14 +11,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tatthood.Activity.TestPagerActivity;
 import com.example.tatthood.Interfaces.RecyclerViewClickInterface;
 import com.example.tatthood.ModelData.Post;
 import com.example.tatthood.R;
-import com.example.tatthood.Activity.TestPagerActivity;
+import com.example.tatthood.ViewModel.TopSheetViewModel;
 import com.example.tatthood.adapters.PhotoGridAdapter;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -34,20 +36,18 @@ import java.util.List;
 
 public class PortFolioPost extends Fragment implements RecyclerViewClickInterface {
 
-    PhotoGridAdapter photoGridAdapter;
-    RecyclerView recyclerView;
-    List<Post> photoList;
-    String profileId;
-    FirebaseUser firebaseUser;
+    private PhotoGridAdapter photoGridAdapter;
+    private RecyclerView recyclerView;
+    private List<Post> photoList;
+    private String profileId;
+    private FirebaseUser firebaseUser;
+    TopSheetViewModel mTopSheetViewModel;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_port_folio_post, container, false);
         SharedPreferences prefs = getContext().getSharedPreferences("PREFS", Context.MODE_PRIVATE);
         profileId = prefs.getString("id","none");
-
-
 
         // Inflate the layout for this fragment
         return view;
@@ -63,10 +63,14 @@ public class PortFolioPost extends Fragment implements RecyclerViewClickInterfac
         photoList = new ArrayList<>();
         photoGridAdapter = new PhotoGridAdapter(getContext(),photoList,this);
         recyclerView.setAdapter(photoGridAdapter);
-
-
         userPortfolio();
-
+        mTopSheetViewModel = new ViewModelProvider(requireActivity()).get(TopSheetViewModel.class);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mTopSheetViewModel.setSheetState(true);
+            }
+        });
     }
 
     private void userPortfolio(){
@@ -92,8 +96,6 @@ public class PortFolioPost extends Fragment implements RecyclerViewClickInterfac
         });
     }
 
-
-
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(getActivity(), TestPagerActivity.class);
@@ -104,6 +106,12 @@ public class PortFolioPost extends Fragment implements RecyclerViewClickInterfac
 
     @Override
     public void onLongClick(int position) {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts").child(photoList.get(position).getPostid());
+        reference.removeValue();
+        photoGridAdapter.notifyDataSetChanged();
+    }
 
+    @Override
+    public void onViewClick(View viewClicked) {
     }
 }

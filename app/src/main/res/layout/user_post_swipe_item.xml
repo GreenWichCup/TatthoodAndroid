@@ -1,52 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/user_post_item">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/post_header">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/image_profile"
+            android:layout_margin="10dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_alignParentStart="true"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toEndOf="@+id/image_profile"
+            android:layout_centerVertical="true">
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="user name"
+                android:textColor="@color/Primary"
+                android:textSize="@dimen/title_text_size"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/time"
+                android:textSize="10dp"
+                android:text="2 days ago"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/options"
+            android:id="@+id/post_options"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@android:color/transparent"/>
+    </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:id="@+id/image_profile"
-                android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/username"
-                    android:layout_gravity="center_vertical"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/Primary"
-                    android:text="user name" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/time"
-                    android:textSize="10dp"
-                    android:text="2 days ago"
-                    android:layout_gravity="center_vertical"/>
-            </LinearLayout>
-        </LinearLayout>
-
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/post_header">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/post_image"
             android:src="@mipmap/ic_launcher"/>
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/description"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/teal_700"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,60 +77,46 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:id="@+id/like"
+                android:id="@+id/like_ic"
                 android:src="@drawable/ic_like"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/likes"
+                android:layout_toEndOf="@id/like_ic"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/PrimaryDark"/>
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:id="@+id/comment"
+                android:id="@+id/comment_ic"
                 android:src="@drawable/ic_comment"
-                android:layout_toEndOf="@+id/like"
-                android:layout_marginStart="15dp"/>
+                android:layout_toEndOf="@+id/likes"
+                android:layout_marginStart="10dp"/>
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:id="@+id/share_post"
                 android:src="@drawable/ic_share"
-                android:layout_toEndOf="@+id/comment"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="15dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/comments"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/comment_ic"
+                android:textStyle="bold"
+                android:textColor="@color/Accent"/>
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:id="@+id/save"
                 android:src="@drawable/ic_save_post"
-                android:layout_alignParentEnd="true"
+                android:layout_toStartOf="@id/share_post"
                 android:layout_marginEnd="10dp"/>
-
         </RelativeLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/likes"
-            android:layout_marginStart="8dp"
-            android:textStyle="bold"
-            android:textColor="@color/PrimaryDark"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/description"
-            android:layout_marginStart="8dp"
-            android:textStyle="bold"
-            android:textColor="@color/PrimaryDark"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/comments"
-            android:layout_marginStart="8dp"
-            android:textStyle="bold"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
-            android:text="view all 20 comments"
-            android:textColor="@color/Accent"/>
-
-
     </LinearLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,6 +25,7 @@ public class OnBoardingActivity extends AppCompatActivity {
         btn_log_in = findViewById(R.id.log_in);
 
 
+
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

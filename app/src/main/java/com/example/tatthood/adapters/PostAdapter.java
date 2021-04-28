@@ -18,19 +18,17 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 
-public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
+public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> implements TestPagerAdapter.IpagerAdapter {
 
     public Context mContext;
     private List<Post> mPost;
     private FirebaseUser firebaseUser;
     public RecyclerViewClickInterface photoClickInterface;
 
-
     public PostAdapter(Context mContext, List<Post> mPost,RecyclerViewClickInterface photoClickInterface) {
         this.mContext = mContext;
         this.mPost = mPost;
         this.photoClickInterface = photoClickInterface;
-
     }
 
 
@@ -54,6 +52,18 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return mPost.size();
+    }
+
+    @Override
+    public void goBackToProfile(String post_id, String post_image, int position) {
+        mPost.remove(position);
+        notifyItemRemoved(position);
+        notifyDataSetChanged();
+    }
+
+    @Override
+    public void editPost(String post_id, String post_url, String description) {
+
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

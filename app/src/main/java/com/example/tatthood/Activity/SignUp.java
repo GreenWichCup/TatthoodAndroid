@@ -45,7 +45,6 @@ public class SignUp extends AppCompatActivity {
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
-        statusUser = findViewById(R.id.spinner);
         imageViewSignUp = findViewById(R.id.imageViewSignUp);
         sheet = findViewById(R.id.top_sheet);
         linearLayout = findViewById(R.id.formLayout);
@@ -70,7 +69,6 @@ public class SignUp extends AppCompatActivity {
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 float height= sheet.getHeight();
                 v.setOnTouchListener(new View.OnTouchListener() {
                     @Override

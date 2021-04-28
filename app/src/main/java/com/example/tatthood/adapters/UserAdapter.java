@@ -30,7 +30,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
-
     private Context mContext;
     private List<User> mUser;
 

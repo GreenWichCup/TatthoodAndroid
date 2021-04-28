@@ -45,7 +45,8 @@
             android:gravity="center"
             android:hint="username"
             android:inputType="textPersonName"
-            android:background="@drawable/custom_edtv_sign_up"/>
+            android:background="@drawable/custom_edtv_sign_up"
+            android:imeOptions="actionNext"/>
 
         <EditText
             android:id="@+id/editTextEmail"
@@ -59,6 +60,7 @@
             android:gravity="center"
             android:hint="email"
             android:inputType="textEmailAddress"
+            android:imeOptions="actionNext"
             android:background="@drawable/custom_edtv_sign_up"/>
 
         <EditText
@@ -74,6 +76,7 @@
             android:gravity="center"
             android:hint="@string/create_your_password"
             android:inputType="textPassword"
+            android:imeOptions="actionNext"
             android:background="@drawable/custom_edtv_sign_up"/>
         <EditText
             android:id="@+id/editTextConfirmPassword"
@@ -88,6 +91,7 @@
             android:gravity="center"
             android:hint="confirm password"
             android:inputType="textPassword"
+            android:imeOptions="actionNext"
             android:background="@drawable/custom_edtv_sign_up"/>
         <EditText
             android:id="@+id/editTextStreetHood"
@@ -102,7 +106,9 @@
             android:gravity="center"
             android:hint="Street name"
             android:inputType="text"
-            android:background="@drawable/custom_edtv_sign_up"/>
+            android:background="@drawable/custom_edtv_sign_up"
+            android:imeOptions="actionNext"
+            />
 
        <LinearLayout
            android:layout_width="280dp"
@@ -127,7 +133,9 @@
                android:ems="8"
                android:gravity="center"
                android:hint="City"
-               android:inputType="text" />
+               android:inputType="text"
+               android:imeOptions="actionNext"
+               android:nextFocusRight="@+id/editTextCountry" />
 
            <EditText
                android:id="@+id/editTextCountry"
@@ -141,8 +149,9 @@
                android:ems="8"
                android:gravity="center"
                android:hint="Country"
-               android:nextFocusRight="@id/editTextState"
-               android:inputType="text" />
+               android:inputType="text"
+               android:imeOptions="actionNext"
+               android:nextFocusDown="@+id/editTextPostaleCode"/>
        </LinearLayout>
 
         <LinearLayout
@@ -167,7 +176,9 @@
                 android:gravity="center"
                 android:hint="Postal code"
                 android:inputType="text"
-                android:background="@drawable/custom_edtv_sign_up"/>
+                android:background="@drawable/custom_edtv_sign_up"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/editTextState"/>
 
             <EditText
                 android:id="@+id/editTextState"
@@ -182,7 +193,7 @@
                 android:ems="8"
                 android:gravity="center"
                 android:hint="State"
-                android:inputType="text" />
+                android:inputType="text"/>
     </LinearLayout>
         <Button
             android:id="@+id/btnSignUp"
@@ -190,7 +201,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/sign_up" />
+            android:text="@string/sign_up"
+            />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 

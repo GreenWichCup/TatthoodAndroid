@@ -16,11 +16,12 @@ import com.example.tatthood.R;
 
 import java.util.List;
 
-public class PhotoGridAdapter extends RecyclerView.Adapter<PhotoGridAdapter.ViewHolder> {
+public class PhotoGridAdapter extends RecyclerView.Adapter<PhotoGridAdapter.ViewHolder> implements TestPagerAdapter.IpagerAdapter{
 
     public Context mContext ;
     public List<Post> userPostedPhoto;
     public RecyclerViewClickInterface photoClickInterface;
+
 
     public PhotoGridAdapter(Context mContext, List<Post> userPostedPhoto,RecyclerViewClickInterface photoClickInterface) {
         this.mContext = mContext;
@@ -46,6 +47,18 @@ public class PhotoGridAdapter extends RecyclerView.Adapter<PhotoGridAdapter.View
     @Override
     public int getItemCount() {
         return userPostedPhoto.size();
+    }
+
+    @Override
+    public void goBackToProfile(String post_id, String post_image, int position) {
+        userPostedPhoto.remove(position);
+        notifyDataSetChanged();
+        notifyItemRemoved(position);
+    }
+
+    @Override
+    public void editPost(String post_id, String post_url, String description) {
+
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

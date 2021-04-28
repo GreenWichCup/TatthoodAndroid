@@ -32,7 +32,6 @@
             android:layout_marginStart="40dp"
             android:text="Prev."
             android:textSize="15sp"
-            android:visibility="gone"
             app:cornerRadius="20dp"
             />
 

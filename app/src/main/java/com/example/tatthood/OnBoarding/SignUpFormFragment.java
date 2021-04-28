@@ -57,7 +57,6 @@ public class SignUpFormFragment extends Fragment implements View.OnKeyListener, 
 
     public SignUpFormFragment() {
         // Required empty public constructor
-
     }
 
     @Override
@@ -96,11 +95,9 @@ public class SignUpFormFragment extends Fragment implements View.OnKeyListener, 
         btnNext.setVisibility(View.VISIBLE);
         mAuth = FirebaseAuth.getInstance();
 
-        editTextPassword.setOnKeyListener(this);
-        editTextUsername.setOnKeyListener(this);
-        editTextEmail.setOnKeyListener(this);
         linFormLayout.setOnClickListener(this);
         image_profile.setOnClickListener(this);
+        editTextState.setOnKeyListener(this);
         btn_act_sign_up.setOnClickListener(this);
 
         geocoder = new Geocoder(getContext());
@@ -127,7 +124,6 @@ public class SignUpFormFragment extends Fragment implements View.OnKeyListener, 
                     editTextStreetHood.setHint("Hood affiliated");
                     lin_address.setVisibility(View.GONE);
                     lin_address_part2.setVisibility(View.GONE);
-
                     break;
 
                 case "Tattoued":
@@ -257,6 +253,9 @@ public class SignUpFormFragment extends Fragment implements View.OnKeyListener, 
 
     @Override
     public boolean onKey(View v, int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN){
+            signUp();
+        }
 
         return false;
     }
@@ -266,9 +265,6 @@ public class SignUpFormFragment extends Fragment implements View.OnKeyListener, 
         switch (v.getId()) {
             case R.id.btnSignUp:
                 signUp();
-                break;
-            case R.id.editTextCountry:
-                editTextCountry.setNextFocusRightId(R.id.editTextState);
                 break;
             case R.id.image_profile:
             case R.id.formLayout:

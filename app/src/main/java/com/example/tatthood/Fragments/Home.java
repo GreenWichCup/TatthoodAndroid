@@ -26,6 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Home extends Fragment implements RecyclerViewClickInterface {
@@ -51,8 +52,8 @@ public class Home extends Fragment implements RecyclerViewClickInterface {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         recyclerView = view.findViewById(R.id.home_recycler_view);
-        recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new GridLayoutManager(getContext(),2);
+        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
         postLists = new ArrayList<>();
         postAdapter = new PostAdapter(getContext(),postLists,this );
@@ -92,9 +93,8 @@ public class Home extends Fragment implements RecyclerViewClickInterface {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Post post = dataSnapshot.getValue(Post.class);
                             postLists.add(post);
-
-
                 }
+                Collections.reverse(postLists);
                 postAdapter.notifyDataSetChanged();
             }
 
@@ -123,6 +123,11 @@ public class Home extends Fragment implements RecyclerViewClickInterface {
 
     @Override
     public void onLongClick(int position) {
+
+    }
+
+    @Override
+    public void onViewClick(View viewClicked) {
 
     }
 }

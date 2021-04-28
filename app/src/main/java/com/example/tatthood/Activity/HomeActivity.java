@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.example.tatthood.Fragments.Home;
@@ -16,16 +17,16 @@ import com.example.tatthood.Fragments.HoodMap;
 import com.example.tatthood.Fragments.MainSearchFragment;
 import com.example.tatthood.Fragments.Profile;
 import com.example.tatthood.R;
-import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Date;
 
 public class HomeActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     Fragment selectFragment = null;
-    AppBarLayout appBarLayout;
-
+    Toolbar toolbar;
 
     private ImageView post_photo;
     private ImageView logOut;
@@ -39,13 +40,17 @@ public class HomeActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        appBarLayout = findViewById(R.id.appBar);
+        Date date = new Date();
+        long dateMilli = date.getTime();
+        System.out.println("Time in milli: " + dateMilli);
 
+        toolbar = findViewById(R.id.toolbar);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         //set home as default fragment
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Home()).commit();
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+
         logOut = findViewById(R.id.log_out);
 
         logOut.setOnClickListener(new View.OnClickListener() {
@@ -62,26 +67,32 @@ public class HomeActivity extends AppCompatActivity {
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            String fTag = "";
             switch (item.getItemId()) {
                 case R.id.bn_home:
-                    appBarLayout.setVisibility(View.VISIBLE);
+                    fTag = "home";
+                    toolbar.setVisibility(View.VISIBLE);
                     selectFragment = new Home();
                     break;
 
                 case R.id.bn_search:
-                    appBarLayout.setVisibility(View.GONE);
+                    fTag = "mainsearch";
+                    toolbar.setVisibility(View.GONE);
                     selectFragment = new MainSearchFragment();
                   break;
 
                 case R.id.bn_messages:
-                    appBarLayout.setVisibility(View.GONE);
+                    fTag = "hoodmap";
+                    toolbar.setVisibility(View.GONE);
                     selectFragment = new HoodMap();
                     break;
 
                 case R.id.bn_profile:
-                    SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
+                    fTag = "profile";
+                    toolbar.setVisibility(View.GONE);
+                    SharedPreferences.Editor editor = getSharedPreferences(getPackageName()+"PREFS_UserProfile", MODE_PRIVATE).edit();
                     editor.putString("id", FirebaseAuth.getInstance().getCurrentUser().getUid());
-                    editor.apply();
+                    editor.commit();
                     selectFragment = new Profile();
                     break;
 
@@ -91,7 +102,7 @@ public class HomeActivity extends AppCompatActivity {
                     break;
             }
             if(selectFragment != null){
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectFragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectFragment,fTag).commit();
             }
 
             return true;

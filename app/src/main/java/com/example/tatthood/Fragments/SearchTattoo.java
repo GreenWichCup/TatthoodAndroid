@@ -1,7 +1,8 @@
+
 package com.example.tatthood.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +14,11 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tatthood.Activity.TestPagerActivity;
+import com.example.tatthood.Interfaces.MatchedTattooClickInterface;
 import com.example.tatthood.ModelData.Category;
 import com.example.tatthood.ModelData.MatchedCategory;
+import com.example.tatthood.ModelData.Post;
 import com.example.tatthood.Modules.GlideApp;
 import com.example.tatthood.R;
 import com.example.tatthood.ViewModel.SearchViewModel;
@@ -22,11 +26,16 @@ import com.example.tatthood.adapters.MatchedTattooAdapter;
 import com.example.tatthood.adapters.SearchTattooAdapter;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
-import static android.content.ContentValues.TAG;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SearchTattoo extends Fragment {
 
@@ -40,6 +49,8 @@ public class SearchTattoo extends Fragment {
     FirebaseRecyclerOptions<MatchedCategory> optionsMatched;
     FirebaseRecyclerAdapter<Category, SearchTattooAdapter> adapter_search;
     FirebaseRecyclerAdapter<MatchedCategory, MatchedTattooAdapter> adapter_matched ;
+    private List<Post> photoList;
+
 
     public SearchTattoo() {
         // Required empty public constructor
@@ -74,14 +85,11 @@ public class SearchTattoo extends Fragment {
         model.getSelectedStatus().observe(getViewLifecycleOwner(), item -> {
             firebaseSearch(item.toUpperCase());
         });
-
     }
 
     private void firebaseSearch(String inputUser){
         Query query = referenceCategory.orderByChild("categoryName_uppercase")
                 .startAt(inputUser.toUpperCase()).endAt(inputUser+"\uf8ff");
-
-        Log.d(TAG, "queryInfo: ");
 
         optionsSearch = new FirebaseRecyclerOptions.Builder<Category>()
                 .setQuery(query,Category.class)
@@ -99,7 +107,34 @@ public class SearchTattoo extends Fragment {
                         @Override
                         protected void onBindViewHolder(@NonNull MatchedTattooAdapter matchedTattooAdapter, int i, @NonNull MatchedCategory matchedCategory) {
                             GlideApp.with(getContext()).load(matchedCategory.getImageurl()).into(matchedTattooAdapter.matched_image);
-                            matchedTattooAdapter.title.setText(matchedCategory.getPostid());
+                            matchedTattooAdapter.matchedTattooIsClicked(new MatchedTattooClickInterface() {
+                                @Override
+                                public void onClick(View view, boolean isLongPressed) {
+                                    photoList = new ArrayList<>();
+                                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Posts").child(matchedCategory.getPostid());
+                                    reference.addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                           Post post = snapshot.getValue(Post.class);
+                                           photoList.add(post);
+
+
+                                        Intent intent = new Intent(getActivity(), TestPagerActivity.class);
+                                            intent.putExtra("index",0);
+                                            intent.putExtra("photoList", (Serializable) photoList);
+                                            getActivity().startActivity(intent);
+
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
+                                  //  getParentFragmentManager().beginTransaction().replace(R.id.fragment_container,matchedTattooDetail,"imageSelected").commit();
+
+                                }
+                            });
                         }
 
                         @NonNull

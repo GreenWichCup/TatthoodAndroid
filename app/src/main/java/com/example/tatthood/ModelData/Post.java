@@ -8,13 +8,15 @@ public class Post implements Serializable {
     private String description;
     private String publisher;
     private String category;
+    private String timestamp;
 
-    public Post(String postid, String postimage, String description, String publisher, String category) {
+    public Post(String postid, String postimage, String description, String publisher, String category,String timestamp) {
         this.postid = postid;
         this.postimage = postimage;
         this.description = description;
         this.publisher = publisher;
         this.category = category;
+        this.timestamp = timestamp;
 
     }
 
@@ -61,6 +63,14 @@ public class Post implements Serializable {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 }
 
