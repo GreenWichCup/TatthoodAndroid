@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-he\\values-he.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Greenwich\\.gradle\\caches\\transforms-3\\2406fd6ca714df691579fcfa27a98974\\transformed\\jetified-Android-Image-Cropper-3.1.3\\res\\values-he\\values-he.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,146,193,247,291,355,416,483,535",
+                        "endColumns": "90,46,53,43,63,60,66,51,68",
+                        "endOffsets": "141,188,242,286,350,411,478,530,599"
+                    }
+                }
+            ]
+        }
+    ]
+}

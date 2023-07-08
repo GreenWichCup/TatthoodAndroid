@@ -1,0 +1,1014 @@
+[
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_comments.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_comments.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_bg_sender.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\bg_sender.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_onboarding_item.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\onboarding_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxxhdpi_splash_screen.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxxhdpi\\splash_screen.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-anydpi-v26_splash_app_name_round.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-anydpi-v26\\splash_app_name_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxxhdpi_logo_text.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxxhdpi\\logo_text.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\raw_logo_rouge_tatthood_3.mp4.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\raw\\logo_rouge_tatthood_3.mp4"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_send.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_send.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_add_hood_dialog_layout.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\add_hood_dialog_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_request_received.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_request_received.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-hdpi_splash_screen.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-hdpi\\splash_screen.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_personal.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_personal.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_new_post_layout.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\new_post_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_splash_logo_background.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\splash_logo_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_profile.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_settings.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_content_remain.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\content_remain.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-hdpi_logo_txt_stream.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-hdpi\\logo_txt_stream.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\raw_logo_anime_rouge_gif.webm.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\raw\\logo_anime_rouge_gif.webm"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_test_pager.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_test_pager.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_studio_2.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_studio_2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxhdpi_splash_app_name_round.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxhdpi\\splash_app_name_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_welcome.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_welcome.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_social_media.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_social_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_loading_bg.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\loading_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xhdpi_logo_txt_stream.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xhdpi\\logo_txt_stream.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_check_ok.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_check_ok.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxhdpi_logo_txt_stream.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxhdpi\\logo_txt_stream.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_comment_item.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\comment_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_category_selection.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_category_selection.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxxhdpi_loading_img_placeholder.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxxhdpi\\loading_img_placeholder.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_tag.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_tag.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_user_post_swipe_item.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\user_post_swipe_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_loading_app_progress_bar.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\loading_app_progress_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_custom_etv_transp.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\custom_etv_transp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_messages.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_messages.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_error.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_error.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\xml_header_preferences.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\xml\\header_preferences.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-mdpi_needle_placehoder.jpg.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-mdpi\\needle_placehoder.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_custom_info_window.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\custom_info_window.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_search_tattoo_details.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_search_tattoo_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_saved_post.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_saved_post.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_custom_rounded_tv.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\custom_rounded_tv.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\raw_top_banner_low.mp4.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\raw\\top_banner_low.mp4"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_port_folio_post.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_port_folio_post.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_row_chat_left.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\row_chat_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_message.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\message.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_setting.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_messages.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\messages.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_hood_artist.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_hood_artist.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_alert_dialog_bg.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\alert_dialog_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_section_item_raw.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\section_item_raw.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_remove_circle.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_remove_circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_email.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_email.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_saved_post.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_saved_post.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_nav_back.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_nav_back.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_calendar.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_calendar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout-v28_container_profile_fragment.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout-v28\\container_profile_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_bg_launch.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\bg_launch.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-mdpi_splash_app_name_round.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-mdpi\\splash_app_name_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\menu_chat_menu.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\menu\\chat_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_map.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\map.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_logo_anime_rouge_tatthood_2.gif.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\logo_anime_rouge_tatthood_2.gif"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_policy.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_policy.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_user_ediit.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_user_ediit.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_post_item.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\post_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_loading_app.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_loading_app.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_options.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\options.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xhdpi_ic_banner.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xhdpi\\ic_banner.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_exit.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\exit.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_selected_category_item.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\selected_category_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\generated\\res\\pngs\\release\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_following.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_following.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xhdpi_logo_text.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xhdpi\\logo_text.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_index_category_name_item.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\index_category_name_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-mdpi_logo_txt_stream.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-mdpi\\logo_txt_stream.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_photo_item.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\photo_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_top_sheet_profile.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\top_sheet_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_status.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_status.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xhdpi_logo_v_bw.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xhdpi\\logo_v_bw.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_search_shop.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_search_shop.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_top_sheet_dialog.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\top_sheet_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_post_photo.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\post_photo.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_back_arrow.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_back_arrow.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_hood_trotters.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_hood_trotters.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_sign_up_form.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_sign_up_form.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_matched_tattoo_card_item.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\matched_tattoo_card_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_notifications.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\notifications.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_dashboard.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_maps.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_maps.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_help.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_help.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_bottom_sheet.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\bottom_sheet.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_chat.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_chat.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\menu_profile_menu.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\menu\\profile_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_profile.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_fans.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_fans.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_hood_edit.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_hood_edit.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_close.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_close.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_chat_list.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_chat_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-hdpi_logo_black_red.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-hdpi\\logo_black_red.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_reset_password.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_reset_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_bookmark_colored.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_bookmark_colored.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_human_skull.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_human_skull.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxhdpi_loading_img_placeholder.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxhdpi\\loading_img_placeholder.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_kisspng_tattoo_machine.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_kisspng_tattoo_machine.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_change_photo.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_change_photo.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_row_chat_right.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\row_chat_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_custom_iv_stream.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\custom_iv_stream.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_save_post.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_save_post.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_follower.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_follower.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_custom_edtv_sign_up.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\custom_edtv_sign_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_header_navigation_drawer.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\header_navigation_drawer.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_category_tatoo__card_items.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\category_tatoo__card_items.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_sheet_content.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\sheet_content.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xhdpi_ic_banner_foreground_homefragment.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xhdpi\\ic_banner_foreground_homefragment.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_request_received_item.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\request_received_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxxhdpi_splash_app_name_round.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxxhdpi\\splash_app_name_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_category_item_view.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\category_item_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_viewed.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_viewed.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_request_sent.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_request_sent.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_row_add_item.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\row_add_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_circle.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_baseline_account_circle_24.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_baseline_account_circle_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\anim_top_sheet_slide_in.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\anim\\top_sheet_slide_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xhdpi_splash_app_name_foreground.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xhdpi\\splash_app_name_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_user_item.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\user_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-hdpi_needle_stream_placeholder.jpg.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-hdpi\\needle_stream_placeholder.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_search.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\search.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_share.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_share.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_tattoued_guy.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_tattoued_guy.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_menu.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_sign_in_form.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_sign_in_form.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_hood_list.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_hood_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_about.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\about.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_add_hood_list.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\add_hood_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable-v24_liked.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable-v24\\liked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout-v24_product_thumbnail_card_view.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout-v24\\product_thumbnail_card_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_painter_1.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_painter_1.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xhdpi_logohomefragment.jpg.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xhdpi\\logohomefragment.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_account24.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_account24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-mdpi_logo_v_bw.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-mdpi\\logo_v_bw.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_market.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_market.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_edit.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_edit.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxhdpi_logo_text.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxhdpi\\logo_text.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_post.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_post.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable-xhdpi_logo_t_red.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable-xhdpi\\logo_t_red.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_gallery.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_gallery.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-mdpi_loading_img_placeholder.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-mdpi\\loading_img_placeholder.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-anydpi-v26_splash_logo_round.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-anydpi-v26\\splash_logo_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_section_category.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\section_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\xml_messages_preferences.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\xml\\messages_preferences.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_home.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_edit_24.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_edit_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_sign_up_detail.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_sign_up_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-hdpi_splash_app_name_foreground.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-hdpi\\splash_app_name_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_tattoo_search.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_tattoo_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\menu_home_menu.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\menu\\home_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_hood_map.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_hood_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_settings_activity.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\settings_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_not_viewed.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_not_viewed.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_splash_ink.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_splash_ink.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxxhdpi_logo_txt_stream.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxxhdpi\\logo_txt_stream.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_friend_requests.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_friend_requests.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_cancel.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_cancel.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xhdpi_splash_app_name_round.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xhdpi\\splash_app_name_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_friend_chat_item.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\friend_chat_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxxhdpi_splash_app_name_foreground.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxxhdpi\\splash_app_name_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-hdpi_splash_app_name_round.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-hdpi\\splash_app_name_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_bg_launch_activity.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\bg_launch_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_bottom_custom_border.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\bottom_custom_border.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_edit_profile.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_edit_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_contact_list_fragment.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_contact_list_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_tattoo_studio.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_tattoo_studio.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_arrow_down.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_arrow_down.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_needle.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_needle.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout-v24_activity_sell.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout-v24\\activity_sell.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_add_photo.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_add_photo.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\anim_top_wave.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\anim\\top_wave.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_home.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_request_sent_item.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\request_sent_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxhdpi_logo_v_bw.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxhdpi\\logo_v_bw.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_new_publication.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_new_publication.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\anim_top_sheet_slide_out.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\anim\\top_sheet_slide_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_hood_spinner_layout.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\hood_spinner_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_tv_status_selector_item.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\tv_status_selector_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_grid.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_grid.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_like.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_like.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_search_users.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_search_users.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_pictures.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\pictures.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_user_sign_up_fragment.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\user_sign_up_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-mdpi_logo_text.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-mdpi\\logo_text.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_edit_post.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_edit_post.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_container_home_fragment.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\container_home_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-hdpi_logo_v_bw.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-hdpi\\logo_v_bw.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_comment.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_comment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_bg_launch.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_bg_launch.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_is_viewed.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_is_viewed.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_bottom_nav_icon.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\bottom_nav_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxhdpi_splash_app_name_foreground.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxhdpi\\splash_app_name_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-anydpi-v26_ic_banner.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_banner.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-mdpi_splash_app_name_foreground.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-mdpi\\splash_app_name_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_main_search.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_main_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_tattoo_machine__1_.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_tattoo_machine__1_.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_check.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_check.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_sync.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\sync.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_tatthood_gif_logo.gif.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\tatthood_gif_logo.gif"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_splash_app_name_background.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\splash_app_name_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable-v24_custom_background.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable-v24\\custom_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_dollar_symbol.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_dollar_symbol.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_overview.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_overview.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-hdpi_loading_img_placeholder.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-hdpi\\loading_img_placeholder.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_account_circle.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_account_circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_port_folio_main.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_port_folio_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_multi_profile.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\multi_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\menu_bottom_navigation.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\menu\\bottom_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_cancel.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\cancel.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_activity_start_app.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\activity_start_app.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxxhdpi_logo_v_bw.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxxhdpi\\logo_v_bw.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_stream_filter.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_stream_filter.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_index_category_filter.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_index_category_filter.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_post_image.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_post_image.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\anim_bottom_animation.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\anim\\bottom_animation.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xhdpi_loading_img_placeholder.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xhdpi\\loading_img_placeholder.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_stream_item.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\stream_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_fragment_search_tattoo.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\fragment_search_tattoo.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_store.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\store.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_new_post_tag_selected.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\new_post_tag_selected.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_near_map.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\near_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_bg_receiver.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\bg_receiver.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_earth.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_earth.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-hdpi_logo_text.png.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-hdpi\\logo_text.png"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_location.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_message.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_message.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_delete.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_delete.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\xml_sync_preferences.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\xml\\sync_preferences.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_padlock.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_padlock.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_request_friend.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_request_friend.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\layout_raw_bottom_sheet_comment.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\layout\\raw_bottom_sheet_comment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\build\\intermediates\\merged_res\\release\\drawable_ic_brick_wall.xml.flat",
+        "source": "C:\\Users\\Greenwich\\AndroidStudioProjects\\TattHood_21__09_15\\app\\src\\main\\res\\drawable\\ic_brick_wall.xml"
+    }
+]

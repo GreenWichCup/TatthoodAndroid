@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <plurals name="mtrl_badge_content_description">
+    <item quantity="one">%d nouvelle notification</item>
+    <item quantity="other">%d nouvelles notifications</item>
+  </plurals>
+    <string name="NoHoodInfo">Aucune</string>
+    <string msgid="5976598919945601918" name="abc_action_bar_home_description">"Revenir à l\'accueil"</string>
+    <string msgid="8388173803310557296" name="abc_action_bar_up_description">"Revenir en haut de la page"</string>
+    <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"Autres options"</string>
+    <string msgid="4692188335987374352" name="abc_action_mode_done">"OK"</string>
+    <string msgid="1189761859438369441" name="abc_activity_chooser_view_see_all">"Tout afficher"</string>
+    <string msgid="2165779757652331008" name="abc_activitychooserview_choose_application">"Sélectionner une application"</string>
+    <string msgid="4215997306490295099" name="abc_capital_off">"NON"</string>
+    <string msgid="884982626291842264" name="abc_capital_on">"OUI"</string>
+    <string msgid="8833365367933412986" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="2223301931652355242" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="838001238306846836" name="abc_menu_delete_shortcut_label">"supprimer"</string>
+    <string msgid="7986526966204849475" name="abc_menu_enter_shortcut_label">"entrée"</string>
+    <string msgid="375214403600139847" name="abc_menu_function_shortcut_label">"Fonction+"</string>
+    <string msgid="4192209724446364286" name="abc_menu_meta_shortcut_label">"Méta+"</string>
+    <string msgid="4741552369836443843" name="abc_menu_shift_shortcut_label">"Maj+"</string>
+    <string msgid="5473865519181928982" name="abc_menu_space_shortcut_label">"espace"</string>
+    <string msgid="6180552449598693998" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="5520303668377388990" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="7208076849092622260" name="abc_search_hint">"Rechercher…"</string>
+    <string msgid="3741173234950517107" name="abc_searchview_description_clear">"Effacer la requête"</string>
+    <string msgid="693312494995508443" name="abc_searchview_description_query">"Requête de recherche"</string>
+    <string msgid="3417662926640357176" name="abc_searchview_description_search">"Rechercher"</string>
+    <string msgid="1486535517437947103" name="abc_searchview_description_submit">"Envoyer la requête"</string>
+    <string msgid="2293578557972875415" name="abc_searchview_description_voice">"Recherche vocale"</string>
+    <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Partager avec"</string>
+    <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Partager avec <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Réduire"</string>
+    <string name="about_us">Nous connaitre</string>
+    <string name="add">+ Ajouter</string>
+    <string name="add_artist">Ajouter artiste</string>
+    <string name="add_friend">Ajouter ami</string>
+    <string name="add_hood">Ajouter hood</string>
+    <string name="add_photo"><u>Ajouter photo</u></string>
+    <string name="add_tags">Ajouter vos tags</string>
+    <string name="all">Tout</string>
+    <string name="almost_there">Vous y êtes presque!</string>
+    <string name="already_an_account_log_in">Déjà un compte ? Se connecter</string>
+    <string name="artist">Artiste</string>
+    <string name="artist_definition">Choisissez \"Artiste\" si vous êtes un artiste tattoueur</string>
+    <string name="bottomsheet_action_expand_halfway">Développer en entier</string>
+    <string name="cancel_changes">Annuler</string>
+    <string name="categories">Catégories</string>
+    <string name="category_list">Liste des catégories</string>
+    <string name="character_counter_content_description">Caractères saisis %1$d sur %2$d</string>
+    <string name="character_counter_overflowed_content_description">Nombre maximal de caractères dépassé : %1$d sur %2$d</string>
+    <string name="choose_your_username">Nom d\'utilisateur</string>
+    <string name="city">Ville</string>
+    <string name="clear_text_end_icon_content_description">Effacer le texte</string>
+    <string name="comment_here">Ecrivez ici...</string>
+    <string name="comments">Commentaires</string>
+    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Activer</string>
+    <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s ne fonctionnera pas tant que vous n\'aurez pas activé les services Google Play.</string>
+    <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Activer les services Google Play</string>
+    <string msgid="7153882981874058840" name="common_google_play_services_install_button">Installer</string>
+    <string name="common_google_play_services_install_text">%1$s ne fonctionnera pas sans les services Google Play, qui ne sont pas installés sur votre appareil.</string>
+    <string msgid="7215213145546190223" name="common_google_play_services_install_title">Installer les services Google Play</string>
+    <string name="common_google_play_services_notification_channel_name">Disponibilité des services Google Play</string>
+    <string name="common_google_play_services_notification_ticker">Erreur liée aux services Google Play</string>
+    <string name="common_google_play_services_unknown_issue">L\'application %1$s rencontre des problèmes avec les services Google Play. Veuillez réessayer.</string>
+    <string name="common_google_play_services_unsupported_text">%1$s ne fonctionnera pas sans les services Google Play, qui ne sont pas compatibles avec votre appareil.</string>
+    <string msgid="6556509956452265614" name="common_google_play_services_update_button">Mettre à jour</string>
+    <string msgid="9053896323427875356" name="common_google_play_services_update_text">%1$s ne fonctionnera pas tant que vous n\'aurez pas mis à jour les services Google Play.</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">Mettre à jour les services Google Play</string>
+    <string name="common_google_play_services_updating_text">%1$s ne fonctionnera pas sans les services Google Play, qui sont en cours de mise à jour.</string>
+    <string name="common_google_play_services_wear_update_text">La nouvelle version des services Google Play est nécessaire. Elle sera bientôt installée automatiquement.</string>
+    <string name="common_open_on_phone">Ouvrir sur le téléphone</string>
+    <string name="common_signin_button_text">Se connecter</string>
+    <string name="common_signin_button_text_long">Se connecter avec Google</string>
+    <string name="confirm_password">Confirmer mot de passe</string>
+    <string name="contact_request">Demande de contact</string>
+    <string msgid="3209159573327985035" name="copy">"Copier"</string>
+    <string name="country">Pays</string>
+    <string name="create_a_new_account">Pas encore inscrit? Créer un compte.</string>
+    <string name="create_password">Mot de passe</string>
+    <string name="crop_image_activity_no_permissions">Annulation, il manque des permissions requises</string>
+    <string name="crop_image_activity_title"/>
+    <string name="crop_image_menu_crop">Redimensionner</string>
+    <string name="dashboard">Tableau de bord</string>
+    <string name="description">Déscription du tattouage</string>
+    <string name="edit_profile">Editer profile</string>
+    <string name="email">Email</string>
+    <string name="email_incorrect">Email non valide</string>
+    <string name="email_or_username">Email</string>
+    <string name="enter_your_email_address">Email</string>
+    <string name="enter_your_username">Nom</string>
+    <string name="error_icon_content_description">Erreur</string>
+    <string msgid="1234962710353108940" name="expand_button_title">"Paramètres avancés"</string>
+    <string name="exposed_dropdown_menu_content_description">Afficher le menu déroulant</string>
+    <string name="fcm_fallback_notification_channel_label">Divers</string>
+    <string name="forgot_password">Mot de passe oublié?</string>
+    <string name="french">Français</string>
+    <string msgid="9521340570209730" name="gcm_fallback_notification_channel_label">"Divers"</string>
+    <string name="home">Stream</string>
+    <string name="hood">Hood</string>
+    <string name="hood_definition">Choisissez \"Hood\" si vous êtes un studio de tattouage</string>
+    <string name="hood_information">Informations Hood </string>
+    <string name="hood_name">Nom du Hood</string>
+    <string name="hood_trotter">Hood trotteur</string>
+    <string name="hoodtrotters_definition">Choisissez \"Hood trotteur\" si vous tattouez dans plusieurs hood</string>
+    <string name="how_many_tattoo_do_you_have">Combien de tattouages avez vous ?</string>
+    <string name="i_agree">J\'accepte</string>
+    <string name="ic_flip_24">Retourner</string>
+    <string name="ic_flip_24_horizontally">Retourner horizontalement</string>
+    <string name="ic_flip_24_vertically">Retourner verticalement</string>
+    <string name="ic_rotate_left_24">Pivoter à gauche</string>
+    <string name="ic_rotate_right_24">Pivoter à droite</string>
+    <string name="icon_content_description">Icône de la boîte de dialogue</string>
+    <string name="incorrect_password">Mot de passe incorrecte</string>
+    <string name="item_view_role_description">Tabulation</string>
+    <string name="language">English</string>
+    <string name="last_seen">"Dernière connexion "</string>
+    <string name="likes">Liker</string>
+    <string name="log_out" translatable="false">Se déconnecter</string>
+    <string name="logout">Se déconnecter</string>
+    <string name="logout_app">Se déconnecter</string>
+    <string name="map">Carte</string>
+    <string name="market">Boutique</string>
+    <string name="material_clock_toggle_content_description">Sélectionner le format AM ou PM</string>
+    <string name="material_hour_selection">Sélectionnez une heure</string>
+    <string name="material_hour_suffix">%1$s h</string>
+    <string name="material_minute_selection">Sélectionner des minutes</string>
+    <string name="material_minute_suffix">%1$s min</string>
+    <string name="material_timepicker_am">AM</string>
+    <string name="material_timepicker_clock_mode_description">Passer en mode horloge pour la saisie de l\'heure.</string>
+    <string name="material_timepicker_hour">Heure</string>
+    <string name="material_timepicker_minute">Minute</string>
+    <string name="material_timepicker_pm">PM</string>
+    <string name="material_timepicker_select_time">Sélectionner l\'heure</string>
+    <string name="material_timepicker_text_input_mode_description">Passer en mode saisie de texte pour la saisie de l\'heure.</string>
+    <string name="mtrl_badge_numberless_content_description">Nouvelle notification</string>
+    <string name="mtrl_chip_close_icon_content_description">Supprimer %1$s</string>
+    <string name="mtrl_exceed_max_badge_number_content_description">Plus de %1$d nouvelles notifications</string>
+    <string name="mtrl_picker_a11y_next_month">Passer au mois suivant</string>
+    <string name="mtrl_picker_a11y_prev_month">Passer au mois précédent</string>
+    <string name="mtrl_picker_announce_current_selection">Sélection actuelle : %1$s</string>
+    <string name="mtrl_picker_confirm">@android:string/ok</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">Sélectionnez une date</string>
+    <string name="mtrl_picker_date_header_unselected">Date sélectionnée</string>
+    <string name="mtrl_picker_day_of_week_column_header">Colonne du jour de la semaine : %1$s</string>
+    <string name="mtrl_picker_invalid_format">Format incorrect.</string>
+    <string name="mtrl_picker_invalid_format_example">Exemple : %1$s</string>
+    <string name="mtrl_picker_invalid_format_use">Utiliser %1$s</string>
+    <string name="mtrl_picker_invalid_range">Plage non valide.</string>
+    <string name="mtrl_picker_navigate_to_year_description">Accéder à l\'année %1$s</string>
+    <string name="mtrl_picker_out_of_range">Hors limite : %1$s</string>
+    <string name="mtrl_picker_range_header_only_end_selected">Date de début – %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – Date de fin</string>
+    <string name="mtrl_picker_range_header_selected">%1$s - %2$s</string>
+    <string name="mtrl_picker_range_header_title">Sélectionnez une période</string>
+    <string name="mtrl_picker_range_header_unselected">Date de début – Date de fin</string>
+    <string name="mtrl_picker_save">Enregistrer</string>
+    <string name="mtrl_picker_text_input_date_hint">Date</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">Date de fin</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">Date de début</string>
+    <string name="mtrl_picker_text_input_day_abbr">j</string>
+    <string name="mtrl_picker_text_input_month_abbr">m</string>
+    <string name="mtrl_picker_text_input_year_abbr">a</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">Passer au mode de saisie Agenda</string>
+    <string name="mtrl_picker_toggle_to_day_selection">Appuyer pour sélectionner un jour</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">Passer au mode de saisie Texte</string>
+    <string name="mtrl_picker_toggle_to_year_selection">Appuyer pour sélectionner une année</string>
+    <string name="my_hood">Mon Hood</string>
+    <string msgid="6301633601645100427" name="nav_app_bar_navigate_up_description">"Remonter"</string>
+    <string msgid="7456070600745802113" name="nav_app_bar_open_drawer_description">"Ouvrir le panneau de navigation"</string>
+    <string name="new_account">Nouveau compte</string>
+    <string name="next">Préc.</string>
+    <string msgid="478774118347071097" name="not_set">"Non définie"</string>
+    <string name="notification_request">Salut! J\'amerais t\'ajouter à ma liste de contacts.</string>
+    <string name="offline">Hors ligne</string>
+    <string name="online">En ligne</string>
+    <string name="password">Mot de passe</string>
+    <string name="password_not_matching">Les mots de passe sont differents</string>
+    <string name="password_toggle_content_description">Afficher le mot de passe</string>
+    <string name="pending">En attente...</string>
+    <string name="personal_tattoo">Tattouage personnel</string>
+    <string name="pick_image_intent_chooser_title">Sélectionner la source</string>
+    <string name="policy">Cette politique de confidentialité décrit comment vos informations personnelles sont collectées, utilisées et partagées lorsque vous visitez ou effectuez un achat auprès de Tatthood.</string>
+    <string name="policyTitle">Tatthood termes et conditions d\'utilisation</string>
+    <string name="post">Nouveau post</string>
+    <string msgid="7961817945132860002" name="preference_copied">"\"<ns1:g id="SUMMARY">%1$s</ns1:g>\" copié dans le presse-papier."</string>
+    <string name="preferred_style">style preferres</string>
+    <string name="previous">Suiv.</string>
+    <string name="privacy_policy"><u>Politique de confidentialité</u></string>
+    <string name="profile">Profil</string>
+    <string name="profile_settings">Paramètres</string>
+    <string name="remember_me">Se souvenir de moi</string>
+    <string name="remove_hood">Effacer Hood</string>
+    <string name="save_changes">Sauvegarder</string>
+    <string name="search">Chercher</string>
+    <string name="search_categories">Rechercher des categories</string>
+    <string msgid="6264217191555673260" name="search_menu_title">"Rechercher"</string>
+    <string name="seller">Vendeur</string>
+    <string name="seller_definition">"Choisissez \"Vendeur\" si vous êtes un commercant "</string>
+    <string name="settings">Réglages</string>
+    <string name="share_picture">Partager</string>
+    <string name="sign_in">Se connecter</string>
+    <string name="sign_up">S\'enregistrer</string>
+    <string name="state">Province/Etat</string>
+    <string name="status">Status</string>
+    <string name="status_account">Qui êtes vous?</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="store_name">Nom du magasin</string>
+    <string name="street_name">Nom de la rue</string>
+    <string msgid="5190123168583152844" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>, <ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string name="tattoo_preferences">Préférences Tattouages</string>
+    <string name="tattooed">Tattoué</string>
+    <string name="tattooed_definition">Choisissez \"Tattoué\" si vous avez  déjà un tattouage</string>
+    <string name="title">Titre</string>
+    <string name="title_activity_maps">Carte</string>
+    <string name="type_a_message">Ecrivez ici...</string>
+    <string name="unread_messages">Non lus :</string>
+    <string name="upload_error">Erreur, echec de telechargement!</string>
+    <string name="user_information">Informations utilisateur</string>
+    <string name="username">Nom d\'utilisateur</string>
+    <string name="username_too_short">Nom trop court</string>
+    <string name="username_used">Nom d\'utilisateur déjà existant</string>
+    <string msgid="5138405918326871307" name="v7_preference_off">"DÉSACTIVÉ"</string>
+    <string msgid="27351710992731591" name="v7_preference_on">"ACTIVÉ"</string>
+    <string name="virgin_skin">Peau vierge</string>
+    <string name="virginskin_definition">Choisissez \"Peau vierge\" si vous n\'avez aucun tatouages</string>
+    <string name="visit_hood_profile">Voir profil </string>
+    <string name="welcome">Bienvenue</string>
+    <string name="your_hood">Votre Hood</string>
+    <string name="zip_code">Code postal</string>
+</resources>

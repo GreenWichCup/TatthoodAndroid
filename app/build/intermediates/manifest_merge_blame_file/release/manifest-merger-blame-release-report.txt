@@ -1,0 +1,651 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.Tatthood.Tatthood"
+4    android:versionCode="11"
+5    android:versionName="11.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml
+10    <!--
+11         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+12         Google Maps Android API v2, but you must specify either coarse or fine
+13         location permissions for the "MyLocation" functionality.
+14    -->
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:10:5-79
+15-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:10:22-76
+16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+16-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:11:5-81
+16-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:11:22-78
+17    <uses-permission android:name="android.permission.INTERNET" />
+17-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:12:5-67
+17-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:12:22-64
+18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+18-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:13:5-79
+18-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:13:22-76
+19    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+19-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:14:5-80
+19-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:14:22-77
+20    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+20-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:15:5-81
+20-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:15:22-78
+21    <uses-permission android:name="android.permission.CAMERA" />
+21-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:16:5-65
+21-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:16:22-62
+22
+23    <queries>
+23-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:11:5-22:15
+24        <intent>
+24-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:12:9-18:18
+25            <action android:name="android.intent.action.GET_CONTENT" />
+25-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:13:13-72
+25-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:13:21-69
+26
+27            <category android:name="android.intent.category.OPENABLE" />
+27-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:15:13-73
+27-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:15:23-70
+28
+29            <data android:mimeType="*/*" />
+29-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:17:13-44
+29-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:17:19-41
+30        </intent>
+31        <intent>
+31-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:19:9-21:18
+32            <action android:name="android.media.action.IMAGE_CAPTURE" />
+32-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:20:13-73
+32-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:20:21-70
+33        </intent>
+34        <!-- Needs to be explicitly declared on Android R+ -->
+35        <package android:name="com.google.android.apps.maps" />
+35-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Greenwich\.gradle\caches\transforms-3\5f919bd97f580ad769fba21046f364d0\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:33:9-64
+35-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Greenwich\.gradle\caches\transforms-3\5f919bd97f580ad769fba21046f364d0\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:33:18-61
+36    </queries>
+37
+38    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+38-->[com.google.firebase:firebase-messaging-directboot:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\ad2b7c27eeccd0157d17196db809c34e\transformed\jetified-firebase-messaging-directboot-23.0.0\AndroidManifest.xml:24:5-68
+38-->[com.google.firebase:firebase-messaging-directboot:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\ad2b7c27eeccd0157d17196db809c34e\transformed\jetified-firebase-messaging-directboot-23.0.0\AndroidManifest.xml:24:22-65
+39    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+39-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\04a8ee5b62b2d027defbfdfe71886768\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:25:5-82
+39-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\04a8ee5b62b2d027defbfdfe71886768\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:25:22-79
+40
+41    <uses-feature
+41-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Greenwich\.gradle\caches\transforms-3\5f919bd97f580ad769fba21046f364d0\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:26:5-28:35
+42        android:glEsVersion="0x00020000"
+42-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Greenwich\.gradle\caches\transforms-3\5f919bd97f580ad769fba21046f364d0\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:27:9-41
+43        android:required="true" />
+43-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Greenwich\.gradle\caches\transforms-3\5f919bd97f580ad769fba21046f364d0\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:28:9-32
+44
+45    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+45-->[com.google.android.gms:play-services-measurement:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\8edd119f172d33bf3b4bd2b9e7d7aae4\transformed\jetified-play-services-measurement-20.0.0\AndroidManifest.xml:26:5-110
+45-->[com.google.android.gms:play-services-measurement:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\8edd119f172d33bf3b4bd2b9e7d7aae4\transformed\jetified-play-services-measurement-20.0.0\AndroidManifest.xml:26:22-107
+46
+47    <application
+47-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:18:5-138:19
+48        android:allowBackup="true"
+48-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:19:9-35
+49        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+49-->[androidx.core:core:1.7.0] C:\Users\Greenwich\.gradle\caches\transforms-3\919b1e91a07ddbf34272a620f8cba519\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+50        android:icon="@mipmap/logo_v_bw"
+50-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:20:9-41
+51        android:label="@string/app_name"
+51-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:21:9-41
+52        android:requestLegacyExternalStorage="true"
+52-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:22:9-52
+53        android:roundIcon="@mipmap/ic_launcher_round"
+53-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:23:9-54
+54        android:supportsRtl="true"
+54-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:24:9-35
+55        android:theme="@style/AppTheme" >
+55-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:25:9-40
+56        <activity
+56-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:26:9-28:39
+57            android:name="com.Tatthood.Tatthood.Activity.PolicyActivity"
+57-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:27:13-52
+58            android:exported="true" />
+58-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:28:13-36
+59        <activity
+59-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:29:9-93
+60            android:name="com.Tatthood.Tatthood.Activity.FriendRequestsActivity"
+60-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:29:19-66
+61            android:exported="true" />
+61-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:29:67-90
+62
+63        <service
+63-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:31:9-38:19
+64            android:name="com.Tatthood.Tatthood.Modules.MyFirebaseMessagingService"
+64-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:32:13-63
+65            android:directBootAware="true"
+65-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:33:13-43
+66            android:exported="false" >
+66-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:34:13-37
+67            <intent-filter>
+67-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:35:13-37:29
+68                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+68-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:36:17-78
+68-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:36:25-75
+69            </intent-filter>
+70        </service>
+71
+72        <meta-data
+72-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:40:9-42:55
+73            android:name="com.google.android.geo.API_KEY"
+73-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:41:13-58
+74            android:value="@string/google_maps_key" />
+74-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:42:13-52
+75
+76        <activity
+76-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:44:9-47:38
+77            android:name="com.Tatthood.Tatthood.Activity.PersonalTattooActivity"
+77-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:45:13-60
+78            android:exported="true"
+78-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:47:13-36
+79            android:screenOrientation="portrait" />
+79-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:46:13-49
+80        <activity
+80-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:48:9-51:52
+81            android:name="com.Tatthood.Tatthood.Activity.SavedPostActivity"
+81-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:50:13-55
+82            android:exported="true"
+82-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:49:13-36
+83            android:screenOrientation="portrait" />
+83-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:51:13-49
+84        <activity
+84-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:52:9-56:55
+85            android:name="com.Tatthood.Tatthood.Activity.StartAppActivity"
+85-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:54:13-54
+86            android:exported="true"
+86-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:53:13-36
+87            android:screenOrientation="portrait"
+87-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:55:13-49
+88            android:windowSoftInputMode="adjustPan" />
+88-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:56:13-52
+89        <activity
+89-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:57:9-60:52
+90            android:name="com.Tatthood.Tatthood.Activity.LoadingAnimActivity"
+90-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:59:13-57
+91            android:exported="true"
+91-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:58:13-36
+92            android:screenOrientation="portrait" />
+92-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:60:13-49
+93        <activity
+93-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:61:9-64:52
+94            android:name="com.Tatthood.Tatthood.Activity.SellActivity"
+94-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:63:13-50
+95            android:exported="true"
+95-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:62:13-36
+96            android:screenOrientation="portrait" />
+96-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:64:13-49
+97        <activity
+97-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:65:9-69:58
+98            android:name="com.Tatthood.Tatthood.Activity.EditProfileActivity"
+98-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:67:13-57
+99            android:exported="true"
+99-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:66:13-36
+100            android:screenOrientation="portrait"
+100-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:68:13-49
+101            android:windowSoftInputMode="adjustResize" />
+101-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:69:13-55
+102        <activity
+102-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:70:9-74:55
+103            android:name="com.Tatthood.Tatthood.OnBoarding.CategorySelectionActivity"
+103-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:72:13-65
+104            android:exported="true"
+104-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:71:13-36
+105            android:screenOrientation="portrait"
+105-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:73:13-49
+106            android:windowSoftInputMode="adjustPan" />
+106-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:74:13-52
+107        <activity
+107-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:75:9-78:52
+108            android:name="com.Tatthood.Tatthood.Activity.StreamPostDetailActivity"
+108-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:77:13-62
+109            android:exported="true"
+109-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:76:13-36
+110            android:screenOrientation="portrait" />
+110-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:78:13-49
+111        <activity
+111-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:79:9-82:52
+112            android:name="com.Tatthood.Tatthood.Activity.CommentsActivity"
+112-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:81:13-54
+113            android:exported="true"
+113-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:80:13-36
+114            android:screenOrientation="portrait" />
+114-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:82:13-49
+115        <activity
+115-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:83:9-87:55
+116            android:name="com.Tatthood.Tatthood.Activity.PostActivity"
+116-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:85:13-50
+117            android:exported="true"
+117-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:84:13-36
+118            android:screenOrientation="portrait"
+118-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:86:13-49
+119            android:windowSoftInputMode="adjustPan" />
+119-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:87:13-52
+120        <activity
+120-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:88:9-91:59
+121            android:name="com.canhub.cropper.CropImageActivity"
+121-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:90:13-64
+122            android:exported="true"
+122-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:89:13-36
+123            android:theme="@style/Base.Theme.AppCompat" />
+123-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:91:13-56
+124        <activity
+124-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:92:9-96:52
+125            android:name="com.Tatthood.Tatthood.Activity.MapsActivity"
+125-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:94:13-50
+126            android:exported="true"
+126-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:93:13-36
+127            android:label="@string/title_activity_maps"
+127-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:95:13-56
+128            android:screenOrientation="portrait" />
+128-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:96:13-49
+129        <activity
+129-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:97:9-100:52
+130            android:name="com.Tatthood.Tatthood.Activity.HomeActivity"
+130-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:99:13-50
+131            android:exported="true"
+131-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:98:13-36
+132            android:screenOrientation="portrait" />
+132-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:100:13-49
+133        <activity
+133-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:101:9-104:52
+134            android:name="com.Tatthood.Tatthood.Activity.ChatActivity"
+134-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:103:13-50
+135            android:exported="true"
+135-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:102:13-36
+136            android:screenOrientation="portrait" />
+136-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:104:13-49
+137        <activity
+137-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:105:9-108:52
+138            android:name="com.Tatthood.Tatthood.Activity.TaggedTattooDetailsActivity"
+138-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:107:13-65
+139            android:exported="true"
+139-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:106:13-36
+140            android:screenOrientation="portrait" />
+140-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:108:13-49
+141        <activity
+141-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:109:9-112:52
+142            android:name="com.Tatthood.Tatthood.Activity.ResetPassword"
+142-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:111:13-51
+143            android:exported="true"
+143-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:110:13-36
+144            android:screenOrientation="portrait" />
+144-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:112:13-49
+145        <activity
+145-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:113:9-117:55
+146            android:name="com.Tatthood.Tatthood.Activity.EditPostActivity"
+146-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:115:13-54
+147            android:exported="true"
+147-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:114:13-36
+148            android:screenOrientation="portrait"
+148-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:116:13-49
+149            android:windowSoftInputMode="adjustPan" />
+149-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:117:13-52
+150        <activity
+150-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:118:9-122:52
+151            android:name="com.Tatthood.Tatthood.SettingsActivity"
+151-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:120:13-45
+152            android:exported="true"
+152-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:119:13-36
+153            android:label="@string/title_activity_settings"
+153-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:121:13-60
+154            android:screenOrientation="portrait" />
+154-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:122:13-49
+155        <activity
+155-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:123:9-133:20
+156            android:name="com.Tatthood.Tatthood.Activity.BgLaunchActivity"
+156-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:125:13-54
+157            android:exported="true"
+157-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:124:13-36
+158            android:screenOrientation="portrait"
+158-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:126:13-49
+159            android:theme="@style/loading_theme" >
+159-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:127:13-49
+160            <intent-filter>
+160-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:128:13-132:29
+161                <action android:name="android.intent.action.MAIN" />
+161-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:129:17-69
+161-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:129:25-66
+162
+163                <category android:name="android.intent.category.LAUNCHER" />
+163-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:131:17-77
+163-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:131:27-74
+164            </intent-filter>
+165        </activity>
+166        <activity
+166-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:134:9-137:52
+167            android:name="com.Tatthood.Tatthood.Activity.PortFolioActivity"
+167-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:136:13-55
+168            android:exported="true"
+168-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:135:13-36
+169            android:screenOrientation="portrait" />
+169-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:137:13-49
+170
+171        <provider
+171-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:25:9-33:20
+172            android:name="com.canhub.cropper.CropFileProvider"
+172-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:26:13-63
+173            android:authorities="com.Tatthood.Tatthood.cropper.fileprovider"
+173-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:27:13-72
+174            android:exported="false"
+174-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:28:13-37
+175            android:grantUriPermissions="true" >
+175-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:29:13-47
+176            <meta-data
+176-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:30:13-32:62
+177                android:name="android.support.FILE_PROVIDER_PATHS"
+177-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:31:17-67
+178                android:resource="@xml/library_file_paths" />
+178-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:32:17-59
+179        </provider>
+180
+181        <activity
+181-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:27:9-44:20
+182            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+182-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:28:13-80
+183            android:excludeFromRecents="true"
+183-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:29:13-46
+184            android:exported="true"
+184-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:30:13-36
+185            android:launchMode="singleTask"
+185-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:31:13-44
+186            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+186-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:32:13-72
+187            <intent-filter>
+187-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:33:13-43:29
+188                <action android:name="android.intent.action.VIEW" />
+188-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:34:17-69
+188-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:34:25-66
+189
+190                <category android:name="android.intent.category.DEFAULT" />
+190-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:36:17-76
+190-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:36:27-73
+191                <category android:name="android.intent.category.BROWSABLE" />
+191-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:37:17-78
+191-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:37:27-75
+192
+193                <data
+193-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:17:13-44
+194                    android:host="firebase.auth"
+195                    android:path="/"
+196                    android:scheme="genericidp" />
+197            </intent-filter>
+198        </activity>
+199        <activity
+199-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:45:9-62:20
+200            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+200-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:46:13-79
+201            android:excludeFromRecents="true"
+201-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:47:13-46
+202            android:exported="true"
+202-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:48:13-36
+203            android:launchMode="singleTask"
+203-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:49:13-44
+204            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+204-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:50:13-72
+205            <intent-filter>
+205-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:51:13-61:29
+206                <action android:name="android.intent.action.VIEW" />
+206-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:34:17-69
+206-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:34:25-66
+207
+208                <category android:name="android.intent.category.DEFAULT" />
+208-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:36:17-76
+208-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:36:27-73
+209                <category android:name="android.intent.category.BROWSABLE" />
+209-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:37:17-78
+209-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:37:27-75
+210
+211                <data
+211-->[com.github.CanHub:Android-Image-Cropper:3.1.3] C:\Users\Greenwich\.gradle\caches\transforms-3\2406fd6ca714df691579fcfa27a98974\transformed\jetified-Android-Image-Cropper-3.1.3\AndroidManifest.xml:17:13-44
+212                    android:host="firebase.auth"
+213                    android:path="/"
+214                    android:scheme="recaptcha" />
+215            </intent-filter>
+216        </activity>
+217
+218        <service
+218-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:64:9-73:19
+219            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+219-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:65:13-101
+220            android:enabled="true"
+220-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:66:13-35
+221            android:exported="false" >
+221-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:67:13-37
+222            <intent-filter>
+222-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:68:13-72:29
+223                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+223-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:69:17-89
+223-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:69:25-86
+224
+225                <category android:name="android.intent.category.DEFAULT" />
+225-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:36:17-76
+225-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:36:27-73
+226            </intent-filter>
+227        </service>
+228        <service
+228-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:74:9-80:19
+229            android:name="com.google.firebase.components.ComponentDiscoveryService"
+229-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:75:13-84
+230            android:directBootAware="true"
+230-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\45b4a080f8d120803c4464eae4da744b\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
+231            android:exported="false" >
+231-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:76:13-37
+232            <meta-data
+232-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:77:13-79:85
+233                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+233-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:78:17-109
+234                android:value="com.google.firebase.components.ComponentRegistrar" />
+234-->[com.google.firebase:firebase-auth:20.0.4] C:\Users\Greenwich\.gradle\caches\transforms-3\dbd04215efe6fd36bf11b192eb2e96a0\transformed\jetified-firebase-auth-20.0.4\AndroidManifest.xml:79:17-82
+235            <meta-data
+235-->[com.google.firebase:firebase-database:20.0.3] C:\Users\Greenwich\.gradle\caches\transforms-3\18cfd55cf106be79d89b3c538ab5de5a\transformed\jetified-firebase-database-20.0.3\AndroidManifest.xml:32:13-34:85
+236                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+236-->[com.google.firebase:firebase-database:20.0.3] C:\Users\Greenwich\.gradle\caches\transforms-3\18cfd55cf106be79d89b3c538ab5de5a\transformed\jetified-firebase-database-20.0.3\AndroidManifest.xml:33:17-109
+237                android:value="com.google.firebase.components.ComponentRegistrar" />
+237-->[com.google.firebase:firebase-database:20.0.3] C:\Users\Greenwich\.gradle\caches\transforms-3\18cfd55cf106be79d89b3c538ab5de5a\transformed\jetified-firebase-database-20.0.3\AndroidManifest.xml:34:17-82
+238            <meta-data
+238-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\0a7b074b652d95014de176cc9faae700\transformed\jetified-firebase-storage-20.0.0\AndroidManifest.xml:33:13-35:85
+239                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+239-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\0a7b074b652d95014de176cc9faae700\transformed\jetified-firebase-storage-20.0.0\AndroidManifest.xml:34:17-107
+240                android:value="com.google.firebase.components.ComponentRegistrar" />
+240-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\0a7b074b652d95014de176cc9faae700\transformed\jetified-firebase-storage-20.0.0\AndroidManifest.xml:35:17-82
+241            <meta-data
+241-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\04a8ee5b62b2d027defbfdfe71886768\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:52:13-54:85
+242                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+242-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\04a8ee5b62b2d027defbfdfe71886768\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:53:17-119
+243                android:value="com.google.firebase.components.ComponentRegistrar" />
+243-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\04a8ee5b62b2d027defbfdfe71886768\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:54:17-82
+244            <meta-data
+244-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\035d24a8374ef20d5e3a2716503b72a5\transformed\jetified-firebase-datatransport-18.0.0\AndroidManifest.xml:28:13-30:85
+245                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+245-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\035d24a8374ef20d5e3a2716503b72a5\transformed\jetified-firebase-datatransport-18.0.0\AndroidManifest.xml:29:17-115
+246                android:value="com.google.firebase.components.ComponentRegistrar" />
+246-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\035d24a8374ef20d5e3a2716503b72a5\transformed\jetified-firebase-datatransport-18.0.0\AndroidManifest.xml:30:17-82
+247            <meta-data
+247-->[com.google.android.gms:play-services-measurement-api:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\0ef913d10470ceaf4bc18c2c16721b45\transformed\jetified-play-services-measurement-api-20.0.0\AndroidManifest.xml:30:13-32:85
+248                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+248-->[com.google.android.gms:play-services-measurement-api:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\0ef913d10470ceaf4bc18c2c16721b45\transformed\jetified-play-services-measurement-api-20.0.0\AndroidManifest.xml:31:17-139
+249                android:value="com.google.firebase.components.ComponentRegistrar" />
+249-->[com.google.android.gms:play-services-measurement-api:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\0ef913d10470ceaf4bc18c2c16721b45\transformed\jetified-play-services-measurement-api-20.0.0\AndroidManifest.xml:32:17-82
+250            <meta-data
+250-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\a844cd1cfb8e0f3354c1720799017d59\transformed\jetified-firebase-installations-17.0.0\AndroidManifest.xml:18:13-20:85
+251                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+251-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\a844cd1cfb8e0f3354c1720799017d59\transformed\jetified-firebase-installations-17.0.0\AndroidManifest.xml:19:17-127
+252                android:value="com.google.firebase.components.ComponentRegistrar" />
+252-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\a844cd1cfb8e0f3354c1720799017d59\transformed\jetified-firebase-installations-17.0.0\AndroidManifest.xml:20:17-82
+253        </service>
+254
+255        <receiver
+255-->[com.google.firebase:firebase-messaging-directboot:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\ad2b7c27eeccd0157d17196db809c34e\transformed\jetified-firebase-messaging-directboot-23.0.0\AndroidManifest.xml:27:9-35:20
+256            android:name="com.google.firebase.messaging.directboot.FirebaseMessagingDirectBootReceiver"
+256-->[com.google.firebase:firebase-messaging-directboot:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\ad2b7c27eeccd0157d17196db809c34e\transformed\jetified-firebase-messaging-directboot-23.0.0\AndroidManifest.xml:28:13-104
+257            android:directBootAware="true"
+257-->[com.google.firebase:firebase-messaging-directboot:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\ad2b7c27eeccd0157d17196db809c34e\transformed\jetified-firebase-messaging-directboot-23.0.0\AndroidManifest.xml:29:13-43
+258            android:exported="true"
+258-->[com.google.firebase:firebase-messaging-directboot:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\ad2b7c27eeccd0157d17196db809c34e\transformed\jetified-firebase-messaging-directboot-23.0.0\AndroidManifest.xml:30:13-36
+259            android:permission="com.google.android.c2dm.permission.SEND" >
+259-->[com.google.firebase:firebase-messaging-directboot:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\ad2b7c27eeccd0157d17196db809c34e\transformed\jetified-firebase-messaging-directboot-23.0.0\AndroidManifest.xml:31:13-73
+260            <intent-filter>
+260-->[com.google.firebase:firebase-messaging-directboot:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\ad2b7c27eeccd0157d17196db809c34e\transformed\jetified-firebase-messaging-directboot-23.0.0\AndroidManifest.xml:32:13-34:29
+261                <action android:name="com.google.firebase.messaging.RECEIVE_DIRECT_BOOT" />
+261-->[com.google.firebase:firebase-messaging-directboot:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\ad2b7c27eeccd0157d17196db809c34e\transformed\jetified-firebase-messaging-directboot-23.0.0\AndroidManifest.xml:33:17-92
+261-->[com.google.firebase:firebase-messaging-directboot:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\ad2b7c27eeccd0157d17196db809c34e\transformed\jetified-firebase-messaging-directboot-23.0.0\AndroidManifest.xml:33:25-89
+262            </intent-filter>
+263        </receiver>
+264        <receiver
+264-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\04a8ee5b62b2d027defbfdfe71886768\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:28:9-35:20
+265            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+265-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\04a8ee5b62b2d027defbfdfe71886768\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:29:13-78
+266            android:exported="true"
+266-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\04a8ee5b62b2d027defbfdfe71886768\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:30:13-36
+267            android:permission="com.google.android.c2dm.permission.SEND" >
+267-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\04a8ee5b62b2d027defbfdfe71886768\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:31:13-73
+268            <intent-filter>
+268-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\04a8ee5b62b2d027defbfdfe71886768\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:32:13-34:29
+269                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+269-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\04a8ee5b62b2d027defbfdfe71886768\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:33:17-81
+269-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\04a8ee5b62b2d027defbfdfe71886768\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:33:25-78
+270            </intent-filter>
+271        </receiver>
+272        <!--
+273             FirebaseMessagingService performs security checks at runtime,
+274             but set to not exported to explicitly avoid allowing another app to call it.
+275        -->
+276        <service
+276-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\04a8ee5b62b2d027defbfdfe71886768\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:41:9-48:19
+277            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+277-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\04a8ee5b62b2d027defbfdfe71886768\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:42:13-82
+278            android:directBootAware="true"
+278-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\04a8ee5b62b2d027defbfdfe71886768\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:43:13-43
+279            android:exported="false" >
+279-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\04a8ee5b62b2d027defbfdfe71886768\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:44:13-37
+280            <intent-filter android:priority="-500" >
+280-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:35:13-37:29
+281                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+281-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:36:17-78
+281-->C:\Users\Greenwich\AndroidStudioProjects\TattHood_21__09_15\app\src\main\AndroidManifest.xml:36:25-75
+282            </intent-filter>
+283        </service> <!-- Needs to be explicitly declared on P+ -->
+284        <uses-library
+284-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Greenwich\.gradle\caches\transforms-3\5f919bd97f580ad769fba21046f364d0\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:39:9-41:40
+285            android:name="org.apache.http.legacy"
+285-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Greenwich\.gradle\caches\transforms-3\5f919bd97f580ad769fba21046f364d0\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:40:13-50
+286            android:required="false" />
+286-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Greenwich\.gradle\caches\transforms-3\5f919bd97f580ad769fba21046f364d0\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:41:13-37
+287
+288        <meta-data
+288-->[com.google.maps.android:android-maps-utils:2.2.2] C:\Users\Greenwich\.gradle\caches\transforms-3\353cf30c8bcdf1ff78e13311aacb7034\transformed\jetified-android-maps-utils-2.2.2\AndroidManifest.xml:12:9-14:69
+289            android:name="com.google.android.gms.version"
+289-->[com.google.maps.android:android-maps-utils:2.2.2] C:\Users\Greenwich\.gradle\caches\transforms-3\353cf30c8bcdf1ff78e13311aacb7034\transformed\jetified-android-maps-utils-2.2.2\AndroidManifest.xml:13:13-58
+290            android:value="@integer/google_play_services_version" />
+290-->[com.google.maps.android:android-maps-utils:2.2.2] C:\Users\Greenwich\.gradle\caches\transforms-3\353cf30c8bcdf1ff78e13311aacb7034\transformed\jetified-android-maps-utils-2.2.2\AndroidManifest.xml:14:13-66
+291
+292        <service
+292-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\f349ce8179ca479f612151e47b98bcbb\transformed\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:29:9-35:19
+293            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+293-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\f349ce8179ca479f612151e47b98bcbb\transformed\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:30:13-103
+294            android:exported="false" >
+294-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\f349ce8179ca479f612151e47b98bcbb\transformed\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:31:13-37
+295            <meta-data
+295-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\f349ce8179ca479f612151e47b98bcbb\transformed\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:32:13-34:39
+296                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+296-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\f349ce8179ca479f612151e47b98bcbb\transformed\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:33:17-94
+297                android:value="cct" />
+297-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\f349ce8179ca479f612151e47b98bcbb\transformed\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:34:17-36
+298        </service>
+299
+300        <provider
+300-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\45b4a080f8d120803c4464eae4da744b\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
+301            android:name="com.google.firebase.provider.FirebaseInitProvider"
+301-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\45b4a080f8d120803c4464eae4da744b\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:27:13-77
+302            android:authorities="com.Tatthood.Tatthood.firebaseinitprovider"
+302-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\45b4a080f8d120803c4464eae4da744b\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:28:13-72
+303            android:directBootAware="true"
+303-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\45b4a080f8d120803c4464eae4da744b\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:29:13-43
+304            android:exported="false"
+304-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\45b4a080f8d120803c4464eae4da744b\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:30:13-37
+305            android:initOrder="100" />
+305-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\45b4a080f8d120803c4464eae4da744b\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
+306
+307        <activity
+307-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Greenwich\.gradle\caches\transforms-3\43a61542070d926941f931fa65baa73e\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+308            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+308-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Greenwich\.gradle\caches\transforms-3\43a61542070d926941f931fa65baa73e\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+309            android:exported="false"
+309-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Greenwich\.gradle\caches\transforms-3\43a61542070d926941f931fa65baa73e\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+310            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+310-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Greenwich\.gradle\caches\transforms-3\43a61542070d926941f931fa65baa73e\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+311
+312        <receiver
+312-->[com.google.android.gms:play-services-measurement:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\8edd119f172d33bf3b4bd2b9e7d7aae4\transformed\jetified-play-services-measurement-20.0.0\AndroidManifest.xml:29:9-33:20
+313            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+313-->[com.google.android.gms:play-services-measurement:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\8edd119f172d33bf3b4bd2b9e7d7aae4\transformed\jetified-play-services-measurement-20.0.0\AndroidManifest.xml:30:13-85
+314            android:enabled="true"
+314-->[com.google.android.gms:play-services-measurement:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\8edd119f172d33bf3b4bd2b9e7d7aae4\transformed\jetified-play-services-measurement-20.0.0\AndroidManifest.xml:31:13-35
+315            android:exported="false" >
+315-->[com.google.android.gms:play-services-measurement:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\8edd119f172d33bf3b4bd2b9e7d7aae4\transformed\jetified-play-services-measurement-20.0.0\AndroidManifest.xml:32:13-37
+316        </receiver>
+317
+318        <service
+318-->[com.google.android.gms:play-services-measurement:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\8edd119f172d33bf3b4bd2b9e7d7aae4\transformed\jetified-play-services-measurement-20.0.0\AndroidManifest.xml:35:9-38:40
+319            android:name="com.google.android.gms.measurement.AppMeasurementService"
+319-->[com.google.android.gms:play-services-measurement:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\8edd119f172d33bf3b4bd2b9e7d7aae4\transformed\jetified-play-services-measurement-20.0.0\AndroidManifest.xml:36:13-84
+320            android:enabled="true"
+320-->[com.google.android.gms:play-services-measurement:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\8edd119f172d33bf3b4bd2b9e7d7aae4\transformed\jetified-play-services-measurement-20.0.0\AndroidManifest.xml:37:13-35
+321            android:exported="false" />
+321-->[com.google.android.gms:play-services-measurement:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\8edd119f172d33bf3b4bd2b9e7d7aae4\transformed\jetified-play-services-measurement-20.0.0\AndroidManifest.xml:38:13-37
+322        <service
+322-->[com.google.android.gms:play-services-measurement:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\8edd119f172d33bf3b4bd2b9e7d7aae4\transformed\jetified-play-services-measurement-20.0.0\AndroidManifest.xml:39:9-43:72
+323            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+323-->[com.google.android.gms:play-services-measurement:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\8edd119f172d33bf3b4bd2b9e7d7aae4\transformed\jetified-play-services-measurement-20.0.0\AndroidManifest.xml:40:13-87
+324            android:enabled="true"
+324-->[com.google.android.gms:play-services-measurement:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\8edd119f172d33bf3b4bd2b9e7d7aae4\transformed\jetified-play-services-measurement-20.0.0\AndroidManifest.xml:41:13-35
+325            android:exported="false"
+325-->[com.google.android.gms:play-services-measurement:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\8edd119f172d33bf3b4bd2b9e7d7aae4\transformed\jetified-play-services-measurement-20.0.0\AndroidManifest.xml:42:13-37
+326            android:permission="android.permission.BIND_JOB_SERVICE" />
+326-->[com.google.android.gms:play-services-measurement:20.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\8edd119f172d33bf3b4bd2b9e7d7aae4\transformed\jetified-play-services-measurement-20.0.0\AndroidManifest.xml:43:13-69
+327
+328        <provider
+328-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\92708834b1c092ddf07d1634926df188\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+329            android:name="androidx.startup.InitializationProvider"
+329-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\92708834b1c092ddf07d1634926df188\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+330            android:authorities="com.Tatthood.Tatthood.androidx-startup"
+330-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\92708834b1c092ddf07d1634926df188\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+331            android:exported="false" >
+331-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\92708834b1c092ddf07d1634926df188\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+332            <meta-data
+332-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\92708834b1c092ddf07d1634926df188\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+333                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+333-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\92708834b1c092ddf07d1634926df188\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+334                android:value="androidx.startup" />
+334-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\92708834b1c092ddf07d1634926df188\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+335            <meta-data
+335-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Greenwich\.gradle\caches\transforms-3\d9db6b6f9ce68129424c2ebe8909f584\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+336                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+336-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Greenwich\.gradle\caches\transforms-3\d9db6b6f9ce68129424c2ebe8909f584\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+337                android:value="androidx.startup" />
+337-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Greenwich\.gradle\caches\transforms-3\d9db6b6f9ce68129424c2ebe8909f584\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+338        </provider>
+339
+340        <service
+340-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\afeca0576ed79ed17f160dead3ee24f5\transformed\jetified-transport-runtime-3.0.0\AndroidManifest.xml:26:9-30:19
+341            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+341-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\afeca0576ed79ed17f160dead3ee24f5\transformed\jetified-transport-runtime-3.0.0\AndroidManifest.xml:27:13-117
+342            android:exported="false"
+342-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\afeca0576ed79ed17f160dead3ee24f5\transformed\jetified-transport-runtime-3.0.0\AndroidManifest.xml:28:13-37
+343            android:permission="android.permission.BIND_JOB_SERVICE" >
+343-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\afeca0576ed79ed17f160dead3ee24f5\transformed\jetified-transport-runtime-3.0.0\AndroidManifest.xml:29:13-69
+344        </service>
+345
+346        <receiver
+346-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\afeca0576ed79ed17f160dead3ee24f5\transformed\jetified-transport-runtime-3.0.0\AndroidManifest.xml:32:9-34:40
+347            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+347-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\afeca0576ed79ed17f160dead3ee24f5\transformed\jetified-transport-runtime-3.0.0\AndroidManifest.xml:33:13-132
+348            android:exported="false" />
+348-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Greenwich\.gradle\caches\transforms-3\afeca0576ed79ed17f160dead3ee24f5\transformed\jetified-transport-runtime-3.0.0\AndroidManifest.xml:34:13-37
+349    </application>
+350
+351</manifest>
